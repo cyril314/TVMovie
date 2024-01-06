@@ -1,0 +1,32 @@
+[
+  {
+    "channelNum": 1,
+    "channelName": "河北卫视",
+    "channelUrl": "http://live2.plus.hebtv.com/hbwsx/hd/live.m3u8",
+    "channelLogo": "http://www.hebtv.com/themes/default/images/icon_ie.jpg"
+  },
+  {
+    "channelNum": 2,
+    "channelName": "河北影视",
+    "channelUrl": "http://live6.plus.hebtv.com/hbysx/hd/live.m3u8",
+    "channelLogo": "http://www.hebtv.com/themes/default/images/icon_ie.jpg"
+  },
+  {
+    "channelNum": 3,
+    "channelName": "浙江卫视",
+    "channelUrl": "http://yd-vl.cztv.com/channels/lantian/channel01/720p.m3u8",
+    "channelLogo": ""
+  },
+  {
+    "channelNum": 4,
+    "channelName": "江苏卫视",
+    "channelUrl": "https://live-hls.jstv.com/livezhuzhan/jsws.m3u8",
+    "channelLogo": ""
+  },
+  {
+    "channelNum": 5,
+    "channelName": "江苏城市",
+    "channelUrl": "https://live-hls.jstv.com/livezhuzhan/jscs.m3u8",
+    "channelLogo": ""
+  }
+]
