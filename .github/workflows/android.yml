@@ -31,7 +31,7 @@ jobs:
 
       # 4. 构建 APK
       - name: Build APK
-        run: bash ./gradlew assembleRelease
+        run: bash ./gradlew assembleRelease --stacktrace
 
       # 5. 上传构建产物
       - name: Upload APK
