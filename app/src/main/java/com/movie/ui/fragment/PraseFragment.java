@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * @author aim
  * @date :2020/12/23
- * @description:
+ * @description: 解析线路
  */
 public class PraseFragment extends BaseLazyFragment {
     private VerticalGridView mGridView;
@@ -47,12 +47,13 @@ public class PraseFragment extends BaseLazyFragment {
         mGridView.setAdapter(praseAdapter);
         mGridView.setNumColumns(6);
         praseBeanList.addAll(ApiConfig.get().getPraseBeanList());
-        praseAdapter.setNewData(praseBeanList);
         for (int i = 0; i < praseBeanList.size(); i++) {
             if (praseBeanList.get(i).selected) {
                 sourceIndex = i;
+                break;
             }
         }
+        praseAdapter.setNewData(praseBeanList);
         praseAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {

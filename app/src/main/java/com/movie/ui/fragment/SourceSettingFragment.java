@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * @author aim
  * @date :2020/12/23
- * @description:
+ * @description: 数据源
  */
 public class SourceSettingFragment extends BaseLazyFragment {
     private VerticalGridView mGridView;

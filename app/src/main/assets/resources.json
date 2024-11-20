@@ -19,8 +19,8 @@
   },
   {
     "id": 4,
-    "name": "乐多资源",
-    "api": "http://cj.leduocaiji.com/inc/seacmsapi.php",
+    "name": "海洋乐播",
+    "api": "http://lbapiby.com/api.php/Seacms/vod/at/xml/",
     "download": ""
   },
   {
@@ -33,12 +33,6 @@
     "id": 6,
     "name": "大地资源",
     "api": "https://dadiapi.com/sea_api.php",
-    "download": ""
-  },
-  {
-    "id": 7,
-    "name": "海洋乐播",
-    "api": "http://lbapiby.com/api.php/Seacms/vod/at/xml/",
     "download": ""
   }
 ]
