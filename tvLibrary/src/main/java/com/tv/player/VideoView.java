@@ -67,10 +67,10 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout implements 
     public static final int STATE_PLAYBACK_COMPLETED = 5;
     public static final int STATE_BUFFERING = 6;
     public static final int STATE_BUFFERED = 7;
-    public static final int STATE_START_ABORT = 8;//开始播放中止
-    protected int mCurrentPlayState = STATE_IDLE;//当前播放器的状态
-    public static final int PLAYER_NORMAL = 10;        // 普通播放器
-    public static final int PLAYER_FULL_SCREEN = 11;   // 全屏播放器
+    public static final int STATE_START_ABORT = 8;      //开始播放中止
+    protected int mCurrentPlayState = STATE_IDLE;       //当前播放器的状态
+    public static final int PLAYER_NORMAL = 10;         // 普通播放器
+    public static final int PLAYER_FULL_SCREEN = 11;    // 全屏播放器
     protected int mCurrentFullState = PLAYER_NORMAL;
 
     protected boolean mIsFullScreen;//是否处于全屏状态
@@ -131,9 +131,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout implements 
     protected void initView() {
         mPlayerContainer = new FrameLayout(getContext());
         mPlayerContainer.setBackgroundColor(mPlayerBackgroundColor);
-        LayoutParams params = new LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT);
+        LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         this.addView(mPlayerContainer, params);
     }
 
@@ -235,10 +233,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout implements 
         }
         mRenderView = mRenderViewFactory.createRenderView(getContext());
         mRenderView.attachToPlayer(mMediaPlayer);
-        LayoutParams params = new LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                Gravity.CENTER);
+        LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.CENTER);
         mPlayerContainer.addView(mRenderView.getView(), 0, params);
     }
 

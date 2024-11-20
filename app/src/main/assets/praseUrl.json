@@ -11,13 +11,23 @@
   },
   {
     "id": 3,
-    "praseName": "备用线路2",
-    "praseUrl": "https://dmjx.m3u8.tv/?url="
+    "praseName": "红牛解析",
+    "praseUrl": "https://www.hnjiexi.com/m3u8/?url="
   },
   {
     "id": 4,
-    "praseName": "备用线路3",
-    "praseUrl": "http://v.renrenfabu.com/jiexi.php?url="
+    "praseName": "红牛解析备",
+    "praseUrl": "https://www.hongniujiexi.com/m3u8/?url="
+  },
+  {
+    "id": 5,
+    "praseName": "苹果解析",
+    "praseUrl": "https://jx.pingguocms.com/dplayer/?url="
+  },
+  {
+    "id": 6,
+    "praseName": "ali苹果解析",
+    "praseUrl": "https://jx.pingguocms.com/aliplayer/?url="
   },
   {
     "id": 14,

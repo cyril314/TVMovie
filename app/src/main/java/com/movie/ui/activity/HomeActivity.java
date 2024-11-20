@@ -286,15 +286,10 @@ public class HomeActivity extends BaseActivity {
                         focusView.requestFocus();
                     }
                     changeTop(false);
-                } else {
-                    exit();
                 }
-            } else {
-                exit();
             }
-        } else {
-            exit();
         }
+        exit();
     }
 
     private void exit() {

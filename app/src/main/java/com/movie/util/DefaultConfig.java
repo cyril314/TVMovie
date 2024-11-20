@@ -57,7 +57,7 @@ public class DefaultConfig {
     }
 
     private static String[] getRemove() {
-        String del = DEFAULT_REMOVE + ",伦理,论理,倫理,福利,激情,理论,写真,情色,美女,街拍,赤足,性感,里番,VIP,乱伦,人妻,巨乳," +
+        String del = DEFAULT_REMOVE + ",萝莉,伦理,论理,倫理,福利,激情,理论,写真,情色,美女,街拍,赤足,性感,里番,VIP,乱伦,人妻,巨乳," +
                 "偷拍,无码,有码,3p,3P,颜射,口交,自慰,SM,sm,精品,诱惑,教师,大秀,字幕,性爱,色情,性交,同性,自拍,国产主播";
         return del.split(",");
     }
