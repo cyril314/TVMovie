@@ -38,68 +38,34 @@ public class PraseDialog {
     }
 
     private void init(Context context) {
-        TextView tvPrase1 = findViewById(R.id.tvPrase1);
-        TextView tvPrase2 = findViewById(R.id.tvPrase2);
-        TextView tvPrase3 = findViewById(R.id.tvPrase3);
-        TextView tvPrase4 = findViewById(R.id.tvPrase4);
+        // 获取 TextView 的 ID 列表
+        int[] textViewIds = {R.id.tvPrase1, R.id.tvPrase2, R.id.tvPrase3, R.id.tvPrase4};
+
+        // 当前选中的线路 ID
         int id = Hawk.get(HawkConfig.DEFAULT_PRASE_ID, 1);
-        if (id == 1) {
-            tvPrase1.requestFocus();
-            tvPrase1.setTextColor(context.getResources().getColor(R.color.color_058AF4));
-        } else if (id == 2) {
-            tvPrase2.requestFocus();
-            tvPrase2.setTextColor(context.getResources().getColor(R.color.color_058AF4));
-        } else if (id == 3) {
-            tvPrase3.requestFocus();
-            tvPrase3.setTextColor(context.getResources().getColor(R.color.color_058AF4));
-        } else {
-            tvPrase4.requestFocus();
-            tvPrase4.setTextColor(context.getResources().getColor(R.color.color_058AF4));
+
+        // 遍历所有线路 TextView
+        for (int i = 0; i < textViewIds.length; i++) {
+            TextView textView = findViewById(textViewIds[i]);
+            int lineId = i + 1; // 线路 ID 从 1 开始
+            // 如果当前线路是选中的，设置焦点和高亮
+            if (id == lineId) {
+                textView.requestFocus();
+                textView.setTextColor(context.getResources().getColor(R.color.color_058AF4));
+            }
+            // 设置点击事件
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FastClickCheckUtil.check(v);
+                    if (id != lineId && playListener != null) {
+                        Hawk.put(HawkConfig.DEFAULT_PRASE_ID, lineId);
+                        playListener.onChange();
+                    }
+                    dismiss();
+                }
+            });
         }
-        tvPrase1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FastClickCheckUtil.check(v);
-                if (id != 1 && playListener != null) {
-                    Hawk.put(HawkConfig.DEFAULT_PRASE_ID, 1);
-                    playListener.onChange();
-                }
-                dismiss();
-            }
-        });
-        tvPrase2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FastClickCheckUtil.check(v);
-                if (id != 2 && playListener != null) {
-                    Hawk.put(HawkConfig.DEFAULT_PRASE_ID, 2);
-                    playListener.onChange();
-                }
-                dismiss();
-            }
-        });
-        tvPrase3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FastClickCheckUtil.check(v);
-                if (id != 3 && playListener != null) {
-                    Hawk.put(HawkConfig.DEFAULT_PRASE_ID, 3);
-                    playListener.onChange();
-                }
-                dismiss();
-            }
-        });
-        tvPrase4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FastClickCheckUtil.check(v);
-                if (id != 4 && playListener != null) {
-                    Hawk.put(HawkConfig.DEFAULT_PRASE_ID, 4);
-                    playListener.onChange();
-                }
-                dismiss();
-            }
-        });
     }
 
     public void show() {

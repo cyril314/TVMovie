@@ -20,6 +20,8 @@ import java.util.List;
  * @author aim
  * @date :2020/12/23
  * @description: 解析线路
+ * "praseName": "虾米解析",
+ * "praseUrl": "https://jx.xmflv.com/?url="
  */
 public class PraseFragment extends BaseLazyFragment {
     private VerticalGridView mGridView;
