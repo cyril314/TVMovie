@@ -1,12 +1,5 @@
 apply plugin: 'com.android.application'
 
-def keystorePropertiesFile = rootProject.file("keystore.properties")
-
-// Initialize a new Properties() object called keystoreProperties.
-def keystoreProperties = new Properties()
-
-// Load your keystore.properties file into the keystoreProperties object.
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
@@ -32,10 +25,10 @@ android {
 
     signingConfigs {
         config {
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
-            storeFile file(keystoreProperties['storeFile'])
-            storePassword keystoreProperties['storePassword']
+            storeFile file("../key.jks")
+            storePassword 'Ai123456'
+            keyAlias 'key0'
+            keyPassword 'Ai123456'
             v1SigningEnabled true
             v2SigningEnabled true
         }
@@ -59,8 +52,7 @@ android {
             if (variant.buildType.name == 'debug') {
                 outputFileName = 'app-debug.apk'
             } else {
-                def buildName = "tv_movie"
-                outputFileName = "${buildName}_v${versionName}.apk"
+                outputFileName = "tv_movie_v${variant.versionName}.apk"
             }
         }
     }
@@ -74,6 +66,7 @@ android {
         checkReleaseBuilds false
         abortOnError false
     }
+
     dexOptions {
         javaMaxHeapSize "4g"
         additionalParameters += '--multi-dex'
@@ -83,6 +76,7 @@ android {
 }
 
 dependencies {
+    api fileTree(dir: "libs", include: ["*.jar"])
     implementation project(path: ':tvLibrary')
     annotationProcessor rootProject.ext.dependencies["room-compiler"]
 }
