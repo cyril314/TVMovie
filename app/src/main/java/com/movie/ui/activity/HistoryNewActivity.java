@@ -72,30 +72,31 @@ public class HistoryNewActivity extends BaseActivity {
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 FastClickCheckUtil.check(view);
                 VodInfo vodInfo = historyAdapter.getData().get(position);
-                HistoryDialog historyDialog = new HistoryDialog().build(mContext, vodInfo).setOnHistoryListener(new HistoryDialog.OnHistoryListener() {
-                    @Override
-                    public void onLook(VodInfo vodInfo) {
-                        if (vodInfo != null) {
-                            Bundle bundle = new Bundle();
-                            bundle.putInt("id", vodInfo.id);
-                            bundle.putString("sourceUrl", vodInfo.apiUrl);
-                            jumpActivity(DetailActivity.class, bundle);
-                        }
-                    }
-
-                    @Override
-                    public void onDelete(VodInfo vodInfo) {
-                        if (vodInfo != null) {
-                            for (int i = 0; i < historyAdapter.getData().size(); i++) {
-                                if (vodInfo.id == historyAdapter.getData().get(i).id) {
-                                    historyAdapter.remove(i);
-                                    break;
+                HistoryDialog historyDialog = new HistoryDialog().build(mContext)
+                        .setVodInfo(vodInfo).setOnHistoryListener(new HistoryDialog.OnHistoryListener() {
+                            @Override
+                            public void onLook(VodInfo vodInfo) {
+                                if (vodInfo != null) {
+                                    Bundle bundle = new Bundle();
+                                    bundle.putInt("id", vodInfo.id);
+                                    bundle.putString("sourceUrl", vodInfo.apiUrl);
+                                    jumpActivity(DetailActivity.class, bundle);
                                 }
                             }
-                            RoomDataManger.deleteVodRecord(vodInfo.apiUrl, vodInfo);
-                        }
-                    }
-                });
+
+                            @Override
+                            public void onDelete(VodInfo vodInfo) {
+                                if (vodInfo != null) {
+                                    for (int i = 0; i < historyAdapter.getData().size(); i++) {
+                                        if (vodInfo.id == historyAdapter.getData().get(i).id) {
+                                            historyAdapter.remove(i);
+                                            break;
+                                        }
+                                    }
+                                    RoomDataManger.deleteVodRecord(vodInfo.apiUrl, vodInfo);
+                                }
+                            }
+                        });
                 historyDialog.show();
             }
         });

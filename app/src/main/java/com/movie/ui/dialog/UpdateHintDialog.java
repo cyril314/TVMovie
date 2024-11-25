@@ -8,52 +8,21 @@ import android.view.View;
 import androidx.annotation.IdRes;
 
 import com.movie.R;
+import com.movie.base.BaseDialog;
 
 /**
  * @author aim
  * @date :2020/12/23
  * @description:
  */
-public class UpdateHintDialog {
-    private View rootView;
-    private Dialog mDialog;
+public class UpdateHintDialog extends BaseDialog<UpdateHintDialog> {
 
-    public UpdateHintDialog() {
-
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.dialog_update_hint;
     }
 
-    public UpdateHintDialog build(Context context) {
-        rootView = LayoutInflater.from(context).inflate(R.layout.dialog_update_hint, null);
-        mDialog = new Dialog(context, R.style.CustomDialogStyle);
-        mDialog.setCanceledOnTouchOutside(false);
-        mDialog.setCancelable(true);
-        mDialog.setContentView(rootView);
-        init(context);
-        return this;
-    }
-
-    private void init(Context context) {
-
-    }
-
-    public void show() {
-        if (mDialog != null && !mDialog.isShowing()) {
-            mDialog.show();
-        }
-    }
-
-    public void dismiss() {
-        if (mDialog != null && mDialog.isShowing()) {
-            mDialog.dismiss();
-        }
-    }
-
-    @SuppressWarnings("unchecked")
-    private <T extends View> T findViewById(@IdRes int viewId) {
-        View view = null;
-        if (rootView != null) {
-            view = rootView.findViewById(viewId);
-        }
-        return (T) view;
+    @Override
+    protected void init() {
     }
 }

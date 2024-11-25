@@ -157,7 +157,6 @@ public abstract class BaseLazyFragment extends Fragment {
                 }
             }
         }
-
     }
 
     /**
@@ -220,7 +219,6 @@ public abstract class BaseLazyFragment extends Fragment {
         isViewCreated = false;
     }
 
-    @SuppressWarnings("unchecked")
     public <T extends View> T findViewById(@IdRes int viewId) {
         View view = null;
         if (rootView != null) {
@@ -274,5 +272,4 @@ public abstract class BaseLazyFragment extends Fragment {
         intent.putExtras(bundle);
         startActivity(intent);
     }
-
 }

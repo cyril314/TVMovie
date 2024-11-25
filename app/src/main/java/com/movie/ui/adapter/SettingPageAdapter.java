@@ -11,10 +11,10 @@ import com.movie.base.BaseLazyFragment;
 import java.util.List;
 
 /**
- * @user acer
- * @date 2018/12/4
+ * @author aim
+ * @date :2020/12/23
+ * @description:
  */
-
 public class SettingPageAdapter extends FragmentPagerAdapter {
     public FragmentManager fragmentManager;
     public List<BaseLazyFragment> list;

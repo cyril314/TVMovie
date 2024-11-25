@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "praseName": "dadi解析",
-    "praseUrl": "https://play.dadiapi.com/watch?url="
+    "praseName": "ali苹果解析",
+    "praseUrl": "https://jx.pingguocms.com/aliplayer/?url="
   },
   {
     "id": 2,
@@ -16,7 +16,7 @@
   },
   {
     "id": 4,
-    "praseName": "ali苹果解析",
-    "praseUrl": "https://jx.pingguocms.com/aliplayer/?url="
+    "praseName": "dadi解析",
+    "praseUrl": "https://play.dadiapi.com/watch?url="
   }
 ]

@@ -4,15 +4,18 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.IntEvaluator;
 import android.animation.ObjectAnimator;
+import android.os.Build;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.movie.ui.adapter.LiveChannelAdapter;
 import com.orhanobut.hawk.Hawk;
@@ -32,7 +35,7 @@ import java.util.List;
 /**
  * @author aim
  * @date :2021/1/12
- * @description:
+ * @description: 直播控制器
  */
 public class LivePlayActivity extends BaseActivity {
 
@@ -46,6 +49,7 @@ public class LivePlayActivity extends BaseActivity {
     private final Handler mHandler = new Handler();
     private int oldPlayIndex = 0;
     private String channelNum = "";
+    private static final int AUTO_HIDE_DELAY = 10000; // 自动隐藏延迟时间
     private final Runnable mRunnable = new Runnable() {
         @Override
         public void run() {
@@ -137,7 +141,7 @@ public class LivePlayActivity extends BaseActivity {
         channelAdapter.setNewData(channelList);
         mGridView.scrollToPosition(index);
         mVideoView.setChannel(channelList);
-        mHandler.postDelayed(mRunnable, 5000);
+        mHandler.postDelayed(mRunnable, AUTO_HIDE_DELAY);
     }
 
     @Override
@@ -215,7 +219,7 @@ public class LivePlayActivity extends BaseActivity {
             mHandler.removeCallbacks(mRunnable);
         } else if (event.getAction() == KeyEvent.ACTION_UP) {
             if (mGridView.getVisibility() == View.VISIBLE) {
-                mHandler.postDelayed(mRunnable, 5000);
+                mHandler.postDelayed(mRunnable, AUTO_HIDE_DELAY);
             }
         }
         return super.dispatchKeyEvent(event);
@@ -232,7 +236,7 @@ public class LivePlayActivity extends BaseActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
-                mHandler.postDelayed(mRunnable, 5000);
+                mHandler.postDelayed(mRunnable, AUTO_HIDE_DELAY);
             }
         });
         tvHint.setVisibility(View.VISIBLE);
@@ -264,7 +268,7 @@ public class LivePlayActivity extends BaseActivity {
             mVideoView.resume();
         }
         if (mGridView.getVisibility() == View.VISIBLE) {
-            mHandler.postDelayed(mRunnable, 5000);
+            mHandler.postDelayed(mRunnable, AUTO_HIDE_DELAY);
         }
     }
 
@@ -285,5 +289,46 @@ public class LivePlayActivity extends BaseActivity {
         if (mVideoView != null) {
             mVideoView.release();
         }
+    }
+
+    private float startX, startY;
+    private boolean hasSwiped = false; // 标记滑动状态
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                startX = event.getX();
+                startY = event.getY();
+                mHandler.removeCallbacks(mRunnable); // 清除自动隐藏任务
+                hasSwiped = false; // 每次触摸重置滑动标记
+                return true;
+            case MotionEvent.ACTION_MOVE:
+                float deltaX = event.getX() - startX;
+                float deltaY = event.getY() - startY;
+                // 限制滑动的方向，避免误触
+                if (!hasSwiped && Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+                    if (deltaX > 50) { // 向右滑动，下一频道
+                        mVideoView.playNext();
+                    } else if (deltaX < -50) { // 向左滑动，上一频道
+                        mVideoView.playPrevious();
+                    }
+                    hasSwiped = true; // 标记已滑动，避免多次触发
+                }
+                return true;
+            case MotionEvent.ACTION_UP:
+                // 处理单击逻辑
+                if (!hasSwiped && Math.abs(event.getX() - startX) < 10 && Math.abs(event.getY() - startY) < 10) {
+                    if (mGridView.getVisibility() == View.INVISIBLE) {
+                        showChannelList();
+                    }
+                }
+                // 重新设置自动隐藏逻辑
+                if (mGridView.getVisibility() == View.VISIBLE) {
+                    mHandler.postDelayed(mRunnable, 5000);
+                }
+                return true;
+        }
+        return super.onTouchEvent(event);
     }
 }

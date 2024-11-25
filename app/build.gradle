@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
-    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId rootProject.ext.android.applicationId
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.versions.versionCode
-        versionName rootProject.ext.versions.versionName
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
         multiDexEnabled true
         ndk {
             //选择要添加的对应 cpu 类型的 .so 库。还可以添加 , 'mips', 'mips64'
@@ -79,4 +79,15 @@ dependencies {
     api fileTree(dir: "libs", include: ["*.jar"])
     implementation project(path: ':tvLibrary')
     annotationProcessor rootProject.ext.dependencies["room-compiler"]
+}
+
+// Disable javaPreCompileDebug task
+tasks.whenTaskAdded { task ->
+    if (task.name == "javaPreCompileDebug") {
+        task.enabled = false
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:-deprecation" << "-Xlint:-unchecked"
 }

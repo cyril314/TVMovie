@@ -6,7 +6,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.movie.api.ApiConfig;
 import com.movie.base.BaseLazyFragment;
 import com.movie.bean.PraseBean;
-import com.movie.ui.adapter.PraseAdapter;
+import com.movie.ui.adapter.SettingPraseAdapter;
 import com.movie.util.FastClickCheckUtil;
 import com.movie.util.HawkConfig;
 import com.orhanobut.hawk.Hawk;
@@ -25,8 +25,8 @@ import java.util.List;
  */
 public class PraseFragment extends BaseLazyFragment {
     private VerticalGridView mGridView;
-    private PraseAdapter praseAdapter;
-    private final List<PraseBean> praseBeanList = new ArrayList<>();
+    private SettingPraseAdapter settingAdapter;
+    private final List<PraseBean> lists = new ArrayList<>();
     private int sourceIndex = 0;
 
     public static PraseFragment newInstance() {
@@ -45,27 +45,22 @@ public class PraseFragment extends BaseLazyFragment {
     @Override
     protected void init() {
         mGridView = findViewById(R.id.mGridView);
-        praseAdapter = new PraseAdapter();
-        mGridView.setAdapter(praseAdapter);
+        settingAdapter = new SettingPraseAdapter();
+        mGridView.setAdapter(settingAdapter);
         mGridView.setNumColumns(6);
-        praseBeanList.addAll(ApiConfig.get().getPraseBeanList());
-        for (int i = 0; i < praseBeanList.size(); i++) {
-            if (praseBeanList.get(i).selected) {
-                sourceIndex = i;
-                break;
-            }
-        }
-        praseAdapter.setNewData(praseBeanList);
-        praseAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        lists.addAll(ApiConfig.get().getPraseBeanList());
+        sourceIndex = Hawk.get(HawkConfig.DEFAULT_PRASE_ID, 0);
+        settingAdapter.setNewData(lists);
+        settingAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 FastClickCheckUtil.check(view);
                 if (sourceIndex != position) {
-                    PraseBean praseBean = praseAdapter.getData().get(position);
-                    praseAdapter.getData().get(sourceIndex).selected = false;
-                    praseAdapter.notifyItemChanged(sourceIndex);
+                    PraseBean praseBean = settingAdapter.getData().get(position);
+                    settingAdapter.getData().get(sourceIndex).selected = false;
+                    settingAdapter.notifyItemChanged(sourceIndex);
                     praseBean.selected = true;
-                    praseAdapter.notifyItemChanged(position);
+                    settingAdapter.notifyItemChanged(position);
                     sourceIndex = position;
                     Hawk.put(HawkConfig.DEFAULT_PRASE_ID, praseBean.getId());
                 }

@@ -86,18 +86,20 @@ public class VodInfo implements Serializable {
             seriesList = new ArrayList<>();
             Movie.Video.UrlBean.UrlInfo mUrlInfo = null;
             for (Movie.Video.UrlBean.UrlInfo urlInfo : video.urlBean.infoList) {
-                if (urlInfo.beanList != null && urlInfo.beanList.size() > 0) {
-                    Movie.Video.UrlBean.UrlInfo.InfoBean infoBean = urlInfo.beanList.get(0);
-                    String name = DefaultConfig.getFileName(infoBean.url);
-                    if (name.contains(".") && !name.endsWith("html")) {
-                        this.isX5 = false;
-                        mUrlInfo = urlInfo;
-                        break;
-                    }
-                    if (name.contains("$") && !name.endsWith("html")) {
-                        this.isX5 = false;
-                        mUrlInfo = urlInfo;
-                        break;
+                if (urlInfo.urls.toLowerCase().contains(".m3u8")) {
+                    if (urlInfo.beanList != null && urlInfo.beanList.size() > 0) {
+                        Movie.Video.UrlBean.UrlInfo.InfoBean infoBean = urlInfo.beanList.get(0);
+                        String name = DefaultConfig.getFileName(infoBean.url);
+                        if (name.contains(".") && !name.endsWith("html")) {
+                            this.isX5 = false;
+                            mUrlInfo = urlInfo;
+                            break;
+                        }
+                        if (name.contains("$") && !name.endsWith("html")) {
+                            this.isX5 = false;
+                            mUrlInfo = urlInfo;
+                            break;
+                        }
                     }
                 }
             }
@@ -124,7 +126,7 @@ public class VodInfo implements Serializable {
 
         public VodSeries(String name, String url) {
             this.name = name;
-            this.url = url;
+            this.url = url.replaceAll("m3u8\\$.*$", "m3u8");
         }
     }
 }

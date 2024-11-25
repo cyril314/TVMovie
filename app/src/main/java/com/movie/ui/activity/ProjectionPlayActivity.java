@@ -16,7 +16,7 @@ import com.tv.player.VideoView;
 /**
  * @author aim
  * @date :2021/3/5
- * @description:
+ * @description: 投屏
  */
 public class ProjectionPlayActivity extends BaseActivity {
     private VideoView mVideoView;
@@ -55,7 +55,7 @@ public class ProjectionPlayActivity extends BaseActivity {
     private void initView() {
         mVideoView = findViewById(R.id.mVideoView);
         mProgressBar = findViewById(R.id.mProgressBar);
-        mVodSeekLayout = findViewById(R.id.mVodSeekLayout);
+        mVodSeekLayout = findViewById(R.id.mVodCastLayout);
         mVideoView.addOnStateChangeListener(new VideoView.OnSimpleStateChangeListener() {
             @Override
             public void OnPlayerState(int state) {

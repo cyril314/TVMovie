@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -22,7 +23,7 @@ import org.greenrobot.eventbus.EventBus;
 /**
  * @author aim
  * @date :2020/12/22
- * @description:
+ * @description: 视频控制器
  */
 public class PlayActivity extends BaseActivity {
     private VodPlayView mVideoView;//视频播放视图
@@ -215,5 +216,85 @@ public class PlayActivity extends BaseActivity {
         if (mVideoView != null) {
             mVideoView.release();
         }
+    }
+
+    private float initialX, initialY; // 记录触摸事件的初始位置
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                // 记录触摸起始位置
+                initialX = event.getX();
+                initialY = event.getY();
+                return true;
+            case MotionEvent.ACTION_UP:
+                // 计算滑动的偏移量
+                float deltaX = event.getX() - initialX;
+                float deltaY = event.getY() - initialY;
+
+                // 水平方向滑动
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                    if (deltaX > 50) { // 快进
+                        fastForward();
+                    } else if (deltaX < -50) { // 快退
+                        fastRewind();
+                    }
+                } else { // 垂直方向或点击事件
+                    if (Math.abs(deltaY) < 30) { // 点击事件
+                        togglePlayPause();
+                    }
+                }
+                return true;
+            default:
+                return super.onTouchEvent(event);
+        }
+    }
+
+    // 暂停/播放切换
+    private void togglePlayPause() {
+        if (!isPause) {
+            isPause = true;
+            mHandler.removeCallbacks(mRunnable);  // 停止更新进度条
+            mVideoView.pause();  // 暂停视频播放
+            mVodSeekLayout.setVisibility(View.VISIBLE);
+            int mCurrentPosition = (int) mVideoView.getCurrentPosition();
+            int mDuration = (int) mVideoView.getDuration();
+            int progress = mDuration == 0 ? 0 : mCurrentPosition * mVodSeekLayout.getMaxProgress() / mDuration;
+            mVodSeekLayout.setProgress(progress);  // 更新进度条
+            mVodSeekLayout.pause();  // 暂停进度条
+        } else {
+            isPause = false;
+            mHandler.removeCallbacks(mRunnable);  // 停止更新进度条
+            mHandler.postDelayed(mRunnable, 1000);  // 开始更新进度条
+            mVideoView.resume();  // 恢复视频播放
+            mVodSeekLayout.start();  // 恢复进度条
+        }
+    }
+
+    // 快进功能
+    private void fastForward() {
+        int currentPosition = (int) mVideoView.getCurrentPosition();
+        int duration = (int) mVideoView.getDuration();
+        int newPosition = Math.min(currentPosition + 10000, duration); // 快进 10 秒
+        mVideoView.seekTo(newPosition);
+        updateSeekLayout(newPosition, duration);
+    }
+
+    // 快退功能
+    private void fastRewind() {
+        int currentPosition = (int) mVideoView.getCurrentPosition();
+        int newPosition = Math.max(currentPosition - 10000, 0); // 快退 10 秒
+        mVideoView.seekTo(newPosition);
+        updateSeekLayout(newPosition, mVideoView.getDuration());
+    }
+
+    // 更新进度条布局
+    private void updateSeekLayout(int currentPosition, long duration) {
+        long progress = duration == 0 ? 0 : currentPosition * mVodSeekLayout.getMaxProgress() / duration;
+        mVodSeekLayout.setVisibility(View.VISIBLE);
+        mVodSeekLayout.setProgress((int) progress);
+        mVodSeekLayout.setCurrentPosition(currentPosition);
+        mVodSeekLayout.setDuration(duration);
     }
 }

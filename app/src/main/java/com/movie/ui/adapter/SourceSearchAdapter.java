@@ -17,7 +17,7 @@ import java.util.ArrayList;
  */
 public class SourceSearchAdapter extends BaseQuickAdapter<SourceBean, BaseViewHolder> {
     public SourceSearchAdapter() {
-        super(R.layout.item_source_search_layout, new ArrayList<>());
+        super(R.layout.item_search_source_layout, new ArrayList<>());
     }
 
     @Override

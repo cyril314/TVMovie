@@ -20,7 +20,7 @@
         android:visibility="invisible" />
 
     <com.movie.widget.VodSeekLayout
-        android:id="@+id/mVodSeekLayout"
+        android:id="@+id/mVodCastLayout"
         android:layout_width="match_parent"
         android:layout_height="180pt"
         android:layout_gravity="bottom"

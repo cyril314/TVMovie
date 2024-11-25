@@ -3,11 +3,10 @@ package com.tv.leanback;
 import android.view.View;
 
 /**
- *
- * @author acer
- * @date 2018/8/6
+ * @author aim
+ * @date :2020/12/23
+ * @description:
  */
-
 public interface OnItemListener<T> {
     /**
      * 获得焦点

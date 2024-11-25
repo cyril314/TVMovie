@@ -1,11 +1,7 @@
 package com.movie.ui.dialog;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-
 import com.movie.R;
+import com.movie.base.BaseDialog;
 
 /**
  * 描述
@@ -13,41 +9,14 @@ import com.movie.R;
  * @author aim
  * @since 2020/12/27
  */
-public class LoadingDialog {
-    private View rootView;
-    private Dialog mDialog;
+public class LoadingDialog extends BaseDialog<LoadingDialog> {
 
-    public LoadingDialog() {
-
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.loading_dialog;
     }
 
-    public LoadingDialog build(Context context) {
-        rootView = LayoutInflater.from(context).inflate(R.layout.loading_dialog, null);
-        mDialog = new Dialog(context, R.style.CustomDialogStyle);
-        mDialog.setCanceledOnTouchOutside(false);
-        mDialog.setCancelable(false);
-        mDialog.setContentView(rootView);
-        init(context);
-        return this;
-    }
-
-    private void init(Context context) {
-
-    }
-
-    public void dismiss() {
-        if (mDialog != null && mDialog.isShowing()) {
-            mDialog.dismiss();
-        }
-    }
-
-    public void show() {
-        if (mDialog != null && !mDialog.isShowing()) {
-            mDialog.show();
-        }
-    }
-
-    public boolean isShowing() {
-        return mDialog != null && mDialog.isShowing();
+    @Override
+    protected void init() {
     }
 }

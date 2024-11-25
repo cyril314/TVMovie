@@ -1,93 +1,60 @@
 package com.movie.ui.dialog;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.TextView;
 
-import androidx.annotation.IdRes;
-
 import com.movie.R;
+import com.movie.base.BaseDialog;
 import com.movie.bean.VodInfo;
 import com.movie.util.FastClickCheckUtil;
 
 /**
  * @author aim
  * @date :2020/12/23
- * @description:
+ * @description: 历史记录对话框
  */
-public class HistoryDialog {
-    private View rootView;
-    private Dialog mDialog;
+public class HistoryDialog extends BaseDialog<HistoryDialog> {
     private OnHistoryListener historyListener;
     private VodInfo vodInfo;
 
-    public HistoryDialog build(Context context, VodInfo vodInfo) {
-        rootView = LayoutInflater.from(context).inflate(R.layout.dialog_history, null);
-        mDialog = new Dialog(context, R.style.CustomDialogStyle);
-        mDialog.setCanceledOnTouchOutside(false);
-        mDialog.setCancelable(true);
-        mDialog.setContentView(rootView);
+    public HistoryDialog setVodInfo(VodInfo vodInfo) {
         this.vodInfo = vodInfo;
-        init(context);
         return this;
     }
 
-    private void init(Context context) {
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.dialog_history; // 返回特定布局资源 ID
+    }
+
+    @Override
+    protected void init() {
         TextView tvLook = findViewById(R.id.tvLook);
         TextView tvDelete = findViewById(R.id.tvDelete);
-        tvLook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FastClickCheckUtil.check(v);
-                dismiss();
-                if (historyListener != null) {
-                    historyListener.onLook(vodInfo);
-                }
+
+        tvLook.setOnClickListener(v -> {
+            FastClickCheckUtil.check(v);
+            dismiss();
+            if (historyListener != null) {
+                historyListener.onLook(vodInfo);
             }
         });
-        tvDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FastClickCheckUtil.check(v);
-                dismiss();
-                if (historyListener != null) {
-                    historyListener.onDelete(vodInfo);
-                }
+
+        tvDelete.setOnClickListener(v -> {
+            FastClickCheckUtil.check(v);
+            dismiss();
+            if (historyListener != null) {
+                historyListener.onDelete(vodInfo);
             }
         });
-    }
-
-    public void show() {
-        if (mDialog != null && !mDialog.isShowing()) {
-            mDialog.show();
-        }
-    }
-
-    public void dismiss() {
-        if (mDialog != null && mDialog.isShowing()) {
-            mDialog.dismiss();
-        }
-    }
-
-    @SuppressWarnings("unchecked")
-    private <T extends View> T findViewById(@IdRes int viewId) {
-        View view = null;
-        if (rootView != null) {
-            view = rootView.findViewById(viewId);
-        }
-        return (T) view;
     }
 
     public HistoryDialog setOnHistoryListener(OnHistoryListener listener) {
-        historyListener = listener;
+        this.historyListener = listener;
         return this;
     }
 
     public interface OnHistoryListener {
         void onLook(VodInfo vodInfo);
-
         void onDelete(VodInfo vodInfo);
     }
 }

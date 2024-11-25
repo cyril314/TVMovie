@@ -5,11 +5,10 @@ import android.view.animation.Interpolator;
 import android.widget.Scroller;
 
 /**
- *
- * @author acer
- * @date 2018/7/24
+ * @author aim
+ * @date :2020/12/23
+ * @description:
  */
-
 public class FixedSpeedScroller extends Scroller {
     private int mDuration = 2500;
 

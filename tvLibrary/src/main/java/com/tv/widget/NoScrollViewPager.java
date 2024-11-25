@@ -10,10 +10,10 @@ import androidx.annotation.Nullable;
 import androidx.viewpager.widget.ViewPager;
 
 /**
- * @author acer
- * @date 2018/7/24
+ * @author aim
+ * @date :2020/12/23
+ * @description:
  */
-
 public class NoScrollViewPager extends ViewPager {
 
     public NoScrollViewPager(@NonNull Context context) {

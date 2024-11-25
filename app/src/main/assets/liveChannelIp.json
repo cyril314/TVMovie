@@ -1,554 +1,1670 @@
 [
-  {
-    "channelNum": 1,
-    "channelName": "CCTV-1 综合",
-    "channelUrl": "http://39.135.138.58:18890/PLTV/88888888/224/3221225642/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/6/65/CCTV-1_Logo.png"
-  },
-  {
-    "channelNum": 2,
-    "channelName": "CCTV-2 财经",
-    "channelUrl": "http://39.135.138.60:18890/PLTV/88888910/224/3221225619/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/thumb/3/34/CCTV-2_Logo.svg/400px-CCTV-2_Logo.svg.png"
-  },
-  {
-    "channelNum": 3,
-    "channelName": "CCTV-3 综艺",
-    "channelUrl": "http://39.134.115.163:8080/PLTV/88888910/224/3221225647/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/3/34/CCTV-3_Logo.png"
-  },
-  {
-    "channelNum": 4,
-    "channelName": "CCTV-4 中文国际",
-    "channelUrl": "http://ott.js.chinamobile.com/TVOD/3/224/3221228156/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/thumb/0/07/CCTV-4_Logo.svg/400px-CCTV-4_Logo.svg.png"
-  },
-  {
-    "channelNum": 5,
-    "channelName": "CCTV-5 体育",
-    "channelUrl": "http://ott.js.chinamobile.com/TVOD/3/224/3221228173/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/3/33/CCTV-5_Logo.png"
-  },
-  {
-    "channelNum": 6,
-    "channelName": "CCTV-5+ 体育赛事",
-    "channelUrl": "http://39.135.138.60:18890/PLTV/88888910/224/3221225706/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/9/90/CCTV-5%2B_Logo.png"
-  },
-  {
-    "channelNum": 7,
-    "channelName": "CCTV-6 电影",
-    "channelUrl": "http://39.135.138.58:18890/PLTV/88888888/224/3221225632/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/0/0c/CCTV-6_Logo.png"
-  },
-  {
-    "channelNum": 8,
-    "channelName": "CCTV-7 国防军事",
-    "channelUrl": "http://ott.js.chinamobile.com/TVOD/3/224/3221227642/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/f/f0/CCTV-7_Logo.png"
-  },
-  {
-    "channelNum": 9,
-    "channelName": "CCTV-8 电视剧",
-    "channelUrl": "http://ott.js.chinamobile.com/TVOD/3/224/3221228079/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/4/49/CCTV-8_Logo.png"
-  },
-  {
-    "channelNum": 10,
-    "channelName": "CCTV-9 纪录",
-    "channelUrl": "http://ott.js.chinamobile.com/TVOD/3/224/3221227614/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/1/11/CCTV-9_Logo.png"
-  },
-  {
-    "channelNum": 11,
-    "channelName": "CCTV-10 科教",
-    "channelUrl": "http://ott.js.chinamobile.com/TVOD/3/224/3221228078/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/f/fd/CCTV-10_Logo.png"
-  },
-  {
-    "channelNum": 12,
-    "channelName": "CCTV-11 戏曲",
-    "channelUrl": "http://39.135.138.58:18890/PLTV/88888888/224/3221225628/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/9/9c/CCTV-11_Logo.png"
-  },
-  {
-    "channelNum": 13,
-    "channelName": "CCTV-12 社会与法制",
-    "channelUrl": "http://ott.js.chinamobile.com/TVOD/3/224/3221227655/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/7/71/CCTV-12_Logo.png"
-  },
-  {
-    "channelNum": 14,
-    "channelName": "CCTV-13 新闻",
-    "channelUrl": "http://ott.js.chinamobile.com/TVOD/3/224/3221228224/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/0/0b/CCTV-13_Logo.png"
-  },
-  {
-    "channelNum": 15,
-    "channelName": "CCTV-14 少儿",
-    "channelUrl": "http://39.135.138.60:18890/PLTV/88888910/224/3221225639/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/c/c8/CCTV-14_Logo.png"
-  },
-  {
-    "channelNum": 16,
-    "channelName": "CCTV-15 音乐",
-    "channelUrl": "http://ott.js.chinamobile.com/TVOD/3/224/3221227538/index.m3u8",
-    "channelLogo": "https://upload.wikimedia.org/wikipedia/zh/f/f8/CCTV-15_Logo.png"
-  },
-  {
-    "channelNum": 17,
-    "channelName": "CCTV-16奥林匹克",
-    "channelUrl": "http://ott.js.chinamobile.com/PLTV/3/224/3221228144/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 18,
-    "channelName": "CCTV-17",
-    "channelUrl": "http://ott.js.chinamobile.com/TVOD/3/224/3221227726/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 19,
-    "channelName": "浙江卫视",
-    "channelUrl": "http://223.110.246.73/ott.js.chinamobile.com/PLTV/4/224/3221227692/index.m3u8$4M1080P",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 20,
-    "channelName": "湖南卫视",
-    "channelUrl": "http://39.135.138.59:18890/PLTV/88888910/224/3221225704/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 21,
-    "channelName": "北京卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/btv1hd.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 22,
-    "channelName": "东方卫视",
-    "channelUrl": "http://117.148.187.37/PLTV/88888888/224/3221226142/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 23,
-    "channelName": "安徽卫视",
-    "channelUrl": "http://39.135.138.59:18890/PLTV/88888910/224/3221225691/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 24,
-    "channelName": "广东卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/gdhd.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 25,
-    "channelName": "深圳卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/szhd.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 26,
-    "channelName": "江苏卫视",
-    "channelUrl": "http://117.148.187.37/PLTV/88888888/224/3221226140/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 27,
-    "channelName": "山东卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/sdhd.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 28,
-    "channelName": "天津卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/tjhd.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 29,
-    "channelName": "重庆卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/cqhd.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 30,
-    "channelName": "东南卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/dntv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 31,
-    "channelName": "甘肃卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/gstv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 32,
-    "channelName": "广西卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/gxtv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 33,
-    "channelName": "贵州卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/gztv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 34,
-    "channelName": "河北卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/hebtv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 35,
-    "channelName": "黑龙江卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/hljhd.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 36,
-    "channelName": "河南卫视",
-    "channelUrl": "http://112.17.40.140/PLTV/88888888/224/3221226130/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 37,
-    "channelName": "湖北卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/hbhd.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 38,
-    "channelName": "江西卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/jxtv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 39,
-    "channelName": "吉林卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/jltv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 40,
-    "channelName": "内蒙古卫视",
-    "channelUrl": "http://117.169.120.140:8080/live/neimenggustv/.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 41,
-    "channelName": "宁夏卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/nxtv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 42,
-    "channelName": "山西卫视",
-    "channelUrl": "http://117.169.120.140:8080/live/shanxistv/.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 43,
-    "channelName": "陕西卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/sxtv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 44,
-    "channelName": "四川卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/sctv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 45,
-    "channelName": "新疆卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/xjtv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 46,
-    "channelName": "云南卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/yntv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 47,
-    "channelName": "青海卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/qhtv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 48,
-    "channelName": "兵团卫视",
-    "channelUrl": "http://112.17.40.140/PLTV/88888888/224/3221226186/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 49,
-    "channelName": "厦门卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/xmtv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 50,
-    "channelName": "金鹰卡通",
-    "channelUrl": "http://117.148.187.37/PLTV/88888888/224/3221226190/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 51,
-    "channelName": "西藏卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/xztv.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 52,
-    "channelName": "CHC高清电影",
-    "channelUrl": "http://iptv.tvfix.org/hls/chchd.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 53,
-    "channelName": "北京纪实",
-    "channelUrl": "http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225729/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 54,
-    "channelName": "北京文艺",
-    "channelUrl": "http://iptv.tvfix.org/hls/btv2hd.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 55,
-    "channelName": "北京科教",
-    "channelUrl": "http://iptv.tvfix.org/hls/btv3.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 56,
-    "channelName": "北京影视",
-    "channelUrl": "http://iptv.tvfix.org/hls/btv4.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 57,
-    "channelName": "北京财经",
-    "channelUrl": "http://iptv.tvfix.org/hls/btv5.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 58,
-    "channelName": "北京生活",
-    "channelUrl": "http://iptv.tvfix.org/hls/btv7.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 59,
-    "channelName": "北京青年",
-    "channelUrl": "http://iptv.tvfix.org/hls/btv8.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 60,
-    "channelName": "北京新闻",
-    "channelUrl": "http://iptv.tvfix.org/hls/btv9.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 61,
-    "channelName": "北京青年",
-    "channelUrl": "http://iptv.tvfix.org/hls/btv8.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 62,
-    "channelName": "优漫卡通",
-    "channelUrl": "http://117.148.187.37/PLTV/88888888/224/3221226172/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 63,
-    "channelName": "金鹰纪实",
-    "channelUrl": "http://112.17.40.140/PLTV/88888888/224/3221226831/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 64,
-    "channelName": "NewTV 明星大片",
-    "channelUrl": "http://117.148.187.37/PLTV/88888888/224/3221226751/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 65,
-    "channelName": "NewTV 潮妈辣婆",
-    "channelUrl": "http://117.148.187.37/PLTV/88888888/224/3221226666/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 66,
-    "channelName": "NewTV 炫舞未来",
-    "channelUrl": "http://112.17.40.140/PLTV/88888888/224/3221226817/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 67,
-    "channelName": "NewTV 精品记录",
-    "channelUrl": "http://117.148.187.37/PLTV/88888888/224/3221226763/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 68,
-    "channelName": "五星体育",
-    "channelUrl": "http://117.148.187.37/PLTV/88888888/224/3221226582/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 69,
-    "channelName": "假面骑士HD",
-    "channelUrl": "http://117.148.187.37/PLTV/88888888/224/3221226178/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 70,
-    "channelName": "公共农村",
-    "channelUrl": "http://219.153.252.50/PLTV/88888888/224/3221225626/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 71,
-    "channelName": "嘉佳卡通",
-    "channelUrl": "http://117.148.187.37/PLTV/88888888/224/3221226461/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 72,
-    "channelName": "四海钓鱼",
-    "channelUrl": "http://112.17.40.140/PLTV/88888888/224/3221226533/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 73,
-    "channelName": "杭州综合",
-    "channelUrl": "http://112.17.40.140/PLTV/88888888/224/3221226170/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 74,
-    "channelName": "浙江数码时代",
-    "channelUrl": "http://112.17.40.140/PLTV/88888888/224/3221226638/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 75,
-    "channelName": "游戏风云",
-    "channelUrl": "http://112.17.40.140/PLTV/88888888/224/3221226726/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 76,
-    "channelName": "湖南茶",
-    "channelUrl": "http://112.17.40.140/PLTV/88888888/224/3221226744/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 77,
-    "channelName": "都市剧场",
-    "channelUrl": "http://112.17.40.140/PLTV/88888888/224/3221226825/index.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 78,
-    "channelName": "重庆国际",
-    "channelUrl": "http://219.153.252.50/PLTV/88888888/224/3221225644/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 79,
-    "channelName": "重庆少儿",
-    "channelUrl": "http://219.153.252.50/PLTV/88888888/224/3221225625/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 80,
-    "channelName": "重庆影视",
-    "channelUrl": "http://219.153.252.50/PLTV/88888888/224/3221225633/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 81,
-    "channelName": "重庆手持电视",
-    "channelUrl": "http://219.153.252.50/PLTV/88888888/224/3221225637/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 82,
-    "channelName": "重庆文体娱乐",
-    "channelUrl": "http://219.153.252.50/PLTV/88888888/224/3221225630/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 83,
-    "channelName": "重庆新闻",
-    "channelUrl": "http://219.153.252.50/PLTV/88888888/224/3221225531/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 84,
-    "channelName": "重庆时尚",
-    "channelUrl": "http://219.153.252.50/PLTV/88888888/224/3221225636/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 85,
-    "channelName": "重庆科教",
-    "channelUrl": "http://219.153.252.50/PLTV/88888888/224/3221225632/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 86,
-    "channelName": "重庆汽摩",
-    "channelUrl": "http://219.153.252.50/PLTV/88888888/224/3221225634/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 87,
-    "channelName": "重庆移动公交",
-    "channelUrl": "http://qxlmlive.cbg.cn:1935/app_2/ls_57.stream/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 88,
-    "channelName": "重庆移动机场",
-    "channelUrl": "http://qxlmlive.cbg.cn:1935/app_2/ls_56.stream/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 89,
-    "channelName": "重庆移动电视",
-    "channelUrl": "http://219.153.252.50/PLTV/88888888/224/3221225628/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 90,
-    "channelName": "重庆都市",
-    "channelUrl": "http://219.153.252.50/PLTV/88888888/224/3221225631/chunklist.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 91,
-    "channelName": "辽宁卫视",
-    "channelUrl": "http://iptv.tvfix.org/hls/lnhd.m3u8",
-    "channelLogo": ""
-  },
-  {
-    "channelNum": 92,
-    "channelName": "CGTN DOC",
-    "channelUrl": "http://iptv.tvfix.org/hls/cgtndochd.m3u8",
-    "channelLogo": ""
-  }
+    {
+        "channelNum": 2,
+        "channelName": "\u5cb3\u897f\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://112.30.194.221:20080/live/b62955a9283f4c2ea8ccb96e8ac468bc/hls.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0301/20160301101914522.jpg"
+    },
+    {
+        "channelNum": 3,
+        "channelName": "\u5b89\u5fbd\u7efc\u827a\u4f53\u80b2\u9891\u9053",
+        "channelUrl": "http://112.30.194.221:20080/live/c41f112b83f644ddb082669501c8ecd3/hls.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0711/small401ad069d72756f41d5bb56c4685879a.jpg"
+    },
+    {
+        "channelNum": 4,
+        "channelName": "\u9102\u6258\u514b\u65d7\u7535\u89c6\u53f0",
+        "channelUrl": "http://110.19.181.138:10080/hls/F509Rh7GR/F509Rh7GR_live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 5,
+        "channelName": "\u5b89\u5fbd\u5f71\u89c6\u9891\u9053",
+        "channelUrl": "http://112.30.194.221:20080/live/d18ff95cb1fb4bbcb56215e189fc12be/hls.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0711/small9b50d42d10cc0af26cfe42b5fadcae99.jpg"
+    },
+    {
+        "channelNum": 6,
+        "channelName": "\u5b89\u5fbd\u7ecf\u6d4e\u751f\u6d3b\u9891\u9053",
+        "channelUrl": "http://112.30.194.221:20080/live/eac499adad7b49ff9cfa79ba84693959/hls.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0711/small45121591588d9e2cd2e62c7573cd550d.jpg"
+    },
+    {
+        "channelNum": 7,
+        "channelName": "\u4e07\u5dde\u79d1\u6559\u9891\u9053",
+        "channelUrl": "http://123.146.162.24:8017/Cz7WPb8/800/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/0629/small658c1e2250d4a57ea9c3fe295777bfa91498719246.jpg"
+    },
+    {
+        "channelNum": 8,
+        "channelName": "\u4e07\u5dde\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://123.146.162.24:8017/iTXwrGs/800/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/0629/small658c1e2250d4a57ea9c3fe295777bfa91498719246.jpg"
+    },
+    {
+        "channelNum": 9,
+        "channelName": "\u4e07\u5dde\u4e09\u5ce1\u79fb\u6c11\u9891\u9053",
+        "channelUrl": "http://123.146.162.24:8017/c2F0hmi/1000/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/0629/small658c1e2250d4a57ea9c3fe295777bfa91498719246.jpg"
+    },
+    {
+        "channelNum": 10,
+        "channelName": "\u4e07\u5dde\u5f71\u89c6\u6587\u827a\u9891\u9053",
+        "channelUrl": "http://123.146.162.24:8017/d4ceB1a/1000/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/0629/small658c1e2250d4a57ea9c3fe295777bfa91498719246.jpg"
+    },
+    {
+        "channelNum": 11,
+        "channelName": "\u8363\u660c\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://183.64.181.25:40023/rongchang01.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/0703/small557aaf1dc9baf1096d17e479c08b2e731499081843.jpg"
+    },
+    {
+        "channelNum": 12,
+        "channelName": "\u57ab\u6c5f\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://125.62.24.185:80/1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/0630/smalle492e5c2fbf59943a78a2afd441fe5cc1498810366.jpg"
+    },
+    {
+        "channelNum": 13,
+        "channelName": "\u4e2d\u56fd\u5929\u6c14",
+        "channelUrl": "http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8",
+        "channelLogo": "https://live.fanmingming.com/tv/\u4e2d\u56fd\u5929\u6c14.png"
+    },
+    {
+        "channelNum": 14,
+        "channelName": "\u8fde\u4e91\u6e2f\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://live.lyg1.com/ggpd/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/0910/small0d2f1938a6403e2e6ab6aaa2c6e9c50d1505057861.jpg"
+    },
+    {
+        "channelNum": 15,
+        "channelName": "CCTV-11\u620f\u66f2",
+        "channelUrl": "http://111.61.236.247:9081/hls/11/index.m3u8",
+        "channelLogo": "https://live.fanmingming.com/tv/CCTV11.png"
+    },
+    {
+        "channelNum": 16,
+        "channelName": "\u7518\u8083\u536b\u89c6",
+        "channelUrl": "http://111.61.236.247:9081/hls/54/index.m3u8",
+        "channelLogo": "https://live.fanmingming.com/tv/\u7518\u8083\u536b\u89c6.png"
+    },
+    {
+        "channelNum": 17,
+        "channelName": "CCTV\u6000\u65e7\u5267\u573a\u9891\u9053",
+        "channelUrl": "http://111.61.236.247:9081/hls/67/index.m3u8",
+        "channelLogo": "http://epg.51zmt.top:8000/tb1/qt/CCTVPAYFEE7.jpg"
+    },
+    {
+        "channelNum": 18,
+        "channelName": "CCTV\u5973\u6027\u65f6\u5c1a\u9891\u9053",
+        "channelUrl": "http://111.61.236.247:9081/hls/59/index.m3u8",
+        "channelLogo": "http://epg.51zmt.top:8000/tb1/CCTV/CCTVnvxing.png"
+    },
+    {
+        "channelNum": 19,
+        "channelName": "\u6e58\u6f6d\u516c\u5171\u90fd\u5e02\u9891\u9053",
+        "channelUrl": "http://live.hnxttv.com:9601/live/dspd/800K/tzwj_video.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0928/130c1fe3c0165a7cad1f0bf2a12229cd.jpg"
+    },
+    {
+        "channelNum": 20,
+        "channelName": "\u7762\u5b81\u4e09\u519c\u9891\u9053",
+        "channelUrl": "http://suining-tv-hls.cm.jstv.com/suining-tv/suiningsn.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 21,
+        "channelName": "\u6cd7\u9633\u8d44\u8baf\u9891\u9053",
+        "channelUrl": "http://siyang-tv-hls.cm.jstv.com/siyang-tv/siyangzx.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 22,
+        "channelName": "\u6e58\u6f6d\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.hnxttv.com:9601/live/xwzh/800K/tzwj_video.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0928/130c1fe3c0165a7cad1f0bf2a12229cd.jpg"
+    },
+    {
+        "channelNum": 23,
+        "channelName": "\u7762\u5b81\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://suining-tv-hls.cm.jstv.com:80/suining-tv/suiningzh.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 24,
+        "channelName": "\u5982\u4e1c\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://rudong-tv-hls.cm.jstv.com/rudong-tv/rdxwzh.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0616/small-rudongysyl27492.jpg"
+    },
+    {
+        "channelNum": 25,
+        "channelName": "\u9ad8\u90ae\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://gaoyou-tv-hls.cm.jstv.com/gaoyou-tv/gaoyouxw.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 26,
+        "channelName": "\u7762\u5b81\u751f\u6d3b\u6559\u80b2\u9891\u9053",
+        "channelUrl": "http://suining-tv-hls.cm.jstv.com/suining-tv/suiningsh.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 27,
+        "channelName": "\u6ec1\u5dde\u79d1\u6559\u9891\u9053",
+        "channelUrl": "http://live.cztv.cc:85/live/sjpd.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/0915/small1e13492406026e47512b4d1370f4748e1505481616.jpg"
+    },
+    {
+        "channelNum": 28,
+        "channelName": "\u6ec1\u5dde\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://live.cztv.cc:85/live/ggpd.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/0915/smallb782467c6fb906bfa1e5a2ed023761551505481741.jpg"
+    },
+    {
+        "channelNum": 29,
+        "channelName": "\u5bbf\u5dde\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://live.ahsz.tv/video/s10001-ggpd/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1004/e3ec2b38258f467e0fe074e33654a5c8.jpg"
+    },
+    {
+        "channelNum": 30,
+        "channelName": "\u6ec1\u5dde\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.cztv.cc:85/live/xwpd.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0619/small-3943790278.jpg"
+    },
+    {
+        "channelNum": 31,
+        "channelName": "\u6dee\u5b89\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://live1.habctv.com/ggpdsl/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0616/20160616053037446.jpg"
+    },
+    {
+        "channelNum": 32,
+        "channelName": "\u6cf0\u5dde\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://stream1.mytaizhou.net/xwzh/playlist.m3u8?_upt=2f3c2e461725409415",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0710/small05db96b3f03b5fae06690247c69d57a31531220508.jpg"
+    },
+    {
+        "channelNum": 33,
+        "channelName": "\u6d59\u6c5f\u7535\u89c6\u53f0\u5c11\u513f\u9891\u9053",
+        "channelUrl": "http://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0619/20160619033946335.jpg"
+    },
+    {
+        "channelNum": 34,
+        "channelName": "\u6d59\u6c5f\u7535\u89c6\u53f0\u5f71\u89c6\u5a31\u4e50\u9891\u9053",
+        "channelUrl": "http://ali-m-l.cztv.com/channels/lantian/channel005/1080p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0619/20160619033257904.jpg"
+    },
+    {
+        "channelNum": 35,
+        "channelName": "\u6d59\u6c5f\u94b1\u6c5f\u90fd\u5e02\u9891\u9053",
+        "channelUrl": "http://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0619/20160619032635173.jpg"
+    },
+    {
+        "channelNum": 36,
+        "channelName": "\u6d59\u6c5f\u7ecf\u89c6",
+        "channelUrl": "http://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0619/20160619032916811.jpg"
+    },
+    {
+        "channelNum": 37,
+        "channelName": "\u6d59\u6c5f\u65b0\u95fb\u9891\u9053",
+        "channelUrl": "http://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2021/0210/992e67a3af8522d5c5c6f17dbb38442f.png"
+    },
+    {
+        "channelNum": 38,
+        "channelName": "\u7ecd\u5174\u7535\u89c6\u53f0\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0619/20160619113053781.jpg"
+    },
+    {
+        "channelNum": 39,
+        "channelName": "\u7ecd\u5174\u6587\u5316\u5f71\u89c6\u9891\u9053",
+        "channelUrl": "http://live.shaoxing.com.cn/video/s10001-sxtv3/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0619/20160619024154424.jpg"
+    },
+    {
+        "channelNum": 40,
+        "channelName": "\u7ecd\u5174\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.shaoxing.com.cn/video/s10001-sxtv1/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1205/8b4bcdec06d0ae3d219511dd0ed81997.jpg"
+    },
+    {
+        "channelNum": 41,
+        "channelName": "\u6cb3\u6e90\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://tmpstream.hyrtv.cn/xwzh/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0611/20160611061323486.jpg"
+    },
+    {
+        "channelNum": 42,
+        "channelName": "\u4f59\u676d\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXyuhang1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 43,
+        "channelName": "\u8427\u5c71\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXxiaoshan1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2021/0217/small34f66f075e1514eda32841630d9a9ffd1613546335.jpg"
+    },
+    {
+        "channelNum": 44,
+        "channelName": "\u6cd7\u9633\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://siyang-tv-hls.cm.jstv.com/siyang-tv/siyangzh.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 45,
+        "channelName": "\u6d59\u6c5f\u6559\u80b2\u79d1\u6280\u9891\u9053",
+        "channelUrl": "http://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0619/20160619033104162.jpg"
+    },
+    {
+        "channelNum": 46,
+        "channelName": "\u6cb3\u6e90\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://tmpstream.hyrtv.cn/hygg/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0611/20160611061323486.jpg"
+    },
+    {
+        "channelNum": 47,
+        "channelName": "\u6cd7\u6d2a\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://sihong-tv-hls.cm.jstv.com/sihong-tv/sihongxinwenzonghe.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 48,
+        "channelName": "\u9752\u5dde\u7535\u89c6\u53f0\u751f\u6d3b\u9891\u9053",
+        "channelUrl": "http://sdqz.chinashadt.com:2036/live/stream:2.stream/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/1018/small8509c9f1ee0686d45ed03128d61f18c91539830945.jpg"
+    },
+    {
+        "channelNum": 49,
+        "channelName": "\u6d59\u6c5f6\u9891\u9053\u6c11\u751f\u4f11\u95f2\u9891\u9053",
+        "channelUrl": "http://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0619/20160619033600521.jpg"
+    },
+    {
+        "channelNum": 50,
+        "channelName": "\u6d59\u6c5f\u56fd\u9645\u9891\u9053",
+        "channelUrl": "http://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0921/cb29f53445eee372c9015525d826d87e.jpg"
+    },
+    {
+        "channelNum": 51,
+        "channelName": "\u8d63\u6986\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://ganyu-tv-hls.cm.jstv.com/ganyu-tv/ganyutv.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 52,
+        "channelName": "\u6c9b\u53bf\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://peixian-tv-hls.cm.jstv.com/peixian-tv/pxzh.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2021/0323/smallc65f6cc449aa24bd71999c5cbcbec0d61616505483.jpg"
+    },
+    {
+        "channelNum": 53,
+        "channelName": "\u6cad\u9633\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://shuyang-tv-hls.cm.jstv.com/shuyang-tv/shuyangzh.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 54,
+        "channelName": "\u8c61\u5c71\u7535\u89c6\u53f0\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXxiangshan1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2021/0217/smalld3574274d145da0a737cc34290abcd8b1613543332.jpg"
+    },
+    {
+        "channelNum": 55,
+        "channelName": "\u6d9f\u6c34\u7535\u89c6\u53f0\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://lianshui-tv-hls.cm.jstv.com/lianshui-tv/lsxw.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 56,
+        "channelName": "\u6cf0\u5dde\u4e09\u5957\u5f71\u89c6\u5a31\u4e50\u9891\u9053",
+        "channelUrl": "http://stream1.mytaizhou.net/ysyl/playlist.m3u8?_upt=16dfe82d1725409426",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0710/small0d68722d6908711bf242ee54dd184f251531220592.jpg"
+    },
+    {
+        "channelNum": 57,
+        "channelName": "\u6d4e\u5b81\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://lives.jnnews.tv/video/s10001-JNTV-1/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/1121/small267cc5c3dada1d4cccffada8da5c13641511246949.jpg"
+    },
+    {
+        "channelNum": 58,
+        "channelName": "\u5a01\u6d77\u4e09\u5957\u6d77\u6d0b\u9891\u9053",
+        "channelUrl": "http://l1.weihai.tv:8081/hls/969O76hb22.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2020/0524/small3866d97a63fbf2a4821f68de82e656a91590309656.jpg"
+    },
+    {
+        "channelNum": 59,
+        "channelName": "\u5a01\u6d77\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l1.weihai.tv:8081/hls/969O76hb22.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0624/20160624105408278.jpg"
+    },
+    {
+        "channelNum": 60,
+        "channelName": "\u83cf\u6cfd\u4e8c\u5957\u7ecf\u6d4e\u751f\u6d3b\u9891\u9053",
+        "channelUrl": "http://live.hznet.tv:1935/live/live2/500K/tzwj_video.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/1121/small93ef2fb81a8bbdffc43eaa85ca52ffe61511274337.jpg"
+    },
+    {
+        "channelNum": 61,
+        "channelName": "\u8427\u5c71\u751f\u6d3b\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2021/0217/small4a7dc6f71256b877b780197bdff615621613546430.jpg"
+    },
+    {
+        "channelNum": 62,
+        "channelName": "\u83cf\u6cfd\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.hznet.tv:1935/live/live1/500K/tzwj_video.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/1121/smallbf7bee559d00a283fc008e28cd04d66d1511274224.jpg"
+    },
+    {
+        "channelNum": 63,
+        "channelName": "\u9752\u5dde\u7535\u89c6\u53f0\u6587\u5316\u65c5\u6e38\u9891\u9053",
+        "channelUrl": "http://sdqz.chinashadt.com:2036/live/stream:3.stream/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/1018/smalld09089c79d43926fd828b285171ba9e61539831276.jpg"
+    },
+    {
+        "channelNum": 64,
+        "channelName": "\u4e1c\u9633\u5f71\u89c6\u751f\u6d3b\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXdongyang1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0706/smallcfc4b13c3851cdb698b81e4ada581d681530885220.jpg"
+    },
+    {
+        "channelNum": 65,
+        "channelName": "\u83cf\u6cfd\u4e09\u5957\u5f71\u89c6\u9891\u9053",
+        "channelUrl": "http://live.hznet.tv:1935/live/live3/500K/tzwj_video.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/1121/small3b337a98db6f2164b63c27391ca585a21511274444.jpg"
+    },
+    {
+        "channelNum": 66,
+        "channelName": "\u6587\u6210\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXwencheng1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 67,
+        "channelName": "\u9752\u7530\u7535\u89c6\u53f0",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXqingtian1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2021/0217/smalla9323f41c3a7a5550006a81cb4cca5181613546170.jpg"
+    },
+    {
+        "channelNum": 68,
+        "channelName": "\u8862\u6c5f\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXqujiang1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 69,
+        "channelName": "\u5e73\u6e56\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXpinghu1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0712/small6a60efc7be41fa4d435e81d808fbf290.jpg"
+    },
+    {
+        "channelNum": 70,
+        "channelName": "\u5170\u6eaa\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXlanxi1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 71,
+        "channelName": "\u82cd\u5357\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXcangnan1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 72,
+        "channelName": "\u6c38\u5609\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXyongjia1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 73,
+        "channelName": "\u5bbf\u5dde\u79d1\u6559\u9891\u9053",
+        "channelUrl": "http://live.ahsz.tv/video/s10001-kxjy/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1004/e3ec2b38258f467e0fe074e33654a5c8.jpg"
+    },
+    {
+        "channelNum": 74,
+        "channelName": "\u67a3\u5e84\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://stream.zztvzd.com/3/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0705/small235d6de058f24b51c4547975a421e3c51530760909.jpg"
+    },
+    {
+        "channelNum": 75,
+        "channelName": "\u6d4e\u5b81\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://lives.jnnews.tv/video/s10001-JNTV3/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/1121/small174f71253553c480ec8eba61c3f86416.jpg"
+    },
+    {
+        "channelNum": 76,
+        "channelName": "\u4e34\u5e73\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXyuhang2/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 77,
+        "channelName": "\u54c8\u5c14\u6ee8\u5a31\u4e50\u9891\u9053",
+        "channelUrl": "http://stream.hrbtv.net/ylpd/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1011/4425495cfbd41d874278baa443b2668b.jpg"
+    },
+    {
+        "channelNum": 78,
+        "channelName": "\u5bbf\u5dde\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.ahsz.tv/video/s10001-szzh/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1004/e3ec2b38258f467e0fe074e33654a5c8.jpg"
+    },
+    {
+        "channelNum": 79,
+        "channelName": "\u54c8\u5c14\u6ee8\u751f\u6d3b\u9891\u9053",
+        "channelUrl": "http://stream.hrbtv.net/shpd/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1011/7c1c8279c7433182e47a6aaefa3d3687.jpg"
+    },
+    {
+        "channelNum": 80,
+        "channelName": "\u54c8\u5c14\u6ee8\u5f71\u89c6\u9891\u9053",
+        "channelUrl": "http://stream.hrbtv.net/yspd/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1011/95f38e639def77b673a8f409db85d7c2.jpg"
+    },
+    {
+        "channelNum": 81,
+        "channelName": "\u5f00\u5316\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXkaihua1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 82,
+        "channelName": "\u9f99\u6cc9\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXlongquan1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 83,
+        "channelName": "\u4f59\u59da\u59da\u6c5f\u6587\u5316\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXyuyao3/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2021/0217/small6b718f0bf9eb6e04c2a20eb5c85271051613546702.jpg"
+    },
+    {
+        "channelNum": 84,
+        "channelName": "\u5d4a\u5dde\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXshengzhou1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 85,
+        "channelName": "\u4e0a\u865e\u65b0\u5546\u90fd\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXshangyu3/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 86,
+        "channelName": "\u65b0\u660c\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXxinchang1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 87,
+        "channelName": "\u4f59\u676d\u672a\u6765\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXyuhang3/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 88,
+        "channelName": "\u5a01\u6d77\u4e8c\u5957\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://l1.weihai.tv:8081/hls/969O76hb22.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0624/20160624104746966.jpg"
+    },
+    {
+        "channelNum": 89,
+        "channelName": "\u70df\u53f0\u5f71\u89c6\u9891\u9053",
+        "channelUrl": "http://live.yantaitv.cn/live/e9f1d9045d474c31884d13fa4ffbbd16/a4a9b3704d854756907845107cc56129-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/1122/small2c63a6fe7b351d57c0b1eaa53460c5471511321759.jpg"
+    },
+    {
+        "channelNum": 90,
+        "channelName": "\u70df\u53f0\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://live.yantaitv.cn/live/e50f104a4ffe4a41b2217cbda534146f/d86092e69df94668b33390278b061700-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/1122/small5a551979a4de45711a674809ce8f6fe31511321665.jpg"
+    },
+    {
+        "channelNum": 91,
+        "channelName": "\u5fb7\u9633\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://scdytv.cn:1935/live/m_ggpd_livevideo/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0119/small5678afc05c7bbdbb7a8fc2821c0b71dc1516349647.jpg"
+    },
+    {
+        "channelNum": 92,
+        "channelName": "\u4e0a\u865e\u6587\u5316\u5f71\u89c6\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXshangyu2/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 93,
+        "channelName": "\u6b66\u4e49\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXwuyi1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 94,
+        "channelName": "\u623f\u5c71\u7535\u89c6\u53f0",
+        "channelUrl": "http://live.funhillrm.com/2/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2022/0326/smallf7e7002ad94212bda9fa70cacc4482af1648266813.jpg"
+    },
+    {
+        "channelNum": 95,
+        "channelName": "\u6cf0\u5dde\u4e8c\u5957\u7ecf\u6d4e\u751f\u6d3b\u9891\u9053",
+        "channelUrl": "http://stream1.mytaizhou.net/jjsh/playlist.m3u8?_upt=432935711725402444",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0710/small0310778e75fdfe2c2b35b440037aade61531220554.jpg"
+    },
+    {
+        "channelNum": 96,
+        "channelName": "\u6c64\u9634\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10523-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 97,
+        "channelName": "\u5185\u9ec4\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10527-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 98,
+        "channelName": "\u767b\u5c01\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10185-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 99,
+        "channelName": "\u6ed1\u53bf\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10526-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 100,
+        "channelName": "\u65b0\u5bc6\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10183-2.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 101,
+        "channelName": "\u677e\u9633\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXsongyang1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 102,
+        "channelName": "\u65b0\u660c\u751f\u6d3b\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 103,
+        "channelName": "\u5f00\u5316\u56fd\u5bb6\u516c\u56ed\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXkaihua2/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 104,
+        "channelName": "\u8365\u9633\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10182-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 105,
+        "channelName": "\u5de9\u4e49\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10181-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 106,
+        "channelName": "\u6797\u5dde\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10581-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 107,
+        "channelName": "\u65b0\u90d1\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10184-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 108,
+        "channelName": "\u4e0a\u865e\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXshangyu1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 109,
+        "channelName": "\u666e\u9640\u7535\u89c6\u53f0",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXputuo1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0605/smallb4e1ec6e16e1fc3ad2d25a7ac8b5034b1528190492.jpg"
+    },
+    {
+        "channelNum": 110,
+        "channelName": "\u4e91\u548c\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXyunhe1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 111,
+        "channelName": "\u5e7f\u5b89\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live1.gatv.com.cn:85/live/XWZH.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0119/smallbcc0164044a54a4ccf90c32eaf904fd31516354774.jpg"
+    },
+    {
+        "channelNum": 112,
+        "channelName": "\u5e7f\u5b89\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://live1.gatv.com.cn:85/live/GGPD.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0119/smallecdf931f3ab319cad5df7d6381c315001516354852.jpg"
+    },
+    {
+        "channelNum": 113,
+        "channelName": "\u4f59\u59da\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2021/0217/small647270a980efd92a229c0cf961b76a801613546617.jpg"
+    },
+    {
+        "channelNum": 114,
+        "channelName": "\u683e\u5ddd\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10324-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 115,
+        "channelName": "\u83b7\u5609\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10724-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 116,
+        "channelName": "\u5e73\u6e56\u6c11\u751f\u4f11\u95f2\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXpinghu2/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0712/small5e203aa5ffb42c51a79ce7dee5525c6f.jpg"
+    },
+    {
+        "channelNum": 117,
+        "channelName": "\u6c5d\u9633\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10326-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 118,
+        "channelName": "\u5c01\u4e18\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10727-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 119,
+        "channelName": "\u6d5a\u53bf\u7535\u89c6\u53f0",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10621-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 120,
+        "channelName": "\u957f\u57a3\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10728-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 121,
+        "channelName": "\u5e86\u5143\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXqingyuan1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 122,
+        "channelName": "\u9042\u660c\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXsuichang1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 123,
+        "channelName": "\u7f19\u4e91\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXjinyun1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 124,
+        "channelName": "\u6e11\u6c60\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11221-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 125,
+        "channelName": "\u65b0\u4e61\u53bf\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10721-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 126,
+        "channelName": "\u6c81\u9633\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10882-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0705/small89d471d3faca24115061c82fc61193ee1530778725.jpg"
+    },
+    {
+        "channelNum": 127,
+        "channelName": "\u5b5f\u5dde\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10883-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 128,
+        "channelName": "\u8f89\u53bf\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10782-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 129,
+        "channelName": "\u539f\u9633\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10725-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 130,
+        "channelName": "\u7075\u5b9d\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11282-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 131,
+        "channelName": "\u6b66\u965f\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10823-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 132,
+        "channelName": "\u536b\u8f89\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10781-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 133,
+        "channelName": "\u4e49\u9a6c\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11281-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 134,
+        "channelName": "\u8944\u57ce\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11025-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 135,
+        "channelName": "\u675e\u53bf\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10221-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 136,
+        "channelName": "\u901a\u8bb8\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10222-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 137,
+        "channelName": "\u6c38\u57ce\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11481-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 138,
+        "channelName": "\u5efa\u5b89\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11003-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 139,
+        "channelName": "\u79b9\u5dde\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11081-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 140,
+        "channelName": "\u9122\u9675\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11024-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 141,
+        "channelName": "\u5d4a\u6cd7\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://l.cztvcloud.com/channels/lantian/SXshengsi1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 142,
+        "channelName": "\u5170\u8003\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10225-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 143,
+        "channelName": "\u9ebb\u6817\u5761\u7535\u89c6\u53f0",
+        "channelUrl": "http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel18/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0119/smallf546e6dc7064692a520d3ad2b280d6231516331629.jpg"
+    },
+    {
+        "channelNum": 144,
+        "channelName": "\u781a\u5c71\u7535\u89c6\u53f0",
+        "channelUrl": "http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel16/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0118/small90601303a2aca7e7584430e3835befe91516284236.jpg"
+    },
+    {
+        "channelNum": 145,
+        "channelName": "\u5bcc\u5b81\u7535\u89c6\u53f0",
+        "channelUrl": "http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel13/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0119/small9a1330a08d4fac732a173b6103fe2bfb1516332162.jpg"
+    },
+    {
+        "channelNum": 146,
+        "channelName": "\u897f\u7574\u7535\u89c6\u53f0",
+        "channelUrl": "http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel11/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0118/small8b70ef4f03cc505a622334737fe730f51516284386.jpg"
+    },
+    {
+        "channelNum": 147,
+        "channelName": "\u6587\u5c71\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0118/0d540a82f3447b1b48a820e86b51da22.jpg"
+    },
+    {
+        "channelNum": 148,
+        "channelName": "\u4e18\u5317\u7535\u89c6\u53f0",
+        "channelUrl": "http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel14/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0119/small8d32f908800cb0f2b7d9956d833b6ebf1516332349.jpg"
+    },
+    {
+        "channelNum": 149,
+        "channelName": "\u5e7f\u5357\u7535\u89c6\u53f0",
+        "channelUrl": "http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel19/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0119/small1274a79d858f4de9d2f27f13c7bbec3f1516331889.jpg"
+    },
+    {
+        "channelNum": 150,
+        "channelName": "\u6587\u5c71\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel8/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0118/small109d58d2b22d79227720fa33948f47de1516273121.jpg"
+    },
+    {
+        "channelNum": 151,
+        "channelName": "\u7126\u4f5c\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://zhpull.dxhmt.cn/jiaozuo/b75a92c9503e47cf9e89f7ff247b65f2/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0121/small3bfaba9eb8cbcba34fca856b738d8b981516502348.jpg"
+    },
+    {
+        "channelNum": 152,
+        "channelName": "\u6cf8\u5dde\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://m3u8.channel.luzhoubs.com/nmip-media/channellive/channel102221/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0120/small24dff4032a35a2a680b02aab330af7b31516423781.jpg"
+    },
+    {
+        "channelNum": 153,
+        "channelName": "\u6d1b\u9633\u4e09\u5957\u6587\u65c5\u9891\u9053",
+        "channelUrl": "http://wshls.live.migucloud.com/live/FJ7Q9PIT_C0/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1016/8de48449ec75d1b2f1023a6efab52aa8.jpg"
+    },
+    {
+        "channelNum": 154,
+        "channelName": "\u53f6\u53bf\u7535\u89c6\u53f0\u4e00\u5957",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10422-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 155,
+        "channelName": "\u90cf\u53bf\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10425-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 156,
+        "channelName": "\u9e7f\u9091\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11628-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 157,
+        "channelName": "\u6dc5\u5ddd\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11326-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 158,
+        "channelName": "\u9042\u5e73\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11728-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 159,
+        "channelName": "\u821e\u9633\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11121-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 160,
+        "channelName": "\u6c88\u4e18\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11624-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2019/0916/small0b03f9f13be42ae3ed24f626b71bd1bd1568625391.jpg"
+    },
+    {
+        "channelNum": 161,
+        "channelName": "\u9879\u57ce\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11681-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 162,
+        "channelName": "\u6ccc\u9633\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11726-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 163,
+        "channelName": "\u65b9\u57ce\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11322-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 164,
+        "channelName": "\u5510\u6cb3\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11328-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 165,
+        "channelName": "\u821e\u94a2\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10481-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 166,
+        "channelName": "\u5c09\u6c0f\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10223-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 167,
+        "channelName": "\u9c81\u5c71\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10423-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 168,
+        "channelName": "\u6d1b\u9633\u4e00\u5957\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://wshls.live.migucloud.com/live/C788MHFD_C0/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1016/ff9d6c28b4d33f8e2307c6e0948dbd61.jpg"
+    },
+    {
+        "channelNum": 169,
+        "channelName": "\u6d1b\u9633\u4e8c\u5957\u79d1\u6559\u9891\u9053",
+        "channelUrl": "http://wshls.live.migucloud.com/live/CXGQPXRK_C0/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1016/b744c5bdeba1e543025a28d0d95aaa1f.jpg"
+    },
+    {
+        "channelNum": 170,
+        "channelName": "\u6dee\u6ee8\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11527-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 171,
+        "channelName": "\u6f62\u5ddd\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11526-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 172,
+        "channelName": "\u9547\u5e73\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11324-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 173,
+        "channelName": "\u5149\u5c71\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11522-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 174,
+        "channelName": "\u4e0a\u8521\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11722-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 175,
+        "channelName": "\u7f57\u5c71\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11521-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 176,
+        "channelName": "\u897f\u5e73\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11721-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 177,
+        "channelName": "\u65b0\u53bf\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11523-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 178,
+        "channelName": "\u5e73\u8206\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11723-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 179,
+        "channelName": "\u5546\u57ce\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11524-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 180,
+        "channelName": "\u786e\u5c71\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11725-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 181,
+        "channelName": "\u90f8\u57ce\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11625-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 182,
+        "channelName": "\u6c5d\u5dde\u79d1\u6559\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10482-2.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 183,
+        "channelName": "\u9752\u5dde\u7535\u89c6\u53f0\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://sdqz.chinashadt.com:2036/live/stream:1.stream/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/1018/small4406764b889fff28d1e186e000c1be0e1539830690.jpg"
+    },
+    {
+        "channelNum": 184,
+        "channelName": "\u5b9d\u4e30\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10421-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 185,
+        "channelName": "\u5b5d\u611f\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://live.yingxi.tv/channel1/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0123/small574b18f327b12aa6bb6173a88466fbb81516684871.jpg"
+    },
+    {
+        "channelNum": 186,
+        "channelName": "\u65b0\u91ce\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11329-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 187,
+        "channelName": "\u878d\u6c34\u7535\u89c6\u53f0",
+        "channelUrl": "https://live.gxrb.com.cn/gx/rongshui/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 188,
+        "channelName": "\u51cc\u4e91\u7535\u89c6\u53f0",
+        "channelUrl": "https://live.gxrb.com.cn/gx/lingyun/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 189,
+        "channelName": "\u6dc7\u53bf\u7535\u89c6\u53f0",
+        "channelUrl": "http://tvpull.dxhmt.cn:9081/tv/10622-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 190,
+        "channelName": "\u5f20\u5bb6\u53e3\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://nlive.zjkgdcs.com:8091/live/xwzhpd.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0125/small6f71e70d9174827f5bc4aedea5c34bf61516865505.jpg"
+    },
+    {
+        "channelNum": 191,
+        "channelName": "\u7530\u4e1c\u7535\u89c6\u53f0",
+        "channelUrl": "https://live.gxrb.com.cn/gx/tiandong/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 192,
+        "channelName": "\u65b0\u8521\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/11729-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 193,
+        "channelName": "\u5b9c\u9633\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://tvpull.dxhmt.cn:9081/tv/10327-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 194,
+        "channelName": "\u54c8\u5c14\u6ee8\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://stream.hrbtv.net/xwzh/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1011/4ae5cacd4a79528b86f631ef4646d404.jpg"
+    },
+    {
+        "channelNum": 195,
+        "channelName": "\u6d4e\u6e90\u7535\u89c6\u53f0\u4e00\u5957",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/19001-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2019/0916/small64a934d906ba3facb8422134d622f9361568622305.jpg"
+    },
+    {
+        "channelNum": 196,
+        "channelName": "\u68a7\u5dde\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://live.wzrtv.cn:80/ggpd1/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0127/small7ea3868307130c24fc7b8cb8107620031517044084.jpg"
+    },
+    {
+        "channelNum": 197,
+        "channelName": "\u8fd0\u57ce\u4e8c\u5957\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://live.0359tv.com/lsdream/t667aTY/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0130/small157f52c45c35f6e43017b68b7fb36f6c1517314850.jpg"
+    },
+    {
+        "channelNum": 198,
+        "channelName": "\u8fd0\u57ce\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.0359tv.com/lsdream/ss4Lj11/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0130/small1169b8b887d3df8600d6271355339f221517314723.jpg"
+    },
+    {
+        "channelNum": 199,
+        "channelName": "\u68a7\u5dde\u6559\u80b2\u751f\u6d3b\u9891\u9053",
+        "channelUrl": "http://live.wzrtv.cn:80/jysh1/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0127/smalle6ef2ac656a747366eba98abeea095b31517044160.jpg"
+    },
+    {
+        "channelNum": 200,
+        "channelName": "\u68a7\u5dde\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://live.wzrtv.cn:80/xwzh1/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0127/small7d904f3faa6bb81870c0a596ba066e351517044018.jpg"
+    },
+    {
+        "channelNum": 201,
+        "channelName": "\u6ca7\u5dde\u7535\u89c6\u53f0\u4e8c\u5957",
+        "channelUrl": "http://czlive.czgd.tv:85/live/xnet.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0125/smallfe0bee57d4a48ca48939f91d8673ff791516861179.jpg"
+    },
+    {
+        "channelNum": 202,
+        "channelName": "\u6ca7\u5dde\u7535\u89c6\u53f0\u4e00\u5957",
+        "channelUrl": "http://czlive.czgd.tv:85/live/xnyt.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0125/smallc658beb1adbf8b3f444e4647448645c51516861066.jpg"
+    },
+    {
+        "channelNum": 203,
+        "channelName": "\u4fdd\u5b9a\u4e09\u5957",
+        "channelUrl": "http://live.bdgdw.com/channel3/playlist.m3u8?_upt=6d59246b1725350917",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0125/small09ae4c62cba3b2e23f13d4bc1f0c40311516857402.jpg"
+    },
+    {
+        "channelNum": 204,
+        "channelName": "\u4fdd\u5b9a\u4e8c\u5957\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://live.bdgdw.com/channel2/playlist.m3u8?_upt=aba7fe801725350911",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0125/small1cb121a976f246a6a6db472ffe7ad5f61516856814.jpg"
+    },
+    {
+        "channelNum": 205,
+        "channelName": "\u6ca7\u5dde\u7535\u89c6\u53f0\u4e09\u5957",
+        "channelUrl": "http://czlive.czgd.tv:85/live/xnst.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0125/small4b06dbb813889b1e8ccdea1f5269b6cb1516861237.jpg"
+    },
+    {
+        "channelNum": 206,
+        "channelName": "\u8346\u95e8\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://stream.jmtv.com.cn/ngpd/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1019/2dee4a2bde22c0a663f6fda95e18d7c6.jpg"
+    },
+    {
+        "channelNum": 207,
+        "channelName": "\u8346\u95e8\u65b0\u95fb\u9891\u9053",
+        "channelUrl": "http://stream.jmtv.com.cn/xwzh/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1019/00ce7db73be380982d4177b395225dec.jpg"
+    },
+    {
+        "channelNum": 208,
+        "channelName": "\u897f\u534e\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://tvpull.dxhmt.cn:9081/tv/11622-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2019/0916/small5828996767422b33a05d9cc4d2211fe51568623914.jpg"
+    },
+    {
+        "channelNum": 209,
+        "channelName": "\u5357\u5b81\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://hls.nntv.cn/nnlive/XWZH_24.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1024/0d6af2d9d5163a8b5f6acec50886b2b4.jpg"
+    },
+    {
+        "channelNum": 210,
+        "channelName": "\u8d3a\u5dde\u7535\u89c6\u53f0\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://zhz.gxhzxw.com:2935/live/HZXW-HD/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2019/1215/small332cddf51f65b90398c8d46ed55a601e1576378646.jpg"
+    },
+    {
+        "channelNum": 211,
+        "channelName": "\u4fdd\u5b9a\u4e00\u5957",
+        "channelUrl": "http://live.bdgdw.com/channel1/playlist.m3u8?_upt=73ed52521725350905",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0125/small85accb8b06a8ffe41f15e0937dd1b8131516856684.jpg"
+    },
+    {
+        "channelNum": 212,
+        "channelName": "\u5357\u5b81\u5f71\u89c6\u5a31\u4e50\u9891\u9053",
+        "channelUrl": "http://hls.nntv.cn/nnlive/YSYL_244.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1024/9cd44c56225e0ddfdc69c697e2413425.jpg"
+    },
+    {
+        "channelNum": 213,
+        "channelName": "\u5ef6\u8fb9\u536b\u89c6",
+        "channelUrl": "http://live.ybtvyun.com/video/s10016-6f0dfd97912f/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1020/162de1a70b0fd0924285f87d70ff8c2c.jpg"
+    },
+    {
+        "channelNum": 214,
+        "channelName": "\u5357\u5b81\u90fd\u5e02\u751f\u6d3b\u9891\u9053",
+        "channelUrl": "http://hls.nntv.cn/nnlive/WLSH_24.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1024/12e0271c89147468562a01a537070074.jpg"
+    },
+    {
+        "channelNum": 215,
+        "channelName": "\u5357\u5b81\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://hls.nntv.cn/nnlive/GGPD_24.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1024/c9299742301b92ab41fbd0d1f93784d8.jpg"
+    },
+    {
+        "channelNum": 216,
+        "channelName": "\u5f00\u5c01\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://tvpull.dxhmt.cn:9081/tv/10200-3.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0121/smallab80cacd25b94cbd3de11c94c83882201516515134.jpg"
+    },
+    {
+        "channelNum": 217,
+        "channelName": "\u9ec4\u5c71\u65b0\u95fb\u9891\u9053",
+        "channelUrl": "http://hslive.hsnewsnet.com/lsdream/hve9Wjs/1000/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0308/20160308113812969.jpg"
+    },
+    {
+        "channelNum": 218,
+        "channelName": "\u8346\u95e8\u6559\u80b2\u9891\u9053",
+        "channelUrl": "http://stream.jmtv.com.cn/ggsh/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1019/ef25af68af87269fe0a1200b4501213c.jpg"
+    },
+    {
+        "channelNum": 219,
+        "channelName": "\u897f\u5b81\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "https://liveout.xntv.tv/a65jur/96iln2.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1112/ce21f1bcfbd3fa4661423626bfa05ca1.jpg"
+    },
+    {
+        "channelNum": 220,
+        "channelName": "\u5ef6\u8fb9\u4e8c\u5957\u6c49\u8bed\u7efc\u5408\u9891\u9053",
+        "channelUrl": "https://live.ybtvyun.com/video/s10006-e9c6f9e4d53b/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1021/34e5586e08864b4033141ed7b2d63e15.jpg"
+    },
+    {
+        "channelNum": 221,
+        "channelName": "\u5ef6\u8fb9\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "https://live.ybtvyun.com/video/s10006-ff4eb5dba33d/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1020/b46df47da4ad3be4c585d53affd029da.jpg"
+    },
+    {
+        "channelNum": 222,
+        "channelName": "CGTN\u4fc4\u8bed",
+        "channelUrl": "http://news.cgtn.com/resource/live/russian/cgtn-r.m3u8",
+        "channelLogo": "https://live.fanmingming.com/tv/CGTN\u4fc4\u8bed.png"
+    },
+    {
+        "channelNum": 223,
+        "channelName": "\u897f\u5b81\u751f\u6d3b\u670d\u52a1\u9891\u9053",
+        "channelUrl": "https://liveout.xntv.tv/a65jur/90p2i1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1112/31c78e268aa487753cbbd410e7a5c4a5.jpg"
+    },
+    {
+        "channelNum": 224,
+        "channelName": "\u9999\u6e2f\u536b\u89c6",
+        "channelUrl": "http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0922/small26a02aa95faa4a0ea0f217651a4f11411474553718.jpg"
+    },
+    {
+        "channelNum": 225,
+        "channelName": "\u6f33\u5dde\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://31182.hlsplay.aodianyun.com/lms_31182/tv_channel_175.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0124/small4ea2cbef483f43fa87812b2afd0756ac1516774297.jpg"
+    },
+    {
+        "channelNum": 226,
+        "channelName": "\u4eb3\u5dde\u519c\u6751\u9891\u9053",
+        "channelUrl": "http://zbbf2.ahbztv.com/live/418.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0711/smallba0d359c6a7d349cc8e4290fc690d29e1531322723.jpg"
+    },
+    {
+        "channelNum": 227,
+        "channelName": "\u9f99\u6e38\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "https://l.cztvcloud.com/channels/lantian/SXlongyou1/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 228,
+        "channelName": "\u9f99\u6e38\u751f\u6d3b\u5a31\u4e50\u9891\u9053",
+        "channelUrl": "https://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 229,
+        "channelName": "\u9547\u6c5f\u4e8c\u5957\u793e\u4f1a\u6c11\u751f\u9891\u9053",
+        "channelUrl": "http://zjtv-wshls.homecdn.com/live/2aa16.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0706/smallfb8863a64a6166c400b765d5a930323b1530866940.jpg"
+    },
+    {
+        "channelNum": 230,
+        "channelName": "\u5175\u56e2\u536b\u89c6",
+        "channelUrl": "https://liveout.btzx.com.cn/62ds9e/yil08g.m3u8",
+        "channelLogo": "https://live.fanmingming.com/tv/\u5175\u56e2\u536b\u89c6.png"
+    },
+    {
+        "channelNum": 231,
+        "channelName": "\u7126\u4f5c\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://zhpull.dxhmt.cn/jiaozuo/29b65b69130c4ef1a3283cc7b913da05/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0121/small42d5a4e950d55b0ac14cfe7bb749aac61516503566.jpg"
+    },
+    {
+        "channelNum": 232,
+        "channelName": "\u5ef6\u5b89\u4e8c\u5957\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://lives.cloud.yanews.cn/video/s10001-YATV-1/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0131/small5289e5916524b9f55012682b3539633a1517369638.jpg"
+    },
+    {
+        "channelNum": 233,
+        "channelName": "\u90af\u90f8\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "https://jwliveqxzb.hebyun.com.cn/hdxwzh/hdxwzh.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0124/small84e71978b5de8a35bf9689f38dae8d9f1516807053.jpg"
+    },
+    {
+        "channelNum": 234,
+        "channelName": "\u90af\u90f8\u516c\u5171\u9891\u9053",
+        "channelUrl": "https://jwliveqxzb.hebyun.com.cn/hdgg/hdgg.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0124/small3d6bd355a48f690c379b28771faf32051516807150.jpg"
+    },
+    {
+        "channelNum": 235,
+        "channelName": "\u90af\u90f8\u79d1\u6559\u9891\u9053",
+        "channelUrl": "https://jwliveqxzb.hebyun.com.cn/hdkj/hdkj.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0124/small6183e5527c98a64d383eea785568d9a61516807252.jpg"
+    },
+    {
+        "channelNum": 236,
+        "channelName": "\u65b0\u5b89\u7535\u89c6\u53f0\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://tvpull.dxhmt.cn/tv/10323-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2019/1219/small6d06f45dc8a4097cf59b76ce5f5b86b81576758998.jpg"
+    },
+    {
+        "channelNum": 237,
+        "channelName": "\u5ef6\u5b89\u4e00\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://lives.cloud.yanews.cn/video/s10001-YATV-2/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0131/small1179b7772bea1ba44ce228b03be0ac5b1517369545.jpg"
+    },
+    {
+        "channelNum": 238,
+        "channelName": "\u4f18\u8d2d\u7269\u7535\u89c6\u8d2d\u7269",
+        "channelUrl": "https://tvlive.ugoshop.com/ugotvlive/ugotv01.m3u8?auth_key=2312509421-0-0-f8f7e886fe98ee0a0c01458710bf26d3",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1024/d3cd568faf93aef426d5063fe57a4e1e.jpg"
+    },
+    {
+        "channelNum": 239,
+        "channelName": "\u6c5f\u5b81\u7535\u89c6\u53f0\u7efc\u5408\u9891\u9053",
+        "channelUrl": "https://jiangning-tv-hls.cm.jstv.com/jiangning-tv/jnxwzh.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 240,
+        "channelName": "\u9752\u6d77\u90fd\u5e02\u9891\u9053",
+        "channelUrl": "http://stream.qhbtv.com/qhds/sd/live.m3u8?_upt=ea03ed711725339376",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1112/70cfb982719ac176d2711b3693bad103.jpg"
+    },
+    {
+        "channelNum": 241,
+        "channelName": "\u5fe0\u53bf\u6587\u65c5\u9891\u9053",
+        "channelUrl": "https://qxlmlive9.cbg.cn/applive/zxtv2/chunklist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/0630/small6e79735514de66fb5657ab8f93ea27391498832153.jpg"
+    },
+    {
+        "channelNum": 242,
+        "channelName": "\u5fe0\u53bf\u7efc\u5408\u9891\u9053",
+        "channelUrl": "https://qxlmlive9.cbg.cn/applive/zxtv2/chunklist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/0630/small6e79735514de66fb5657ab8f93ea27391498832153.jpg"
+    },
+    {
+        "channelNum": 243,
+        "channelName": "\u6885\u5dde\u4e8c\u5957\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://pili-live-hls.xianchangliving.gdmztv.com/meizhou-xianchangliving/mztv2.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/0109/small-74835kejia.jpg"
+    },
+    {
+        "channelNum": 244,
+        "channelName": "\u6885\u5dde\u4e00\u5957\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://pili-live-hls.xianchangliving.gdmztv.com/meizhou-xianchangliving/mztv1.m3u8?sign=248c3b9e3bb0057a4c358b3657bd06d1&t=663b3512",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/0109/small-74835kejia.jpg"
+    },
+    {
+        "channelNum": 245,
+        "channelName": "\u4e34\u6c82\u516c\u5171\u9891\u9053",
+        "channelUrl": "https://m3u8-channel.lytv.tv/nmip-media/channellive/channel113571/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/1122/small9209424334b1b8964825f75a91322db71511330890.jpg"
+    },
+    {
+        "channelNum": 246,
+        "channelName": "\u4e34\u6c82\u519c\u79d1\u9891\u9053",
+        "channelUrl": "https://m3u8-channel.lytv.tv/nmip-media/channellive/channel115062/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/1122/smalld57fa920f60359a272b80d1dfcea2bd41511330982.jpg"
+    },
+    {
+        "channelNum": 247,
+        "channelName": "\u9752\u6d77\u7ecf\u89c6\u9891\u9053",
+        "channelUrl": "http://stream.qhbtv.com/qhsh/sd/live.m3u8?_upt=e4e9fe741725348067",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2021/0320/small15bc421ea75393ad60b4604b2af8f4d3.jpg"
+    },
+    {
+        "channelNum": 248,
+        "channelName": "\u4e34\u6c82\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2017/1122/small453f8c94e42b110ca9d6c59b24ed841a1511330710.jpg"
+    },
+    {
+        "channelNum": 249,
+        "channelName": "\u59dc\u5830\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "https://jiangyan-tv-hls.cm.jstv.com/jiangyan-tv/jiangyanzh.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 250,
+        "channelName": "\u4e0a\u6d77\u4e1c\u65b9\u8d2d\u7269\u9891\u9053",
+        "channelUrl": "http://ocj2.kksmg.com/ocj1/ocj1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/1012/46d6ac94062c0719114cd04412e89aad.jpg"
+    },
+    {
+        "channelNum": 251,
+        "channelName": "\u77f3\u666f\u5c71\u7535\u89c6\u53f0",
+        "channelUrl": "http://live.sjsrm.com/bjsjs/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0704/small45f8c0a862f56e1fb0a1740f5c628f751530693077.jpg"
+    },
+    {
+        "channelNum": 252,
+        "channelName": "\u8fd0\u57ce\u4e09\u5957\u79d1\u6559\u9891\u9053",
+        "channelUrl": "http://live.0359tv.com/lsdream/p5eq48m/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0130/small9c5e724ad76565e008ec5a7544276f3d1517314935.jpg"
+    },
+    {
+        "channelNum": 253,
+        "channelName": "\u5357\u4e50\u7535\u89c6\u53f0",
+        "channelUrl": "http://live.dxhmt.cn:9081/tv/10923-1.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2019/1219/smallf636e2e7a1f824b97de6b4aa439ec5111576761585.jpg"
+    },
+    {
+        "channelNum": 254,
+        "channelName": "\u90d1\u5dde3\u5957\u6587\u4f53\u65c5\u6e38\u9891\u9053",
+        "channelUrl": "https://live2-new.zztv.tv/wtlypd/sd/live.m3u8?_upt=2ba681301725349047",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0711/20160711012112309.jpg"
+    },
+    {
+        "channelNum": 255,
+        "channelName": "\u90d1\u5dde4\u5957\u5f71\u89c6\u620f\u66f2\u9891\u9053",
+        "channelUrl": "https://live2-new.zztv.tv/ysxqpd/sd/live.m3u8?_upt=299228691725345170",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0711/20160711011909834.jpg"
+    },
+    {
+        "channelNum": 256,
+        "channelName": "\u90d1\u5dde5\u5957\u5987\u5973\u513f\u7ae5\u9891\u9053",
+        "channelUrl": "https://live2-new.zztv.tv/fnetpd/sd/live.m3u8?_upt=b6376b201725349066",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0916/56437603822d9bdfecb39dde2a912bb0.jpg"
+    },
+    {
+        "channelNum": 257,
+        "channelName": "\u90d1\u5dde6\u5957\u90fd\u5e02\u751f\u6d3b\u9891\u9053",
+        "channelUrl": "https://live2-new.zztv.tv/dsshpd/sd/live.m3u8?_upt=b647580f1725349072",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0916/006386f0b0e7b048648fce10983cac8f.jpg"
+    },
+    {
+        "channelNum": 258,
+        "channelName": "\u90d1\u5dde2\u5957\u5546\u90fd\u9891\u9053",
+        "channelUrl": "https://live2-new.zztv.tv/sdpd/sd/live.m3u8?_upt=58ec646d1725349040",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0712/20160712113507524.jpg"
+    },
+    {
+        "channelNum": 259,
+        "channelName": "\u6cf8\u5dde\u79d1\u6559\u9891\u9053",
+        "channelUrl": "http://m3u8.channel.luzhoubs.com/nmip-media/channellive/channel103074/playlist.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0120/smallc63c71efa3c24aa2187c9fcfc9ed6cef1516423857.jpg"
+    },
+    {
+        "channelNum": 260,
+        "channelName": "\u5317\u4eac\u65b0\u95fb\u9891\u9053BTV9",
+        "channelUrl": "https://live.funhillrm.com/5/sd/live.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2014/0512/20140512034324556.jpg"
+    },
+    {
+        "channelNum": 261,
+        "channelName": "\u5f20\u5bb6\u53e3\u4e8c\u5957\u516c\u5171\u9891\u9053",
+        "channelUrl": "http://nlive.zjkgdcs.com:8091/live/zjktv2.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2018/0125/small6f71e70d9174827f5bc4aedea5c34bf61516865505.jpg"
+    },
+    {
+        "channelNum": 262,
+        "channelName": "CGTN\u6cd5\u8bed",
+        "channelUrl": "https://news.cgtn.com/resource/live/french/cgtn-f.m3u8",
+        "channelLogo": "https://live.fanmingming.com/tv/CGTN\u6cd5\u8bed.png"
+    },
+    {
+        "channelNum": 263,
+        "channelName": "\u90d1\u5dde1\u5957\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "https://live3-new.zztv.tv/xwzh/playlist.m3u8?_upt=e73462c41725342700",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0712/20160712113858950.jpg"
+    },
+    {
+        "channelNum": 264,
+        "channelName": "CGTN\u897f\u8bed",
+        "channelUrl": "https://news.cgtn.com/resource/live/espanol/cgtn-e.m3u8",
+        "channelLogo": "https://live.fanmingming.com/tv/CGTN\u897f\u8bed.png"
+    },
+    {
+        "channelNum": 265,
+        "channelName": "CGTN\u963f\u8bed",
+        "channelUrl": "https://news.cgtn.com/resource/live/arabic/cgtn-a.m3u8",
+        "channelLogo": "https://live.fanmingming.com/tv/CGTN\u963f\u8bed.png"
+    },
+    {
+        "channelNum": 266,
+        "channelName": "CGTN\u7eaa\u5f55",
+        "channelUrl": "https://news.cgtn.com/resource/live/document/cgtn-doc.m3u8",
+        "channelLogo": "https://live.fanmingming.com/tv/CGTNDoc.png"
+    },
+    {
+        "channelNum": 267,
+        "channelName": "\u91cd\u5e86\u65f6\u5c1a\u8d2d\u7269\u9891\u9053",
+        "channelUrl": "https://tvlive.ugoshop.com/ugotvlive/ssgotv.m3u8?auth_key=2312509421-0-0-6642ec3645caa943da6855a9ef7e2129",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2020/0625/small8b5734c458942546e61af25e3758e00e.jpg"
+    },
+    {
+        "channelNum": 268,
+        "channelName": "\u5e7f\u5dde\u7535\u89c6\u53f0\u7efc\u5408\u9891\u9053",
+        "channelUrl": "https://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=dce137597806f62ae6fdfc40328a336e&txTime=191b5fc1c86",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2014/0512/20140512042230403.jpg"
+    },
+    {
+        "channelNum": 269,
+        "channelName": "\u5e7f\u5dde\u7535\u89c6\u53f0\u5f71\u89c6\u9891\u9053",
+        "channelUrl": "https://tencentplay.gztv.com/live/yingshi.m3u8?txSecret=2b09d952702fe2c67ddad695faa4c27c&txTime=191b5db5ed0",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2014/0512/20140512042346693.jpg"
+    },
+    {
+        "channelNum": 270,
+        "channelName": "\u5e7f\u5dde\u7535\u89c6\u53f0\u65b0\u95fb\u9891\u9053",
+        "channelUrl": "https://tencentplay.gztv.com/live/xinwen.m3u8?txSecret=520177bc9dd6916a7d6fa86bdb3f8830&txTime=191b5f5b230",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2014/0512/20140512042622928.jpg"
+    },
+    {
+        "channelNum": 271,
+        "channelName": "\u5e7f\u5dde\u5357\u56fd\u90fd\u5e02\u9891\u9053",
+        "channelUrl": "https://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=babbcbacdbcf13a3311a264e4dd66b8d&txTime=191b60b41a7",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2020/0608/small8794c1380bce42c709e47badc86e6c9c1591592752.jpg"
+    },
+    {
+        "channelNum": 272,
+        "channelName": "\u9547\u6c5f\u65b0\u95fb\u7efc\u5408\u9891\u9053",
+        "channelUrl": "http://cm-wshls.homecdn.com/live/2aa50.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2016/0614/20160614045900469.jpg"
+    },
+    {
+        "channelNum": 273,
+        "channelName": "\u5e7f\u5dde\u7535\u89c6\u53f0\u6cd5\u6cbb\u9891\u9053",
+        "channelUrl": "https://tencentplay.gztv.com/live/fazhi.m3u8?txSecret=4400d75d2114b2db07d86eda8f8218ee&txTime=191b60ce0f6",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2019/1115/small2dc32ee498f65382d2fb9dab733c4c47.jpg"
+    },
+    {
+        "channelNum": 274,
+        "channelName": "\u5e7f\u5dde\u7ade\u8d5b\u9891\u9053",
+        "channelUrl": "https://tencentplay.gztv.com/live/jingsai.m3u8?txSecret=a4d04c27d0d1d8b7efef2ed7ff1c3eae&txTime=191b60cc9ca",
+        "channelLogo": "http://tv.haoqu99.com/d/file/2014/0512/20140512042736661.jpg"
+    },
+    {
+        "channelNum": 275,
+        "channelName": "\u5d07\u660e\u7535\u89c6\u53f0",
+        "channelUrl": "https://pili-live-hls.wdit.com.cn/wditlive/c038f4fafbdf4f97ba74c74ad67259b931ee.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 276,
+        "channelName": "\u9f99\u5dde\u7535\u89c6\u53f0",
+        "channelUrl": "https://live.gxrb.com.cn/gx/longzhou/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 277,
+        "channelName": "\u9756\u897f\u7535\u89c6\u53f0",
+        "channelUrl": "https://live.gxrb.com.cn/gx/jingxi/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 278,
+        "channelName": "\u5df4\u9a6c\u7535\u89c6\u53f0",
+        "channelUrl": "https://live.gxrb.com.cn/gx/bama/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    },
+    {
+        "channelNum": 279,
+        "channelName": "\u90fd\u5b89\u7535\u89c6\u53f0",
+        "channelUrl": "https://live.gxrb.com.cn/gx/duan/index.m3u8",
+        "channelLogo": "http://tv.haoqu99.com/e/data/images/notemp.gif"
+    }
 ]

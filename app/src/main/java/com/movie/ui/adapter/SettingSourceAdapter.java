@@ -15,9 +15,9 @@ import java.util.ArrayList;
  * @date :2020/12/23
  * @description:
  */
-public class SourceSettingAdapter extends BaseQuickAdapter<SourceBean, BaseViewHolder> {
-    public SourceSettingAdapter() {
-        super(R.layout.item_source_setting_layout, new ArrayList<>());
+public class SettingSourceAdapter extends BaseQuickAdapter<SourceBean, BaseViewHolder> {
+    public SettingSourceAdapter() {
+        super(R.layout.item_setting_source_layout, new ArrayList<>());
     }
 
     @Override

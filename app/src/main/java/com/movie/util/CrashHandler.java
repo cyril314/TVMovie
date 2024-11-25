@@ -22,12 +22,11 @@ import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-
 /**
- * @author acer
- * @date 2018/9/10
+ * @author aim
+ * @date :2020/12/23
+ * @description:
  */
-
 public class CrashHandler implements Thread.UncaughtExceptionHandler {
     private static volatile CrashHandler instance;
     private Context mContext;

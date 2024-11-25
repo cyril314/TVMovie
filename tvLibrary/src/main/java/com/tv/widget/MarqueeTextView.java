@@ -9,9 +9,10 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 /**
- * Created by acer on 2018/7/13.
+ * @author aim
+ * @date :2020/12/23
+ * @description:
  */
-
 @SuppressLint("AppCompatCustomView")
 public class MarqueeTextView extends TextView{
     public MarqueeTextView(Context context) {

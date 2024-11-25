@@ -18,10 +18,10 @@ import com.movie.R;
 import com.tv.player.PlayerUtils;
 
 /**
- * @user acer
- * @date 2018/11/27
+ * @author aim
+ * @date :2020/12/23
+ * @description:
  */
-
 public class VodSeekLayout extends FrameLayout implements VodSeekBar.OnVodSeekBarChangedListener {
     private VodSeekBar mSeekBar;
     private FrameLayout seekInfoLayout;

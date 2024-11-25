@@ -5,8 +5,9 @@ import android.view.View;
 import androidx.viewpager.widget.ViewPager;
 
 /**
- * @author acer
- * @date 2018/8/22 11:46
+ * @author aim
+ * @date :2020/12/23
+ * @description:
  */
 public class DefaultTransformer implements ViewPager.PageTransformer{
     @Override

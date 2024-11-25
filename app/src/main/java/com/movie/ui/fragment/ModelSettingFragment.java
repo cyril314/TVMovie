@@ -24,7 +24,7 @@ import java.lang.reflect.Field;
 /**
  * @author aim
  * @date :2020/12/23
- * @description:
+ * @description: 设置其它
  */
 public class ModelSettingFragment extends BaseLazyFragment {
     private TextView tvOpen;
@@ -117,22 +117,22 @@ public class ModelSettingFragment extends BaseLazyFragment {
 //                        try {
 //                            Field mPlayerFactoryField = config.getClass().getDeclaredField("mPlayerFactory");
 //                            mPlayerFactoryField.setAccessible(true);
-                            PlayerFactory playerFactory = null;
-                            switch (playType) {
-                                case 0:
-                                default:
-                                    tvPlay.setText("系统播放器");
-                                    playerFactory = AndroidMediaPlayerFactory.create();
-                                    break;
-                                case 1:
-                                    tvPlay.setText("Ijk播放器");
-                                    playerFactory = IjkPlayerFactory.create();
-                                    break;
-                                case 2:
-                                    tvPlay.setText("Exo播放器");
-                                    playerFactory = ExoMediaPlayerFactory.create();
-                                    break;
-                            }
+                        PlayerFactory playerFactory = null;
+                        switch (playType) {
+                            case 0:
+                            default:
+                                tvPlay.setText("系统播放器");
+                                playerFactory = AndroidMediaPlayerFactory.create();
+                                break;
+                            case 1:
+                                tvPlay.setText("Ijk播放器");
+                                playerFactory = IjkPlayerFactory.create();
+                                break;
+                            case 2:
+                                tvPlay.setText("Exo播放器");
+                                playerFactory = ExoMediaPlayerFactory.create();
+                                break;
+                        }
                         config.mPlayerFactory = playerFactory;
 //                            mPlayerFactoryField.set(config, playerFactory);
 //                        } catch (Exception e) {

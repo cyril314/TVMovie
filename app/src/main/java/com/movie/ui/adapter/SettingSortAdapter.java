@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class SettingSortAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
     public SettingSortAdapter() {
-        super(R.layout.item_sort_setting_layout, new ArrayList<>());
+        super(R.layout.item_setting_sort_layout, new ArrayList<>());
     }
 
     @Override

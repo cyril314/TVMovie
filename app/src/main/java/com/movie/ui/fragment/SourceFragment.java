@@ -6,7 +6,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.movie.api.ApiConfig;
 import com.movie.base.BaseLazyFragment;
 import com.movie.bean.SourceBean;
-import com.movie.ui.adapter.SourceSettingAdapter;
+import com.movie.ui.adapter.SettingSourceAdapter;
 import com.movie.util.FastClickCheckUtil;
 import com.movie.R;
 import com.tv.leanback.VerticalGridView;
@@ -19,17 +19,17 @@ import java.util.List;
  * @date :2020/12/23
  * @description: 数据源
  */
-public class SourceSettingFragment extends BaseLazyFragment {
+public class SourceFragment extends BaseLazyFragment {
     private VerticalGridView mGridView;
-    private SourceSettingAdapter settingAdapter;
-    private final List<SourceBean> mSourceBeanList = new ArrayList<>();
+    private SettingSourceAdapter settingAdapter;
+    private final List<SourceBean> lists = new ArrayList<>();
     private int sourceIndex = 0;
 
-    public static SourceSettingFragment newInstance() {
-        return new SourceSettingFragment().setArguments();
+    public static SourceFragment newInstance() {
+        return new SourceFragment().setArguments();
     }
 
-    public SourceSettingFragment setArguments() {
+    public SourceFragment setArguments() {
         return this;
     }
 
@@ -41,18 +41,18 @@ public class SourceSettingFragment extends BaseLazyFragment {
     @Override
     protected void init() {
         mGridView = findViewById(R.id.mGridView);
-        settingAdapter = new SourceSettingAdapter();
+        settingAdapter = new SettingSourceAdapter();
         mGridView.setAdapter(settingAdapter);
         mGridView.setNumColumns(6);
-        mSourceBeanList.addAll(ApiConfig.get().getSourceBeanList());
-        for (int i = 0; i < mSourceBeanList.size(); i++) {
-            if (mSourceBeanList.get(i).getId() == ApiConfig.get().getDefaultSourceBean().getId()) {
-                mSourceBeanList.get(i).selected = true;
+        lists.addAll(ApiConfig.get().getSourceBeanList());
+        for (int i = 0; i < lists.size(); i++) {
+            if (lists.get(i).getId() == ApiConfig.get().getDefaultSourceBean().getId()) {
+                lists.get(i).selected = true;
                 sourceIndex = i;
                 break;
             }
         }
-        settingAdapter.setNewData(mSourceBeanList);
+        settingAdapter.setNewData(lists);
         settingAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {

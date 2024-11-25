@@ -1,13 +1,9 @@
 package com.movie.ui.dialog;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.annotation.IdRes;
-
+import com.movie.base.BaseDialog;
 import com.orhanobut.hawk.Hawk;
 import com.movie.R;
 import com.movie.util.FastClickCheckUtil;
@@ -16,28 +12,18 @@ import com.movie.util.HawkConfig;
 /**
  * @author aim
  * @date :2020/12/23
- * @description:
+ * @description: 直播源对话框
  */
-public class LiveSourceDialog {
-    private View rootView;
-    private Dialog mDialog;
+public class LiveSourceDialog extends BaseDialog<LiveSourceDialog> {
     private OnChangeLiveListener liveListener;
 
-    public LiveSourceDialog() {
-
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.dialog_live_source;
     }
 
-    public LiveSourceDialog build(Context context) {
-        rootView = LayoutInflater.from(context).inflate(R.layout.dialog_live_source, null);
-        mDialog = new Dialog(context, R.style.CustomDialogStyle);
-        mDialog.setCanceledOnTouchOutside(false);
-        mDialog.setCancelable(true);
-        mDialog.setContentView(rootView);
-        init(context);
-        return this;
-    }
-
-    private void init(Context context) {
+    @Override
+    protected void init() {
         //直播源1 ip多余域名
         TextView tvLive1 = findViewById(R.id.tvLive1);
         //直播源2
@@ -45,10 +31,10 @@ public class LiveSourceDialog {
         int live = Hawk.get(HawkConfig.LIVE_SOURCE, 0);
         if (live == 0) {
             tvLive1.requestFocus();
-            tvLive1.setTextColor(context.getResources().getColor(R.color.color_058AF4));
+            tvLive1.setTextColor(mContext.getResources().getColor(R.color.color_058AF4));
         } else {
             tvLive2.requestFocus();
-            tvLive2.setTextColor(context.getResources().getColor(R.color.color_058AF4));
+            tvLive2.setTextColor(mContext.getResources().getColor(R.color.color_058AF4));
         }
         tvLive1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,27 +58,6 @@ public class LiveSourceDialog {
                 dismiss();
             }
         });
-    }
-
-    public void show() {
-        if (mDialog != null && !mDialog.isShowing()) {
-            mDialog.show();
-        }
-    }
-
-    public void dismiss() {
-        if (mDialog != null && mDialog.isShowing()) {
-            mDialog.dismiss();
-        }
-    }
-
-    @SuppressWarnings("unchecked")
-    private <T extends View> T findViewById(@IdRes int viewId) {
-        View view = null;
-        if (rootView != null) {
-            view = rootView.findViewById(viewId);
-        }
-        return (T) view;
     }
 
     public LiveSourceDialog setOnChangeLiveListener(OnChangeLiveListener listener) {

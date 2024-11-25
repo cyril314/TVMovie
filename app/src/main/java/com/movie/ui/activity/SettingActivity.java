@@ -20,7 +20,7 @@ import com.movie.base.BaseLazyFragment;
 import com.movie.ui.adapter.SettingPageAdapter;
 import com.movie.ui.fragment.ModelSettingFragment;
 import com.movie.ui.fragment.PraseFragment;
-import com.movie.ui.fragment.SourceSettingFragment;
+import com.movie.ui.fragment.SourceFragment;
 import com.movie.util.AppManager;
 import com.movie.util.HawkConfig;
 import com.tv.leanback.OnChildViewHolderSelectedListener;
@@ -57,7 +57,21 @@ public class SettingActivity extends BaseActivity {
     @Override
     protected void init() {
         initView();
-        initData();
+        // 初始化数据
+        id = ApiConfig.get().getDefaultSourceBean().getId();
+        adolescentDefault = Hawk.get(HawkConfig.ADOLESCENT_MODEL, true);
+        List<String> sortList = new ArrayList<>();
+        sortList.add("首页数据源");
+        sortList.add("解析线路");
+        sortList.add("设置其他");
+        sortAdapter.setNewData(sortList);
+        // 加载页面
+        fragments.add(SourceFragment.newInstance());
+        fragments.add(PraseFragment.newInstance());
+        fragments.add(ModelSettingFragment.newInstance());
+        pageAdapter = new SettingPageAdapter(getSupportFragmentManager(), fragments);
+        mViewPager.setAdapter(pageAdapter);
+        mViewPager.setCurrentItem(0);
     }
 
     private void initView() {
@@ -112,7 +126,9 @@ public class SettingActivity extends BaseActivity {
                                 isRight = false;
                                 if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
                                     isRight = true;
-                                } else return keyCode == KeyEvent.KEYCODE_DPAD_LEFT && position == 0 || keyCode == KeyEvent.KEYCODE_DPAD_DOWN && position == sortAdapter.getData().size() - 1;
+                                } else
+                                    return keyCode == KeyEvent.KEYCODE_DPAD_LEFT && position == 0 ||
+                                            keyCode == KeyEvent.KEYCODE_DPAD_DOWN && position == sortAdapter.getData().size() - 1;
                             }
                             return false;
                         }
@@ -120,26 +136,6 @@ public class SettingActivity extends BaseActivity {
                 }
             }
         });
-    }
-
-    private void initData() {
-        id = ApiConfig.get().getDefaultSourceBean().getId();
-        adolescentDefault = Hawk.get(HawkConfig.ADOLESCENT_MODEL, true);
-        List<String> sortList = new ArrayList<>();
-        sortList.add("首页数据源");
-        sortList.add("解析线路");
-        sortList.add("设置其他");
-        sortAdapter.setNewData(sortList);
-        initViewPager();
-    }
-
-    private void initViewPager() {
-        fragments.add(SourceSettingFragment.newInstance());
-        fragments.add(PraseFragment.newInstance());
-        fragments.add(ModelSettingFragment.newInstance());
-        pageAdapter = new SettingPageAdapter(getSupportFragmentManager(), fragments);
-        mViewPager.setAdapter(pageAdapter);
-        mViewPager.setCurrentItem(0);
     }
 
     private final Runnable mDataRunnable = new Runnable() {

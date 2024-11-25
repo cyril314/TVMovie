@@ -15,9 +15,9 @@ import java.util.ArrayList;
  * @date :2021/3/9
  * @description:
  */
-public class PraseAdapter extends BaseQuickAdapter<PraseBean, BaseViewHolder> {
-    public PraseAdapter() {
-        super(R.layout.item_prase_layout, new ArrayList<>());
+public class SettingPraseAdapter extends BaseQuickAdapter<PraseBean, BaseViewHolder> {
+    public SettingPraseAdapter() {
+        super(R.layout.item_setting_prase_layout, new ArrayList<>());
     }
 
     @Override
@@ -29,6 +29,5 @@ public class PraseAdapter extends BaseQuickAdapter<PraseBean, BaseViewHolder> {
             tvPrase.setTextColor(Color.WHITE);
         }
         tvPrase.setText(item.getPraseName());
-        helper.addOnClickListener(R.id.tvPrase);
     }
 }

@@ -1,14 +1,10 @@
 package com.movie.ui.dialog;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.IdRes;
-
+import com.movie.base.BaseDialog;
 import com.orhanobut.hawk.Hawk;
 import com.movie.R;
 import com.movie.util.FastClickCheckUtil;
@@ -17,29 +13,19 @@ import com.movie.util.HawkConfig;
 /**
  * @author aim
  * @date :2020/12/23
- * @description:
+ * @description: 密码对话框
  */
-public class ModelDialog {
-    private View rootView;
-    private Dialog mDialog;
+public class ModelDialog extends BaseDialog<ModelDialog> {
     private EditText editText;
     private OnChangeModelListener modelListener;
 
-    public ModelDialog() {
-
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.dialog_model;
     }
 
-    public ModelDialog build(Context context) {
-        rootView = LayoutInflater.from(context).inflate(R.layout.dialog_model, null);
-        mDialog = new Dialog(context, R.style.CustomDialogStyle);
-        mDialog.setCanceledOnTouchOutside(false);
-        mDialog.setCancelable(false);
-        mDialog.setContentView(rootView);
-        init(context);
-        return this;
-    }
-
-    private void init(Context context) {
+    @Override
+    protected void init() {
         editText = findViewById(R.id.etPassword);
         findViewById(R.id.tvConfirm).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +39,7 @@ public class ModelDialog {
                     }
                     mDialog.dismiss();
                 } else {
-                    Toast.makeText(context, "密码错误", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "密码错误", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -63,21 +49,6 @@ public class ModelDialog {
                 mDialog.dismiss();
             }
         });
-    }
-
-    public void show() {
-        if (mDialog != null && !mDialog.isShowing()) {
-            mDialog.show();
-        }
-    }
-
-    @SuppressWarnings("unchecked")
-    private <T extends View> T findViewById(@IdRes int viewId) {
-        View view = null;
-        if (rootView != null) {
-            view = rootView.findViewById(viewId);
-        }
-        return (T) view;
     }
 
     public ModelDialog setOnChangeModelListener(OnChangeModelListener listener) {

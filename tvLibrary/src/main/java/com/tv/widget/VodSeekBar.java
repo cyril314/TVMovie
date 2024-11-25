@@ -17,12 +17,10 @@ import androidx.annotation.Nullable;
 
 import com.tv.R;
 
-
 /**
- * 最小高度20
- *
- * @user acer
- * @date 2018/12/21
+ * @author aim
+ * @date :2020/12/23
+ * @description: 最小高度20
  */
 public class VodSeekBar extends View {
     private Paint mBarPaint;

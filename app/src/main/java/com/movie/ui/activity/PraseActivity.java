@@ -23,7 +23,7 @@ import com.movie.R;
 import com.movie.api.ApiConfig;
 import com.movie.base.BaseActivity;
 import com.movie.bean.PraseBean;
-import com.movie.ui.adapter.PraseAdapter;
+import com.movie.ui.adapter.SettingPraseAdapter;
 import com.movie.util.AdBlocker;
 import com.movie.util.FastClickCheckUtil;
 import com.movie.util.HawkConfig;
@@ -45,7 +45,7 @@ public class PraseActivity extends BaseActivity {
 
     private WebView mX5WebView;
     private VerticalGridView mGridView;
-    private PraseAdapter praseAdapter;
+    private SettingPraseAdapter settingPraseAdapter;
     private String html;
     private String praseUrl;
     private int selected;
@@ -116,18 +116,18 @@ public class PraseActivity extends BaseActivity {
                 }
             }
         });
-        praseAdapter = new PraseAdapter();
-        mGridView.setAdapter(praseAdapter);
+        settingPraseAdapter = new SettingPraseAdapter();
+        mGridView.setAdapter(settingPraseAdapter);
         mGridView.setNumColumns(6);
-        praseAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        settingPraseAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 FastClickCheckUtil.check(view);
                 if (selected != position) {
-                    PraseBean praseBean = praseAdapter.getData().get(position);
-                    praseAdapter.getData().get(selected).selected = false;
+                    PraseBean praseBean = settingPraseAdapter.getData().get(position);
+                    settingPraseAdapter.getData().get(selected).selected = false;
                     praseBean.selected = true;
-                    praseAdapter.notifyDataSetChanged();
+                    settingPraseAdapter.notifyDataSetChanged();
                     selected = position;
                     Hawk.put(HawkConfig.DEFAULT_PRASE_ID, praseBean.getId());
                     mX5WebView.stopLoading();
@@ -136,7 +136,7 @@ public class PraseActivity extends BaseActivity {
                 }
             }
         });
-        praseAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+        settingPraseAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 if (view.getId() == R.id.tvPrase) {
@@ -144,10 +144,10 @@ public class PraseActivity extends BaseActivity {
                         ((ViewGroup) view.getParent()).requestFocus();
                     }
                     if (selected != position) {
-                        PraseBean praseBean = praseAdapter.getData().get(position);
-                        praseAdapter.getData().get(selected).selected = false;
+                        PraseBean praseBean = settingPraseAdapter.getData().get(position);
+                        settingPraseAdapter.getData().get(selected).selected = false;
                         praseBean.selected = true;
-                        praseAdapter.notifyDataSetChanged();
+                        settingPraseAdapter.notifyDataSetChanged();
                         selected = position;
                         Hawk.put(HawkConfig.DEFAULT_PRASE_ID, praseBean.getId());
                         mX5WebView.stopLoading();
@@ -170,7 +170,7 @@ public class PraseActivity extends BaseActivity {
                 break;
             }
         }
-        praseAdapter.setNewData(praseBeanList);
+        settingPraseAdapter.setNewData(praseBeanList);
         mGridView.setFocusPosition(selected);
         Intent intent = getIntent();
         if (intent != null && intent.getExtras() != null) {
