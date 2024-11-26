@@ -22,6 +22,7 @@ import android.os.Looper;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
 import com.lzy.okgo.cookie.CookieJarImpl;
+import com.lzy.okgo.https.HttpsUtils;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.HttpParams;
@@ -30,8 +31,6 @@ import com.lzy.okgo.utils.HttpUtils;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 
-import javax.net.ssl.*;
-import java.security.cert.CertificateException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -73,53 +72,10 @@ public class OkGo {
         builder.readTimeout(OkGo.DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS);
         builder.writeTimeout(OkGo.DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS);
         builder.connectTimeout(OkGo.DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS);
-        try {
-            setOkHttpSsl(builder);
-            builder.hostnameVerifier(UnSafeHostnameVerifier);
-            okHttpClient = builder.build();
-        } catch (ExceptionInInitializerError error) {
-            error.printStackTrace();
-            okHttpClient = builder.build();
-        }
-    }
-
-    /**
-     * 此类是用于主机名验证的基接口。 在握手期间，如果 URL 的主机名和服务器的标识主机名不匹配，
-     * 则验证机制可以回调此接口的实现程序来确定是否应该允许此连接。策略可以是基于证书的或依赖于其他验证方案。
-     * 当验证 URL 主机名使用的默认规则失败时使用这些回调。如果主机名是可接受的，则返回 true
-     */
-    private final HostnameVerifier UnSafeHostnameVerifier = new HostnameVerifier() {
-        @Override
-        public boolean verify(String hostname, SSLSession session) {
-            return true;
-        }
-    };
-
-    private synchronized void setOkHttpSsl(OkHttpClient.Builder okhttpBuilder) {
-        try {
-            // 自定义一个信任所有证书的TrustManager，添加SSLSocketFactory的时候要用到
-            final X509TrustManager trustAllCert =
-                    new X509TrustManager() {
-                        @Override
-                        public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
-                        }
-
-                        @Override
-                        public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
-                        }
-
-                        @Override
-                        public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-                            return new java.security.cert.X509Certificate[]{};
-                        }
-                    };
-            SSLContext sslContext = SSLContext.getInstance("TLS");
-            sslContext.init(null, new TrustManager[]{trustAllCert}, null);
-            SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
-            okhttpBuilder.sslSocketFactory(sslSocketFactory, trustAllCert);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory();
+        builder.sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager);
+        builder.hostnameVerifier(HttpsUtils.UnSafeHostnameVerifier);
+        okHttpClient = builder.build();
     }
 
     public static OkGo getInstance() {
