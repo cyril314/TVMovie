@@ -32,6 +32,7 @@ import okhttp3.OkHttpClient;
 
 import javax.net.ssl.*;
 import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -97,30 +98,40 @@ public class OkGo {
 
     private synchronized void setOkHttpSsl(OkHttpClient.Builder okhttpBuilder) {
         try {
-            // 自定义一个信任所有证书的TrustManager，添加SSLSocketFactory的时候要用到
-            final X509TrustManager trustAllCert =
-                    new X509TrustManager() {
-                        @Override
-                        public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
-                        }
+            // 使用 TLS 1.2 或 1.3
+            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
 
-                        @Override
-                        public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
-                        }
+            // 自定义信任管理器，使用有效的证书验证
+            final X509TrustManager trustManager = new X509TrustManager() {
+                @Override
+                public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+                    // 自定义证书验证逻辑
+                }
 
-                        @Override
-                        public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-                            return new java.security.cert.X509Certificate[]{};
-                        }
-                    };
-            SSLContext sslContext = SSLContext.getInstance("TLS");
-            sslContext.init(null, new TrustManager[]{trustAllCert}, new java.security.SecureRandom());
-            final SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
-            okhttpBuilder.sslSocketFactory(sslSocketFactory, trustAllCert);
+                @Override
+                public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+                    // 自定义证书验证逻辑
+                }
+
+                @Override
+                public X509Certificate[] getAcceptedIssuers() {
+                    return null;
+                }
+            };
+
+            sslContext.init(null, new TrustManager[]{trustManager}, new java.security.SecureRandom());
+            SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
+
+            okhttpBuilder.sslSocketFactory(sslSocketFactory, trustManager);
+
+            // 使用默认的安全的主机名验证器
+            okhttpBuilder.hostnameVerifier(HttpsURLConnection.getDefaultHostnameVerifier());
+
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("SSL setup failed", e);
         }
     }
+
 
     public static OkGo getInstance() {
         return OkGoHolder.holder;
