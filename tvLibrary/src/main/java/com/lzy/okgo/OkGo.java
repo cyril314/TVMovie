@@ -19,34 +19,21 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
 import com.lzy.okgo.cookie.CookieJarImpl;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.HttpParams;
-import com.lzy.okgo.request.DeleteRequest;
-import com.lzy.okgo.request.GetRequest;
-import com.lzy.okgo.request.HeadRequest;
-import com.lzy.okgo.request.OptionsRequest;
-import com.lzy.okgo.request.PatchRequest;
-import com.lzy.okgo.request.PostRequest;
-import com.lzy.okgo.request.PutRequest;
-import com.lzy.okgo.request.TraceRequest;
+import com.lzy.okgo.request.*;
 import com.lzy.okgo.utils.HttpUtils;
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
 
+import javax.net.ssl.*;
 import java.security.cert.CertificateException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.X509TrustManager;
-
-import okhttp3.Call;
-import okhttp3.OkHttpClient;
 
 /**
  * ================================================
@@ -58,11 +45,12 @@ import okhttp3.OkHttpClient;
  * ================================================
  */
 public class OkGo {
+
     public static final long DEFAULT_MILLISECONDS = 60000;      //默认的超时时间
     public static long REFRESH_TIME = 300;                      //回调刷新时间（单位ms）
 
     private Application context;            //全局上下文
-    private final Handler mDelivery;              //用于在主线程执行的调度器
+    private final Handler mDelivery;        //用于在主线程执行的调度器
     private OkHttpClient okHttpClient;      //ok请求的客户端
     private HttpParams mCommonParams;       //全局公共请求参数
     private HttpHeaders mCommonHeaders;     //全局公共请求头
@@ -125,7 +113,9 @@ public class OkGo {
                             return new java.security.cert.X509Certificate[]{};
                         }
                     };
-            final SSLSocketFactory sslSocketFactory = new SSLSocketFactoryCompat(trustAllCert);
+            SSLContext sslContext = SSLContext.getInstance("TLS");
+            sslContext.init(null, new TrustManager[]{trustAllCert}, new java.security.SecureRandom());
+            final SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
             okhttpBuilder.sslSocketFactory(sslSocketFactory, trustAllCert);
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -137,6 +127,7 @@ public class OkGo {
     }
 
     private static class OkGoHolder {
+
         private static final OkGo holder = new OkGo();
     }
 
