@@ -2,13 +2,13 @@
   {
     "id": 1,
     "name": "八戒资源",
-    "api": "https://cj.bajiecaiji.com/inc/seacmsapi.php",
+    "api": "http://cj.bajiecaiji.com/inc/seacmsapi.php",
     "download": ""
   },
   {
     "id": 2,
     "name": "百度云",
-    "api": "https://api.apibdzy.com/api.php/provide/vod/at/xml/",
+    "api": "http://api.apibdzy.com/api.php/provide/vod/at/xml/",
     "download": ""
   },
   {

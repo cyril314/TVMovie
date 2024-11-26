@@ -4,21 +4,10 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * <b>类名称：</b> MD5 <br/>
- * <b>类描述：</b> MD5值计算<br/>
- * <b>创建人：</b> 林肯 <br/>
- * <b>修改人：</b> 编辑人 <br/>
- * <b>修改时间：</b> 2015年08月11日 下午2:41 <br/>
- * <b>修改备注：</b> <br/>
- *
- * @version 1.0.0 <br/>
- */
 public class MD5 {
 
     private static final char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',

@@ -83,10 +83,8 @@ public class HttpLoggingInterceptor implements Interceptor {
         if (printLevel == Level.NONE) {
             return chain.proceed(request);
         }
-
         //请求日志拦截
         logForRequest(request, chain.connection());
-
         //执行请求，计算请求时间
         long startNs = System.nanoTime();
         Response response;
@@ -97,7 +95,6 @@ public class HttpLoggingInterceptor implements Interceptor {
             throw e;
         }
         long tookMs = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNs);
-
         //响应日志拦截
         return logForResponse(response, tookMs);
     }
