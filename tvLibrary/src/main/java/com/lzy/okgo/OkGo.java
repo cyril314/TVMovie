@@ -31,6 +31,7 @@ import com.lzy.okgo.utils.HttpUtils;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 

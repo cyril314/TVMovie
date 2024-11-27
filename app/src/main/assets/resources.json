@@ -8,7 +8,7 @@
   {
     "id": 2,
     "name": "百度云",
-    "api": "http://api.apibdzy.com/api.php/provide/vod/at/xml/",
+    "api": "https://api.apibdzy.com/api.php/provide/vod/at/xml/",
     "download": ""
   },
   {

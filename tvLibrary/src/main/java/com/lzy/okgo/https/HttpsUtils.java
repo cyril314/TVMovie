@@ -15,6 +15,7 @@
  */
 package com.lzy.okgo.https;
 
+import android.os.Build;
 import com.lzy.okgo.utils.OkLogger;
 
 import javax.net.ssl.*;
@@ -100,16 +101,20 @@ public class HttpsUtils {
             }
             // 创建TLS类型的SSLContext对象， that uses our TrustManager
             SSLContext sslContext = SSLContext.getInstance("TLS");
+            String[] protocols = new String[]{"TLSv1.2"};
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                protocols = new String[]{"TLSv1.2", "TLSv1.3"};  // Android 9+ 支持 TLSv1.3
+            }
             // 用上面得到的trustManagers初始化SSLContext，这样sslContext就会信任keyStore中的证书
             // 第一个参数是授权的密钥管理器，用来授权验证，比如授权自签名的证书验证。第二个是被授权的证书管理器，用来验证服务器端的证书
             sslContext.init(keyManagers, new TrustManager[]{manager}, null);
             // 通过sslContext获取SSLSocketFactory对象
             sslParams.sSLSocketFactory = sslContext.getSocketFactory();
+            SSLSocket socket = (SSLSocket) sslParams.sSLSocketFactory.createSocket();
+            socket.setEnabledProtocols(protocols);  // 设置允许的协议版本
             sslParams.trustManager = manager;
             return sslParams;
-        } catch (NoSuchAlgorithmException e) {
-            throw new AssertionError(e);
-        } catch (KeyManagementException e) {
+        } catch (NoSuchAlgorithmException | KeyManagementException | IOException e) {
             throw new AssertionError(e);
         }
     }
