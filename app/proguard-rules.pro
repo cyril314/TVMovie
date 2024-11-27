@@ -144,15 +144,3 @@
 -keepclassmembers class * extends org.greenrobot.eventbus.util.ThrowableFailureEvent {
     <init>(java.lang.Throwable);
 }
-#腾讯x5
--dontwarn dalvik.**
--dontwarn com.tencent.smtt.**
-
--keep class com.tencent.smtt.** {
-    *;
-}
--keep class com.tencent.tbs.** {
-    *;
-}
--dontwarn com.tencent.bugly.**
--keep public class com.tencent.bugly.**{*;}

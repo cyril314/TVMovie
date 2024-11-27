@@ -40,8 +40,6 @@
         <activity android:name="com.movie.ui.activity.SettingActivity" android:screenOrientation="landscape"/>
         <activity android:name="com.movie.ui.activity.HistoryNewActivity" android:screenOrientation="landscape"/>
         <activity android:name="com.movie.ui.activity.HistoryActivity" android:screenOrientation="landscape"/>
-        <activity android:name="com.tencent.bugly.beta.ui.BetaActivity" android:screenOrientation="landscape"
-                  android:theme="@android:style/Theme.Translucent"/>
 
         <receiver android:name="com.movie.receiver.SearchReceiver">
             <intent-filter>

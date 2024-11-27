@@ -89,5 +89,5 @@ tasks.whenTaskAdded { task ->
 }
 
 tasks.withType(JavaCompile) {
-    options.compilerArgs << "-Xlint:-deprecation" << "-Xlint:-unchecked"
+    options.compilerArgs << "-Xlint:deprecation" << "-Xlint:unchecked"
 }

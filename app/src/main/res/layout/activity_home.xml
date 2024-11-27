@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20pt"
             android:gravity="center_vertical"
-            android:text="声明："
+            android:text="声明：欢迎收看你的影院"
             android:textColor="@android:color/white"
             android:textSize="28pt" />
 

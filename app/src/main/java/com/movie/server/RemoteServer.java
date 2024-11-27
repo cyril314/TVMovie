@@ -6,7 +6,6 @@ import android.net.wifi.WifiManager;
 
 import com.movie.R;
 import com.movie.event.ServerEvent;
-import com.tencent.bugly.crashreport.CrashReport;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -152,7 +151,7 @@ public class RemoteServer extends NanoHTTPD {
                     }
                 }
             } catch (SocketException e) {
-                CrashReport.postCatchedException(e);
+                e.printStackTrace();
             }
         } else {
             return String.format("%d.%d.%d.%d", (ipAddress & 0xff), (ipAddress >> 8 & 0xff), (ipAddress >> 16 & 0xff), (ipAddress >> 24 & 0xff));

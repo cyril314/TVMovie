@@ -20,7 +20,6 @@ import com.lzy.okgo.utils.OkLogger;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
@@ -47,7 +46,7 @@ import okio.Buffer;
  */
 public class HttpLoggingInterceptor implements Interceptor {
 
-    private static final Charset UTF8 = StandardCharsets.UTF_8;
+    private static final Charset UTF8 = Charset.forName("UTF-8");
 
     private volatile Level printLevel = Level.NONE;
     private java.util.logging.Level colorLevel;

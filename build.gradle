@@ -64,7 +64,6 @@ ext {
             "xstream"                      : "com.thoughtworks.xstream:xstream:1.4.15",
             "eventbus"                     : "org.greenrobot:eventbus:3.2.0",
             "refreshlayout"                : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0",
-            "bugly"                        : "com.tencent.bugly:crashreport_upgrade:1.4.2",
             "ijkplayer"                    : "tv.danmaku.ijk.media:ijkplayer-java:0.8.8",
             "exoplayer-core"               : "com.google.android.exoplayer:exoplayer-core:${exo_player2}",
             "exoplayer-dash"               : "com.google.android.exoplayer:exoplayer-dash:${exo_player2}",
@@ -72,6 +71,5 @@ ext {
             "exoplayer-smoothstreaming"    : "com.google.android.exoplayer:exoplayer-smoothstreaming:${exo_player2}",
             "extension-rtmp"               : "com.google.android.exoplayer:extension-rtmp:${exo_player2}",
             "hawk"                         : "com.orhanobut:hawk:2.0.1",
-            "tbssdk"                       : "com.tencent.tbs.tbssdk:sdk:43939",
     ]
 }

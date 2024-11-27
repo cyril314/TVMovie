@@ -210,7 +210,7 @@ public class HttpHeaders implements Serializable {
                 // We have nothing to do
             }
             if (TextUtils.isEmpty(webUserAgent)) {
-                webUserAgent = "okhttp-okgo/jeasonlzy";
+                webUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0";
             }
 
             Locale locale = Locale.getDefault();

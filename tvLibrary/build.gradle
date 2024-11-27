@@ -39,7 +39,6 @@ dependencies {
     api rootProject.ext.dependencies['autosize']
     api rootProject.ext.dependencies['refreshlayout']
     api rootProject.ext.dependencies['eventbus']
-    api rootProject.ext.dependencies['bugly']
     api rootProject.ext.dependencies['ijkplayer']
     api rootProject.ext.dependencies['exoplayer-core']
     api rootProject.ext.dependencies['exoplayer-dash']

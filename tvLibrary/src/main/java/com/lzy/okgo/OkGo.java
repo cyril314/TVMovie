@@ -46,7 +46,7 @@ import java.util.logging.Level;
  */
 public class OkGo {
 
-    public static final long DEFAULT_MILLISECONDS = 60000;      //默认的超时时间
+    public static final long DEFAULT_MILLISECONDS = 120000;      //默认的超时时间
     public static long REFRESH_TIME = 300;                      //回调刷新时间（单位ms）
 
     private Application context;            //全局上下文
