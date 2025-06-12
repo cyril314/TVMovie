@@ -37,10 +37,11 @@ tasks.withType(JavaCompile) {
 ext {
     applicationId = "com.movie"
     buildToolsVersion = '29.0.2'
+    compileSdkVersion = 30
     exo_player2 = '2.11.3'
+    javaVersion = JavaVersion.VERSION_1_8
     minSdkVersion = 16
-    targetSdkVersion = 29
-    compileSdkVersion = 29
+    targetSdkVersion = 30
     versionCode = 1
     versionName = "1.0.0"
 
