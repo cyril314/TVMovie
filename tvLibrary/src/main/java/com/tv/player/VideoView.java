@@ -12,10 +12,8 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.tv.R;
 import com.tv.player.ijk.IjkPlayer;
 import com.tv.player.render.IRenderView;
@@ -36,7 +34,6 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout implements 
     protected P mMediaPlayer;//播放器
     protected PlayerFactory<P> mPlayerFactory;//工厂类，用于实例化播放核心
     protected FrameLayout mPlayerContainer;
-
     protected IRenderView mRenderView;
     protected RenderViewFactory mRenderViewFactory;
     public static final int SCREEN_SCALE_DEFAULT = 0;
@@ -55,7 +52,6 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout implements 
     protected String mUrl;//当前播放视频的地址
     protected Map<String, String> mHeaders;//当前视频地址的请求头
     protected AssetFileDescriptor mAssetFileDescriptor;//assets文件
-
     protected long mCurrentPosition;//当前正在播放视频的位置
     //播放器的各种状态
     public static final int STATE_ERROR = -1;
@@ -72,7 +68,6 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout implements 
     public static final int PLAYER_NORMAL = 10;         // 普通播放器
     public static final int PLAYER_FULL_SCREEN = 11;    // 全屏播放器
     protected int mCurrentFullState = PLAYER_NORMAL;
-
     protected boolean mIsFullScreen;//是否处于全屏状态
     /**
      * 监听系统中音频焦点改变，见{@link #setEnableAudioFocus(boolean)}

@@ -36,4 +36,49 @@
         android:layout_gravity="bottom"
         android:focusable="false"
         android:visibility="invisible" />
+
+    <!-- 虚拟遥控器 -->
+    <LinearLayout
+        android:id="@+id/virtualRemote"
+        android:layout_width="match_parent"
+        android:layout_height="80pt"
+        android:layout_gravity="bottom"
+        android:background="#CC000000"
+        android:orientation="horizontal"
+        android:padding="10pt"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btnRewind"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5pt"
+            android:background="@drawable/bottom_shape"
+            android:text="◀◀"
+            android:textColor="@android:color/white"
+            android:textSize="20pt" />
+
+        <Button
+            android:id="@+id/btnPlayPause"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5pt"
+            android:background="@drawable/bottom_shape"
+            android:text="⏸"
+            android:textColor="@android:color/white"
+            android:textSize="20pt" />
+
+        <Button
+            android:id="@+id/btnForward"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5pt"
+            android:background="@drawable/bottom_shape"
+            android:text="▶▶"
+            android:textColor="@android:color/white"
+            android:textSize="20pt" />
+    </LinearLayout>
 </FrameLayout>
