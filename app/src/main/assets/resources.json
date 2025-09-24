@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "name": "八戒资源",
-    "api": "http://cj.bajiecaiji.com/inc/seacmsapi.php",
+    "name": "花旗资源",
+    "api": "https://www.seacms.org/zyapi.php",
     "download": ""
   },
   {
@@ -33,6 +33,42 @@
     "id": 6,
     "name": "大地资源",
     "api": "https://dadiapi.com/sea_api.php",
+    "download": ""
+  },
+  {
+    "id": 7,
+    "name": "悟空资源",
+    "api": "https://wukongzyz.com/api.php/provide/vod/at/xml",
+    "download": ""
+  },
+  {
+    "id": 8,
+    "name": "金鹰资源",
+    "api": "https://jyzyapi.com/provide/vod?ct=xml",
+    "download": ""
+  },
+  {
+    "id": 9,
+    "name": "速播资源",
+    "api": "https://subocaiji.com/api.php/provide/vod/at/xml",
+    "download": ""
+  },
+  {
+    "id": 10,
+    "name": "电影天堂",
+    "api": "http://caiji.dyttzyapi.com/api.php/provide/vod/at/xml/",
+    "download": ""
+  },
+  {
+    "id": 11,
+    "name": "360资源",
+    "api": "https://360zy.com/api.php/provide/vod/at/xml",
+    "download": ""
+  },
+  {
+    "id": 0,
+    "name": "豆瓣资源",
+    "api": "https://caiji.dbzy.tv/api.php/provide/vod/from/dbm3u8/at/xml/",
     "download": ""
   }
 ]

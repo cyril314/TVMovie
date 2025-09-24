@@ -1,12 +1,10 @@
 package com.movie.data;
 
 import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
-
 import com.movie.base.App;
 
 
@@ -38,18 +36,18 @@ public class AppDataManager {
             throw new RuntimeException("AppDataManager is no init");
         }
         return Room.databaseBuilder(App.getInstance(), AppDataBase.class, DB_NAME).addCallback(new RoomDatabase.Callback() {
-            @Override
-            public void onCreate(@NonNull SupportSQLiteDatabase db) {
-                super.onCreate(db);
-                Log.e("AppDataBase", "数据库第一次创建成功");
-            }
+                    @Override
+                    public void onCreate(@NonNull SupportSQLiteDatabase db) {
+                        super.onCreate(db);
+                        Log.e("AppDataBase", "数据库第一次创建成功");
+                    }
 
-            @Override
-            public void onOpen(@NonNull SupportSQLiteDatabase db) {
-                super.onOpen(db);
-                Log.e("AppDataBase", "数据库打开成功");
-            }
-        }).allowMainThreadQueries()//可以在主线程操作
+                    @Override
+                    public void onOpen(@NonNull SupportSQLiteDatabase db) {
+                        super.onOpen(db);
+                        Log.e("AppDataBase", "数据库打开成功");
+                    }
+                }).allowMainThreadQueries()//可以在主线程操作
                 .build();
     }
 }

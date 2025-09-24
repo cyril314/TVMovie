@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.movie.R;
 import com.movie.base.BaseActivity;
 import com.movie.bean.VodInfo;
@@ -17,7 +16,6 @@ import com.movie.event.RefreshEvent;
 import com.movie.widget.VodPlayView;
 import com.movie.widget.VodSeekLayout;
 import com.tv.player.VideoView;
-
 import org.greenrobot.eventbus.EventBus;
 
 /**
@@ -49,42 +47,6 @@ public class PlayActivity extends BaseActivity {
         }
     };
 
-    // ---------------- 触屏快进快退相关 ----------------
-    private float startX; // 记录手指按下位置
-    private boolean isSeekingByTouch = false; // 是否正在触屏快进
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                startX = event.getX();
-                isSeekingByTouch = false;
-                break;
-            case MotionEvent.ACTION_MOVE:
-                float deltaX = event.getX() - startX;
-                if (Math.abs(deltaX) > 100) { // 滑动超过100px才触发
-                    isSeekingByTouch = true;
-                    if (deltaX > 0) {
-                        // 向右滑动，模拟遥控器右键长按
-                        dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_RIGHT));
-                    } else {
-                        // 向左滑动，模拟遥控器左键长按
-                        dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_LEFT));
-                    }
-                    startX = event.getX(); // 更新起点，避免一次滑动触发过多
-                }
-                break;
-            case MotionEvent.ACTION_UP:
-                if (isSeekingByTouch) {
-                    // 抬起时松开按键（模拟长按结束）
-                    dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DPAD_RIGHT));
-                    dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DPAD_LEFT));
-                }
-                break;
-        }
-        return true; // 消费事件
-    }
-    // ---------------- End 触屏快进快退 ----------------
 
     @Override
     protected int getLayoutResID() {
@@ -251,5 +213,66 @@ public class PlayActivity extends BaseActivity {
         if (mVideoView != null) {
             mVideoView.release();
         }
+    }
+
+    private float initialX; // 记录触摸事件的初始位置
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                initialX = event.getX();
+                isPause = false;
+                mHandler.removeCallbacks(mRunnable);
+                break;
+            case MotionEvent.ACTION_MOVE:
+                float moveX = event.getX();
+                float deltaX = moveX - initialX;
+                if (Math.abs(deltaX) > 50) { // 左右滑动阈值
+                    isPause = true;
+                    mVodSeekLayout.setVisibility(View.VISIBLE);
+                    mHandler.removeCallbacks(mRunnable);
+                    // 获取当前播放位置（毫秒）
+                    int mCurrentPosition = (int) mVideoView.getCurrentPosition();
+                    // 获取视频总时长（毫秒）
+                    int mDuration = (int) mVideoView.getDuration();
+                    int offset = (int) (deltaX / 100 * 10000);
+                    int newPosition = mCurrentPosition + offset;
+                    newPosition = Math.max(0, Math.min(newPosition, mDuration)); // 限制范围
+                    // 更新UI控件
+                    mVideoView.seekTo(newPosition);
+                    // 计算进度条进度（避免除零错误）
+                    int progress = mDuration == 0 ? 0 : (int) (newPosition * 1.0 / mDuration * mVodSeekLayout.getMaxProgress());
+                    mVodSeekLayout.setCurrentPosition(mVideoView.getCurrentPosition()); // 显示当前时间
+                    mVodSeekLayout.setProgress(progress);// 设置进度条位置
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                if (!isPause) {
+                    isPause = true;
+                    mHandler.removeCallbacks(mRunnable);
+                    mVideoView.pause();
+                    mVodSeekLayout.setVisibility(View.VISIBLE);
+                    int mCurrentPosition = (int) mVideoView.getCurrentPosition();
+                    int mDuration = (int) mVideoView.getDuration();
+                    int progress = mDuration == 0 ? 0 : mCurrentPosition * mVodSeekLayout.getMaxProgress() / mDuration;
+                    mVodSeekLayout.setProgress(progress);
+                    mVodSeekLayout.pause();
+                } else {
+                    isPause = false;
+                    mHandler.removeCallbacks(mRunnable);
+                    mHandler.postDelayed(mRunnable, 1000);
+                    mVideoView.resume();
+                    mVodSeekLayout.start();
+                }
+                // 重新设置自动隐藏逻辑
+                if (mVideoView.getVisibility() == View.VISIBLE) {
+                    mHandler.postDelayed(mRunnable, 5000);
+                }
+                break;
+            default:
+                return super.onTouchEvent(event);
+        }
+        return true;
     }
 }
