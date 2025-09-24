@@ -1,10 +1,9 @@
-package com.tv;
+package com.movie.util;
 
 import android.graphics.Bitmap;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
-import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
@@ -34,7 +33,7 @@ public class QRCodeGen {
                 }
             }
             return Bitmap.createBitmap(pixels, 0, width, width, height, Bitmap.Config.RGB_565);
-        } catch (WriterException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;

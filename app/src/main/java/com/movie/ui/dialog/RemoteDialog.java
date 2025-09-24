@@ -6,7 +6,7 @@ import android.widget.TextView;
 import com.movie.R;
 import com.movie.base.BaseDialog;
 import com.movie.server.RemoteServer;
-import com.tv.QRCodeGen;
+import com.movie.util.QRCodeGen;
 
 /**
  * @author aim

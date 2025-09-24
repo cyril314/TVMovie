@@ -1,15 +1,21 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.versionName
         consumerProguardFiles "consumer-rules.pro"
+        minSdkVersion rootProject.ext.minSdkVersion
+        multiDexEnabled true
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.appVersionCode
+        versionName rootProject.ext.appVersionName
+
+        compileOptions {
+            sourceCompatibility rootProject.ext.javaVersion
+            targetCompatibility rootProject.ext.javaVersion
+        }
     }
 
     buildTypes {
@@ -18,40 +24,37 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    compileOptions {
-        sourceCompatibility rootProject.ext.javaVersion
-        targetCompatibility rootProject.ext.javaVersion
-    }
 }
 
 dependencies {
     api fileTree(dir: "libs", include: ["*.jar"])
     api rootProject.ext.dependencies['appcompat']
-    api rootProject.ext.dependencies['lifecycle']
-    api rootProject.ext.dependencies['recyclerview']
-    api rootProject.ext.dependencies['material']
-    api rootProject.ext.dependencies['room-runtime']
-    api rootProject.ext.dependencies['room-rxjava2']
-    api rootProject.ext.dependencies['multidex']
-    api rootProject.ext.dependencies['okhttp']
-    api rootProject.ext.dependencies['okio']
-    api rootProject.ext.dependencies['rxandroid']
-    api rootProject.ext.dependencies['BaseRecyclerViewAdapterHelper']
-    api rootProject.ext.dependencies['loadsir']
-    api rootProject.ext.dependencies['picasso']
-    api rootProject.ext.dependencies['gson']
     api rootProject.ext.dependencies['autosize']
-    api rootProject.ext.dependencies['refreshlayout']
+    api rootProject.ext.dependencies['BaseRecyclerViewAdapterHelper']
     api rootProject.ext.dependencies['eventbus']
-    api rootProject.ext.dependencies['ijkplayer']
     api rootProject.ext.dependencies['exoplayer-core']
     api rootProject.ext.dependencies['exoplayer-dash']
     api rootProject.ext.dependencies['exoplayer-hls']
     api rootProject.ext.dependencies['exoplayer-smoothstreaming']
     api rootProject.ext.dependencies['extension-rtmp']
+    api rootProject.ext.dependencies['gson']
     api rootProject.ext.dependencies['hawk']
+    api rootProject.ext.dependencies['ijkplayer']
+    api rootProject.ext.dependencies['lifecycle']
+    api rootProject.ext.dependencies['loadsir']
+    api rootProject.ext.dependencies['material']
+    api rootProject.ext.dependencies['multidex']
+    api rootProject.ext.dependencies['nanohttpd']
+    api rootProject.ext.dependencies['okhttp']
+    api rootProject.ext.dependencies['okio']
+    api rootProject.ext.dependencies['picasso']
+    api rootProject.ext.dependencies['recyclerview']
+    api rootProject.ext.dependencies['refreshlayout']
+    api rootProject.ext.dependencies['room-runtime']
+    api rootProject.ext.dependencies['room-rxjava2']
+    api rootProject.ext.dependencies['rxandroid']
     api(rootProject.ext.dependencies['xstream']) {
         exclude group: 'xmlpull', module: 'xmlpull'
     }
+    api rootProject.ext.dependencies['zxing']
 }

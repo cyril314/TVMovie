@@ -1,19 +1,24 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
         applicationId rootProject.ext.applicationId
         minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.versionName
         multiDexEnabled true
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        vectorDrawables.useSupportLibrary = true
+        versionCode rootProject.ext.appVersionCode
+        versionName rootProject.ext.appVersionName
+        compileOptions {
+            sourceCompatibility rootProject.ext.javaVersion
+            targetCompatibility rootProject.ext.javaVersion
+        }
         ndk {
             //选择要添加的对应 cpu 类型的 .so 库。还可以添加 , 'mips', 'mips64'
-            abiFilters 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
         }
         //设置room的Schema的位置
         javaCompileOptions {
@@ -34,15 +39,20 @@ android {
         }
     }
 
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
     buildTypes {
         debug {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             minifyEnabled false
         }
         release {
+            zipAlignEnabled true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
-            minifyEnabled false
         }
     }
 
@@ -56,21 +66,15 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility rootProject.ext.javaVersion
-        targetCompatibility rootProject.ext.javaVersion
-    }
-
     lintOptions {
         checkReleaseBuilds false
         abortOnError false
     }
 
     dexOptions {
-        javaMaxHeapSize "4g"
-        additionalParameters += '--multi-dex'
+        javaMaxHeapSize "2g"
+        additionalParameters += '--multi-dex --minimal-main-dex'
         additionalParameters += '--set-max-idx-number=48000'
-        additionalParameters += '--minimal-main-dex'
     }
 }
 
@@ -78,15 +82,4 @@ dependencies {
     api fileTree(dir: "libs", include: ["*.jar"])
     implementation project(path: ':tvLibrary')
     annotationProcessor rootProject.ext.dependencies["room-compiler"]
-}
-
-// Disable javaPreCompileDebug task
-tasks.whenTaskAdded { task ->
-    if (task.name == "javaPreCompileDebug") {
-        task.enabled = false
-    }
-}
-
-tasks.withType(JavaCompile) {
-    options.compilerArgs << "-Xlint:deprecation" << "-Xlint:unchecked"
 }

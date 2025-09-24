@@ -28,7 +28,7 @@ import com.movie.util.FastClickCheckUtil;
 import com.movie.util.L;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
-import com.tv.QRCodeGen;
+import com.movie.util.QRCodeGen;
 import com.tv.leanback.VerticalGridView;
 
 import org.greenrobot.eventbus.EventBus;
