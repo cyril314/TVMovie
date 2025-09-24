@@ -19,12 +19,12 @@ import com.tv.player.VideoView;
  * @description: 投屏
  */
 public class ProjectionPlayActivity extends BaseActivity {
-    private VideoView mVideoView;
-    private ProgressBar mProgressBar;
-    private VodSeekLayout mVodSeekLayout;
     private String playUrl;
     private boolean isPause = false;
     private boolean isChangedState = true;
+    private ProgressBar mProgressBar;
+    private VideoView mVideoView;
+    private VodSeekLayout mVodSeekLayout;
     private final Handler mHandler = new Handler();
     private final Runnable mRunnable = new Runnable() {
         @Override

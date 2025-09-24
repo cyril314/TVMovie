@@ -4,8 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.*;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.movie.R;
 import com.movie.base.BaseActivity;
 import com.movie.bean.VodInfo;
@@ -13,6 +17,7 @@ import com.movie.event.RefreshEvent;
 import com.movie.widget.VodPlayView;
 import com.movie.widget.VodSeekLayout;
 import com.tv.player.VideoView;
+
 import org.greenrobot.eventbus.EventBus;
 
 /**
@@ -21,20 +26,20 @@ import org.greenrobot.eventbus.EventBus;
  * @description: 视频控制器
  */
 public class PlayActivity extends BaseActivity {
-    private VodPlayView mVideoView;//视频播放视图
-    private TextView tvHint; // 视频标题
-    private ProgressBar mProgressBar; //进度条
-    private VodSeekLayout mVodSeekLayout; //视频点播搜索
+    private boolean isPause = false;        //是否暂停
+    private boolean isChangedState = true;  //是否改变状态
+    private ProgressBar mProgressBar;       //进度条
+    private TextView tvHint;                //视频标题
+    private VodPlayView mVideoView;         //视频播放视图
+    private VodSeekLayout mVodSeekLayout;   //视频点播搜索
     private VodInfo mVodInfo;
-    private boolean isPause = false; // 是否暂停
-    private boolean isChangedState = true; //
     private final Handler mHandler = new Handler();
     private final Runnable mRunnable = new Runnable() {
         @Override
         public void run() {
             if (isChangedState) {
-                int mCurrentPosition = (int) mVideoView.getCurrentPosition(); // 播放当前位置
-                int mDuration = (int) mVideoView.getDuration(); // 获取视频总时长
+                int mCurrentPosition = (int) mVideoView.getCurrentPosition();
+                int mDuration = (int) mVideoView.getDuration();
                 int progress = mDuration == 0 ? 0 : (int) (mCurrentPosition * 1.0 / mDuration * mVodSeekLayout.getMaxProgress());
                 mVodSeekLayout.setProgress(progress);
                 mVodSeekLayout.setCurrentPosition(mCurrentPosition);
@@ -43,9 +48,43 @@ public class PlayActivity extends BaseActivity {
             }
         }
     };
-    // 虚拟遥控器
-    private LinearLayout virtualRemote;
-    private Button btnRewind, btnPlayPause, btnForward;
+
+    // ---------------- 触屏快进快退相关 ----------------
+    private float startX; // 记录手指按下位置
+    private boolean isSeekingByTouch = false; // 是否正在触屏快进
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                startX = event.getX();
+                isSeekingByTouch = false;
+                break;
+            case MotionEvent.ACTION_MOVE:
+                float deltaX = event.getX() - startX;
+                if (Math.abs(deltaX) > 100) { // 滑动超过100px才触发
+                    isSeekingByTouch = true;
+                    if (deltaX > 0) {
+                        // 向右滑动，模拟遥控器右键长按
+                        dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_RIGHT));
+                    } else {
+                        // 向左滑动，模拟遥控器左键长按
+                        dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_LEFT));
+                    }
+                    startX = event.getX(); // 更新起点，避免一次滑动触发过多
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                if (isSeekingByTouch) {
+                    // 抬起时松开按键（模拟长按结束）
+                    dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DPAD_RIGHT));
+                    dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DPAD_LEFT));
+                }
+                break;
+        }
+        return true; // 消费事件
+    }
+    // ---------------- End 触屏快进快退 ----------------
 
     @Override
     protected int getLayoutResID() {
@@ -56,7 +95,6 @@ public class PlayActivity extends BaseActivity {
     protected void init() {
         initView();
         initData();
-        initVirtualRemote();
     }
 
     private void initView() {
@@ -64,10 +102,6 @@ public class PlayActivity extends BaseActivity {
         tvHint = findViewById(R.id.tvHint);
         mProgressBar = findViewById(R.id.mProgressBar);
         mVodSeekLayout = findViewById(R.id.mVodSeekLayout);
-        virtualRemote = findViewById(R.id.virtualRemote);
-        btnRewind = findViewById(R.id.btnRewind);
-        btnPlayPause = findViewById(R.id.btnPlayPause);
-        btnForward = findViewById(R.id.btnForward);
         mVideoView.addOnStateChangeListener(new VideoView.OnSimpleStateChangeListener() {
             @Override
             public void OnPlayerState(int state) {
@@ -79,13 +113,10 @@ public class PlayActivity extends BaseActivity {
                         mHandler.post(mRunnable);
                         mVodSeekLayout.start();
                         mVodSeekLayout.setDuration(mVideoView.getDuration());
-                        updatePlayPauseButton(true);
-                        break;
                     case VideoView.STATE_BUFFERED:
                         mProgressBar.setVisibility(View.INVISIBLE);
                         break;
                     case VideoView.STATE_PAUSED:
-                        updatePlayPauseButton(false);
                         break;
                     case VideoView.STATE_BUFFERING:
                     case VideoView.STATE_PREPARING:
@@ -131,62 +162,6 @@ public class PlayActivity extends BaseActivity {
         });
     }
 
-    private void initVirtualRemote() {
-        // 显示/隐藏虚拟遥控器（点击屏幕切换）
-        mVideoView.setOnClickListener(v -> {
-            if (virtualRemote.getVisibility() == View.VISIBLE) {
-                virtualRemote.setVisibility(View.GONE);
-            } else {
-                virtualRemote.setVisibility(View.VISIBLE);
-                // 3秒后自动隐藏
-                mHandler.removeCallbacks(hideRemoteRunnable);
-                mHandler.postDelayed(hideRemoteRunnable, 3000);
-            }
-        });
-
-        // 快退按钮（左）
-        btnRewind.setOnClickListener(v -> {
-            simulateKeyEvent(KeyEvent.KEYCODE_DPAD_LEFT);
-            resetHideTimer();
-        });
-
-        // 播放/暂停按钮
-        btnPlayPause.setOnClickListener(v -> {
-            simulateKeyEvent(KeyEvent.KEYCODE_DPAD_CENTER);
-            resetHideTimer();
-        });
-
-        // 快进按钮（右）
-        btnForward.setOnClickListener(v -> {
-            simulateKeyEvent(KeyEvent.KEYCODE_DPAD_RIGHT);
-            resetHideTimer();
-        });
-    }
-
-    private Runnable hideRemoteRunnable = new Runnable() {
-        @Override
-        public void run() {
-            virtualRemote.setVisibility(View.GONE);
-        }
-    };
-
-    private void resetHideTimer() {
-        mHandler.removeCallbacks(hideRemoteRunnable);
-        mHandler.postDelayed(hideRemoteRunnable, 3000);
-    }
-
-    private void updatePlayPauseButton(boolean isPlaying) {
-        if (isPlaying) {
-            btnPlayPause.setText("⏸");
-        } else {
-            btnPlayPause.setText("▶");
-        }
-    }
-
-    private void simulateKeyEvent(int keyCode) {
-        onKeyDown(keyCode, new KeyEvent(KeyEvent.ACTION_DOWN, keyCode));
-    }
-
     private void initData() {
         Intent intent = getIntent();
         if (intent != null && intent.getExtras() != null) {
@@ -203,9 +178,6 @@ public class PlayActivity extends BaseActivity {
             if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT || keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
                 if (mVideoView.isPlaying()) {
                     mVodSeekLayout.setVisibility(View.VISIBLE);
-                    // 显示虚拟遥控器
-                    virtualRemote.setVisibility(View.VISIBLE);
-                    resetHideTimer();
                 }
             } else if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE) {
                 if (!isPause) {
@@ -218,18 +190,13 @@ public class PlayActivity extends BaseActivity {
                     int progress = mDuration == 0 ? 0 : mCurrentPosition * mVodSeekLayout.getMaxProgress() / mDuration;
                     mVodSeekLayout.setProgress(progress);
                     mVodSeekLayout.pause();
-                    updatePlayPauseButton(false);
                 } else {
                     isPause = false;
                     mHandler.removeCallbacks(mRunnable);
                     mHandler.postDelayed(mRunnable, 1000);
                     mVideoView.resume();
                     mVodSeekLayout.start();
-                    updatePlayPauseButton(true);
                 }
-                // 显示虚拟遥控器
-                virtualRemote.setVisibility(View.VISIBLE);
-                resetHideTimer();
             } else if (keyCode == KeyEvent.KEYCODE_DPAD_UP) {
                 if (mVideoView.hasPrevious()) {
                     mVideoView.playPrevious();
@@ -276,7 +243,6 @@ public class PlayActivity extends BaseActivity {
             mVideoView.pause();
         }
         mHandler.removeCallbacks(mRunnable);
-        mHandler.removeCallbacks(hideRemoteRunnable);
     }
 
     @Override
@@ -285,7 +251,5 @@ public class PlayActivity extends BaseActivity {
         if (mVideoView != null) {
             mVideoView.release();
         }
-        mHandler.removeCallbacks(mRunnable);
-        mHandler.removeCallbacks(hideRemoteRunnable);
     }
 }
