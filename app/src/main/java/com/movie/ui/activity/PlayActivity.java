@@ -142,9 +142,9 @@ public class PlayActivity extends BaseActivity {
                     mVodSeekLayout.setVisibility(View.VISIBLE);
                 }
             } else if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE) {
+                mHandler.removeCallbacks(mRunnable);
                 if (!isPause) {
                     isPause = true;
-                    mHandler.removeCallbacks(mRunnable);
                     mVideoView.pause();
                     mVodSeekLayout.setVisibility(View.VISIBLE);
                     int mCurrentPosition = (int) mVideoView.getCurrentPosition();
@@ -154,7 +154,6 @@ public class PlayActivity extends BaseActivity {
                     mVodSeekLayout.pause();
                 } else {
                     isPause = false;
-                    mHandler.removeCallbacks(mRunnable);
                     mHandler.postDelayed(mRunnable, 1000);
                     mVideoView.resume();
                     mVodSeekLayout.start();
@@ -222,12 +221,9 @@ public class PlayActivity extends BaseActivity {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 initialX = event.getX();
-                isPause = false;
-                mHandler.removeCallbacks(mRunnable);
                 break;
             case MotionEvent.ACTION_MOVE:
-                float moveX = event.getX();
-                float deltaX = moveX - initialX;
+                float deltaX = event.getX() - initialX;
                 if (Math.abs(deltaX) > 50) { // 左右滑动阈值
                     isPause = true;
                     mVodSeekLayout.setVisibility(View.VISIBLE);
@@ -248,26 +244,24 @@ public class PlayActivity extends BaseActivity {
                 }
                 break;
             case MotionEvent.ACTION_UP:
+                mHandler.removeCallbacks(mRunnable); // 停止更新进度条
                 if (!isPause) {
                     isPause = true;
-                    mHandler.removeCallbacks(mRunnable);
-                    mVideoView.pause();
+                    mVideoView.pause();  // 暂停视频播放
                     mVodSeekLayout.setVisibility(View.VISIBLE);
                     int mCurrentPosition = (int) mVideoView.getCurrentPosition();
                     int mDuration = (int) mVideoView.getDuration();
                     int progress = mDuration == 0 ? 0 : mCurrentPosition * mVodSeekLayout.getMaxProgress() / mDuration;
-                    mVodSeekLayout.setProgress(progress);
-                    mVodSeekLayout.pause();
+                    mVodSeekLayout.setProgress(progress);  // 更新进度条
+                    mVodSeekLayout.pause();  // 暂停进度条
                 } else {
                     isPause = false;
-                    mHandler.removeCallbacks(mRunnable);
-                    mHandler.postDelayed(mRunnable, 1000);
-                    mVideoView.resume();
-                    mVodSeekLayout.start();
-                }
-                // 重新设置自动隐藏逻辑
-                if (mVideoView.getVisibility() == View.VISIBLE) {
-                    mHandler.postDelayed(mRunnable, 5000);
+                    mHandler.postDelayed(mRunnable, 1000);  // 开始更新进度条
+                    mVideoView.resume();  // 恢复视频播放
+                    mVodSeekLayout.start();  // 恢复进度条
+                    if (mVideoView.getVisibility() == View.VISIBLE) {
+                        mHandler.postDelayed(mRunnable, 5000);
+                    }
                 }
                 break;
             default:

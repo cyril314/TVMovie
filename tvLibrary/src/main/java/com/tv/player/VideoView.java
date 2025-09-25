@@ -272,6 +272,9 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout implements 
         setPlayState(STATE_PLAYING);
     }
 
+    /**
+     * 暂停播放
+     */
     @Override
     public void pause() {
         if (isInPlaybackState() && mMediaPlayer.isPlaying()) {
