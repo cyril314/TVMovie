@@ -19,14 +19,14 @@
   },
   {
     "id": 4,
-    "name": "海洋乐播",
+    "name": "乐播资源",
     "api": "http://lbapiby.com/api.php/Seacms/vod/at/xml/",
     "download": ""
   },
   {
     "id": 5,
-    "name": "乐播资源",
-    "api": "https://lbapi9.com/api.php/provide/vod/at/xml/",
+    "name": "闪电资源",
+    "api": "https://sdzyapi.com/api.php/provide/vod/at/xml",
     "download": ""
   },
   {
@@ -44,7 +44,7 @@
   {
     "id": 8,
     "name": "金鹰资源",
-    "api": "https://jyzyapi.com/provide/vod?ct=xml",
+    "api": "https://jyzyapi.com/provide/vod/from/jinyingm3u8/at/xml/",
     "download": ""
   },
   {
@@ -61,6 +61,12 @@
   },
   {
     "id": 11,
+    "name": "360资源",
+    "api": "https://360zy.com/api.php/provide/vod/at/xml",
+    "download": ""
+  },
+  {
+    "id": 12,
     "name": "360资源",
     "api": "https://360zy.com/api.php/provide/vod/at/xml",
     "download": ""

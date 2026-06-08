@@ -5,7 +5,7 @@
     "praseUrl": "https://jx.pingguocms.com/aliplayer/?url="
   },
   {
-    "id": 2,
+    "id",: 2,
     "praseName": "备用线路1",
     "praseUrl": "https://www.playm3u8.cn/jiexi.php?url="
   },
@@ -16,6 +16,11 @@
   },
   {
     "id": 4,
+    "praseName": "金鹰解析",
+    "praseUrl": "https://hd.iapijy.com/play?url="
+  },
+  {
+    "id": 0,
     "praseName": "dadi解析",
     "praseUrl": "https://play.dadiapi.com/watch?url="
   }
