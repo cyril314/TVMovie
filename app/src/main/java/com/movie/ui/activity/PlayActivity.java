@@ -1,6 +1,7 @@
 package com.movie.ui.activity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.KeyEvent;
@@ -64,6 +65,7 @@ public class PlayActivity extends BaseActivity {
         tvHint = findViewById(R.id.tvHint);
         mProgressBar = findViewById(R.id.mProgressBar);
         mVodSeekLayout = findViewById(R.id.mVodSeekLayout);
+        updateScreenScaleType(getResources().getConfiguration().orientation);
         mVideoView.addOnStateChangeListener(new VideoView.OnSimpleStateChangeListener() {
             @Override
             public void OnPlayerState(int state) {
@@ -211,6 +213,24 @@ public class PlayActivity extends BaseActivity {
         super.onDestroy();
         if (mVideoView != null) {
             mVideoView.release();
+        }
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        // 允许横竖屏切换，布局自动重绘，播放状态保持不变
+        updateScreenScaleType(newConfig.orientation);
+    }
+
+    private void updateScreenScaleType(int orientation) {
+        if (mVideoView == null) {
+            return;
+        }
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            mVideoView.setScreenScaleType(VideoView.SCREEN_SCALE_DEFAULT);
+        } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            mVideoView.setScreenScaleType(VideoView.SCREEN_SCALE_CENTER_CROP);
         }
     }
 

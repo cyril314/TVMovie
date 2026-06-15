@@ -122,7 +122,7 @@ public class App extends MultiDexApplication {
         //播放器配置，注意：此为全局配置，按需开启
         VideoViewManager.setConfig(PlayerConfig.newBuilder()
                 .setLogEnabled(BuildConfig.DEBUG)//调试的时候请打开日志，方便排错
-                .setScreenScaleType(VideoView.SCREEN_SCALE_16_9)
+                .setScreenScaleType(VideoView.SCREEN_SCALE_DEFAULT)
                 .setPlayerFactory(playerFactory)
                 .setEnableMediaCodec(Hawk.get(HawkConfig.MEDIA_CODEC, false))
                 .setProgressManager(new ProgressManagerImpl())
