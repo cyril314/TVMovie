@@ -5,7 +5,7 @@
     "praseUrl": "https://jx.pingguocms.com/aliplayer/?url="
   },
   {
-    "id",: 2,
+    "id": 2,
     "praseName": "备用线路1",
     "praseUrl": "https://www.playm3u8.cn/jiexi.php?url="
   },
@@ -18,6 +18,36 @@
     "id": 4,
     "praseName": "金鹰解析",
     "praseUrl": "https://hd.iapijy.com/play?url="
+  },
+  {
+    "id": 5,
+    "praseName": "杏吧解析",
+    "praseUrl": "https://xbxbw888.com/?url="
+  },
+  {
+    "id": 6,
+    "praseName": "虎牙解析",
+    "praseUrl": "https://huyajx.com/play/?url="
+  },
+  {
+    "id": 7,
+    "praseName": "速播解析",
+    "praseUrl": "https://subojiexi.com/play/?url="
+  },
+  {
+    "id": 8,
+    "praseName": "西瓜解析",
+    "praseUrl": "https://svip.xgzyplay.com/?url="
+  },
+  {
+    "id": 9,
+    "praseName": "猫眼解析",
+    "praseUrl": "https://jx.maoyanjx.top/player/?url="
+  },
+  {
+    "id": 10,
+    "praseName": "鸭鸭解析",
+    "praseUrl": "https://jx.yayazy.cc/m3u8/?url="
   },
   {
     "id": 0,

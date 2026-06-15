@@ -13,8 +13,8 @@
   },
   {
     "id": 3,
-    "name": "天空资源",
-    "api": "https://api.tiankongapi.com/api.php/provide/vod/at/xml/",
+    "name": "鸭鸭资源",
+    "api": "https://cj.yayazy.net/api.php/provide/vod/from/yym3u8/at/xml",
     "download": ""
   },
   {
@@ -67,8 +67,50 @@
   },
   {
     "id": 12,
-    "name": "360资源",
-    "api": "https://360zy.com/api.php/provide/vod/at/xml",
+    "name": "杏吧资源",
+    "api": "https://api.xgbbk8.com/api.php/provide/vod/at/xml",
+    "download": ""
+  },
+  {
+    "id": 13,
+    "name": "虎牙资源",
+    "api": "https://www.huyaapi.com/api.php/provide/vod/at/xml/",
+    "download": ""
+  },
+  {
+    "id": 14,
+    "name": "黑料资源",
+    "api": "https://heiliaozyapi.com/api.php/seaxml/vod/at/xml",
+    "download": ""
+  },
+  {
+    "id": 15,
+    "name": "速播资源",
+    "api": "https://subocj.com/api.php/provide/vod/at/xml",
+    "download": ""
+  },
+  {
+    "id": 15,
+    "name": "无水印资源",
+    "api": "https://api.wsyzy.net/api.php/provide/vod/from/wsym3u8/at/xmlsea/",
+    "download": ""
+  },
+  {
+    "id": 16,
+    "name": "西瓜资源",
+    "api": "https://caiji.xgzyapi.com/api.php/provide/vod/at/xml/",
+    "download": ""
+  },
+  {
+    "id": 17,
+    "name": "猫眼资源",
+    "api": "https://api.maoyanapi.top/api.php/provide/vod",
+    "download": ""
+  },
+  {
+    "id": 18,
+    "name": "天堂资源",
+    "api": "http://caiji.dyttzyapi.com/api.php/provide/vod/at/xml/",
     "download": ""
   },
   {
