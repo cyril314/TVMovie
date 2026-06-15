@@ -49,8 +49,6 @@ android {
             minifyEnabled false
         }
         release {
-            zipAlignEnabled true
-            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }
@@ -59,7 +57,7 @@ android {
     android.applicationVariants.all { variant ->
         variant.outputs.all {
             if (variant.buildType.name == 'debug') {
-                outputFileName = 'app-debug.apk'
+                outputFileName = 'tv_movie_debug.apk'
             } else {
                 outputFileName = "tv_movie_v${variant.versionName}.apk"
             }
@@ -72,7 +70,7 @@ android {
     }
 
     dexOptions {
-        javaMaxHeapSize "2g"
+        javaMaxHeapSize "1g"
         additionalParameters += '--multi-dex --minimal-main-dex'
         additionalParameters += '--set-max-idx-number=48000'
     }

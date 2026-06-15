@@ -215,50 +215,88 @@ public class PlayActivity extends BaseActivity {
     }
 
     private float initialX; // 记录触摸事件的初始位置
+    private float initialY;
+    private boolean isTap = false;
+    private static final int FAST_FORWARD_MILLIS = 15000;
+    private static final int REWIND_MILLIS = 10000;
+
+    private void seekBy(int offsetMillis) {
+        int currentPosition = (int) mVideoView.getCurrentPosition();
+        int duration = (int) mVideoView.getDuration();
+        int newPosition = Math.max(0, Math.min(currentPosition + offsetMillis, duration));
+        mVideoView.seekTo(newPosition);
+        mVodSeekLayout.setVisibility(View.VISIBLE);
+        int progress = duration == 0 ? 0 : (int) (newPosition * 1.0 / duration * mVodSeekLayout.getMaxProgress());
+        mVodSeekLayout.setCurrentPosition(newPosition);
+        mVodSeekLayout.setProgress(progress);
+        if (isPause) {
+            mVodSeekLayout.pause();
+        } else {
+            mVodSeekLayout.start();
+        }
+    }
+
+    private boolean handleEdgeTap(float x) {
+        int width = getWindow().getDecorView().getWidth();
+        int edge = width / 5;
+        if (x <= edge) {
+            seekBy(-REWIND_MILLIS);
+            return true;
+        } else if (x >= width - edge) {
+            seekBy(FAST_FORWARD_MILLIS);
+            return true;
+        }
+        return false;
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 initialX = event.getX();
+                initialY = event.getY();
+                isTap = true;
                 break;
             case MotionEvent.ACTION_MOVE:
                 float deltaX = event.getX() - initialX;
-                if (Math.abs(deltaX) > 50) { // 左右滑动阈值
+                float deltaY = event.getY() - initialY;
+                if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) { // 左右滑动阈值
+                    isTap = false;
                     isPause = true;
                     mVodSeekLayout.setVisibility(View.VISIBLE);
                     mHandler.removeCallbacks(mRunnable);
-                    // 获取当前播放位置（毫秒）
                     int mCurrentPosition = (int) mVideoView.getCurrentPosition();
-                    // 获取视频总时长（毫秒）
                     int mDuration = (int) mVideoView.getDuration();
                     int offset = (int) (deltaX / 100 * 10000);
                     int newPosition = mCurrentPosition + offset;
-                    newPosition = Math.max(0, Math.min(newPosition, mDuration)); // 限制范围
-                    // 更新UI控件
+                    newPosition = Math.max(0, Math.min(newPosition, mDuration));
                     mVideoView.seekTo(newPosition);
-                    // 计算进度条进度（避免除零错误）
                     int progress = mDuration == 0 ? 0 : (int) (newPosition * 1.0 / mDuration * mVodSeekLayout.getMaxProgress());
-                    mVodSeekLayout.setCurrentPosition(mVideoView.getCurrentPosition()); // 显示当前时间
-                    mVodSeekLayout.setProgress(progress);// 设置进度条位置
+                    mVodSeekLayout.setCurrentPosition(mVideoView.getCurrentPosition());
+                    mVodSeekLayout.setProgress(progress);
+                } else if (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10) {
+                    isTap = false;
                 }
                 break;
             case MotionEvent.ACTION_UP:
-                mHandler.removeCallbacks(mRunnable); // 停止更新进度条
+                if (isTap && handleEdgeTap(event.getX())) {
+                    return true;
+                }
+                mHandler.removeCallbacks(mRunnable);
                 if (!isPause) {
                     isPause = true;
-                    mVideoView.pause();  // 暂停视频播放
+                    mVideoView.pause();
                     mVodSeekLayout.setVisibility(View.VISIBLE);
                     int mCurrentPosition = (int) mVideoView.getCurrentPosition();
                     int mDuration = (int) mVideoView.getDuration();
                     int progress = mDuration == 0 ? 0 : mCurrentPosition * mVodSeekLayout.getMaxProgress() / mDuration;
-                    mVodSeekLayout.setProgress(progress);  // 更新进度条
-                    mVodSeekLayout.pause();  // 暂停进度条
+                    mVodSeekLayout.setProgress(progress);
+                    mVodSeekLayout.pause();
                 } else {
                     isPause = false;
-                    mHandler.postDelayed(mRunnable, 1000);  // 开始更新进度条
-                    mVideoView.resume();  // 恢复视频播放
-                    mVodSeekLayout.start();  // 恢复进度条
+                    mHandler.postDelayed(mRunnable, 1000);
+                    mVideoView.resume();
+                    mVodSeekLayout.start();
                     if (mVideoView.getVisibility() == View.VISIBLE) {
                         mHandler.postDelayed(mRunnable, 5000);
                     }

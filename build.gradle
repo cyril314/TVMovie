@@ -17,9 +17,10 @@ allprojects {
         maven { url 'https://jitpack.io' }
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }
-        google()
-        mavenCentral()
-        gradlePluginPortal()
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        // google()
+        // mavenCentral()
+        // gradlePluginPortal()
     }
 }
 
@@ -54,8 +55,8 @@ ext {
     javaVersion = JavaVersion.VERSION_1_8
     minSdkVersion = 16
     targetSdkVersion = 30
+    exo_player2 = "2.11.3"
 
-    exo_player2 = '2.11.3'
     dependencies = ["appcompat"                    : "androidx.appcompat:appcompat:1.3.0",
                     "autosize"                     : "me.jessyan:autosize:1.2.1",
                     "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.45-androidx",
@@ -80,7 +81,7 @@ ext {
                     "refreshlayout"                : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0",
                     "room-compiler"                : "androidx.room:room-compiler:2.2.0",
                     "room-runtime"                 : "androidx.room:room-runtime:2.2.0",
-                    "room-rxjava2"                 : "android.arch.persistence.room:rxjava2:2.2.3",
+                    "room-rxjava2"                 : "androidx.room:room-rxjava2:2.2.0",
                     "rxandroid"                    : "io.reactivex.rxjava2:rxandroid:2.0.1",
                     "xstream"                      : "com.thoughtworks.xstream:xstream:1.4.15",
                     "zxing"                        : "com.google.zxing:core:3.4.1",]
