@@ -50,6 +50,11 @@
     "praseUrl": "https://jx.yayazy.cc/m3u8/?url="
   },
   {
+    "id": 11,
+    "praseName": "黑料解析",
+    "praseUrl": "https://www.heiliaozyjx.com/?url="
+  },
+  {
     "id": 0,
     "praseName": "dadi解析",
     "praseUrl": "https://play.dadiapi.com/watch?url="

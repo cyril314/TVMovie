@@ -1,6 +1,7 @@
 package com.movie.ui.activity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
@@ -123,7 +124,26 @@ public class PlayActivity extends BaseActivity {
             public void onShowState(boolean show) {
                 tvHint.setVisibility(show ? View.VISIBLE : View.GONE);
             }
+
+            @Override
+            public void onToggleScreen() {
+                int orientation = getResources().getConfiguration().orientation;
+                if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                    mVodSeekLayout.setToggleState(false);
+                } else {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                    mVodSeekLayout.setToggleState(true);
+                }
+            }
+
+            @Override
+            public void onSoundToggle() {
+                boolean mute = !mVideoView.isMute();
+                mVideoView.setMute(mute);
+            }
         });
+        mVodSeekLayout.setToggleState(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE);
     }
 
     private void initData() {

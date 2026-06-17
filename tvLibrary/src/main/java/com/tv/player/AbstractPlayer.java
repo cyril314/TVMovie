@@ -168,6 +168,5 @@ public abstract class AbstractPlayer {
         void onPrepared();
 
         void onVideoSizeChanged(int width, int height);
-
     }
 }

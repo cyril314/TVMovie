@@ -8,14 +8,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.AttrRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
-import com.tv.widget.VodSeekBar;
 import com.movie.R;
 import com.tv.player.PlayerUtils;
+import com.tv.widget.VodSeekBar;
 
 /**
  * @author aim
@@ -29,6 +27,9 @@ public class VodSeekLayout extends FrameLayout implements VodSeekBar.OnVodSeekBa
     private TextView tvDuration;
     private TextView vodName;
     private ImageView playState;
+    private ImageView toggle;
+    private ImageView sound;
+    private boolean isMute = false;
     private int delayed = 3000;
     private long mDuration;
     public static final int SEEK_START = 1;
@@ -74,10 +75,32 @@ public class VodSeekLayout extends FrameLayout implements VodSeekBar.OnVodSeekBa
         tvDuration = view.findViewById(R.id.tvDuration);
         vodName = view.findViewById(R.id.vodName);
         playState = view.findViewById(R.id.playState);
+        toggle = view.findViewById(R.id.toggle);
+        sound = view.findViewById(R.id.sound);
         seekInfoLayout.setBackgroundResource(R.drawable.vod_time);
         setBackgroundResource(R.drawable.seek_layout_background);
         playState.setImageResource(R.drawable.vod_play);
+        sound.setImageResource(R.drawable.vod_audio);
+        toggle.setImageResource(R.drawable.vod_toggle);
         mSeekBar.setOnVodSeekBarChangedListener(this);
+        toggle.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (seekStateListener != null) {
+                    seekStateListener.onToggleScreen();
+                }
+            }
+        });
+        sound.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isMute = !isMute;
+                setSoundState(isMute);
+                if (seekStateListener != null) {
+                    seekStateListener.onSoundToggle();
+                }
+            }
+        });
         mSeekBar.setOnKeyListener(new OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -97,6 +120,20 @@ public class VodSeekLayout extends FrameLayout implements VodSeekBar.OnVodSeekBa
         });
         tvCurrentPosition.setText(PlayerUtils.stringForTime(0));
         tvDuration.setText(PlayerUtils.stringForTime(0));
+    }
+
+    public void setSoundState(boolean isMute) {
+        this.isMute = isMute;
+        sound.setImageResource(isMute ? R.drawable.vod_audio_no : R.drawable.vod_audio);
+    }
+
+    public boolean isMute() {
+        return isMute;
+    }
+
+    public void setToggleState(boolean isLandscape) {
+        toggle.setImageResource(R.drawable.vod_toggle);
+        toggle.setContentDescription(isLandscape ? "退出横屏" : "切换横屏");
     }
 
     @Override
@@ -193,5 +230,9 @@ public class VodSeekLayout extends FrameLayout implements VodSeekBar.OnVodSeekBa
         void onSeekState(int state, int progress);
 
         void onShowState(boolean show);
+
+        void onToggleScreen();
+
+        void onSoundToggle();
     }
 }

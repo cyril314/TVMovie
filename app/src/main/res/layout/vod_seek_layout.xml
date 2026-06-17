@@ -1,71 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingLeft="20pt"
-    android:paddingRight="20pt"
-    android:paddingTop="10pt"
-    android:paddingBottom="10pt">
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:paddingLeft="20pt"
+             android:paddingRight="20pt"
+             android:paddingTop="10pt"
+             android:paddingBottom="10pt">
 
     <FrameLayout
-        android:id="@+id/seekInfoLayout"
-        android:layout_width="110pt"
-        android:layout_height="60pt"
-        android:layout_marginLeft="55pt"
-        android:layout_marginTop="20pt"
-        android:background="@drawable/vod_time">
+            android:id="@+id/seekInfoLayout"
+            android:layout_width="110pt"
+            android:layout_height="60pt"
+            android:layout_marginLeft="55pt"
+            android:layout_marginTop="20pt"
+            android:background="@drawable/vod_time">
 
         <TextView
-            android:id="@+id/tvCurrentPosition"
-            android:layout_width="match_parent"
-            android:layout_height="48pt"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:paddingLeft="10pt"
-            android:paddingRight="10pt"
-            android:textColor="@android:color/white"
-            android:textSize="18pt" />
+                android:id="@+id/tvCurrentPosition"
+                android:layout_width="match_parent"
+                android:layout_height="48pt"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:paddingLeft="10pt"
+                android:paddingRight="10pt"
+                android:textColor="@android:color/white"
+                android:textSize="18pt" />
 
     </FrameLayout>
 
     <ImageView
-        android:id="@+id/playState"
-        android:layout_width="42pt"
-        android:layout_height="42pt"
-        android:layout_marginLeft="24pt"
-        android:layout_marginTop="73pt"
-        android:src="@drawable/vod_play" />
+            android:id="@+id/playState"
+            android:layout_width="42pt"
+            android:layout_height="42pt"
+            android:layout_marginLeft="24pt"
+            android:layout_marginTop="73pt"
+            android:src="@drawable/vod_play"
+            android:contentDescription="播放/暂停"/>
+
+    <ImageView
+            android:id="@+id/toggle"
+            android:layout_width="42pt"
+            android:layout_height="42pt"
+            android:layout_marginLeft="74pt"
+            android:layout_marginTop="73pt"
+            android:src="@drawable/vod_toggle"
+            android:contentDescription="切换屏幕"/>
+
+    <ImageView
+            android:id="@+id/sound"
+            android:layout_width="42pt"
+            android:layout_height="42pt"
+            android:layout_marginLeft="124pt"
+            android:layout_marginTop="73pt"
+            android:src="@drawable/vod_audio"
+            android:contentDescription="有声/无声"/>
 
     <com.tv.widget.VodSeekBar
-        android:id="@+id/mSeekBar"
-        android:layout_width="match_parent"
-        android:layout_height="20pt"
-        android:layout_marginLeft="130pt"
-        android:layout_marginTop="85pt"
-        android:layout_marginRight="120pt"
-        android:paddingBottom="2pt"
-        android:paddingTop="2pt"
-        app:max="140" />
+            android:id="@+id/mSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="20pt"
+            android:layout_marginLeft="170pt"
+            android:layout_marginTop="85pt"
+            android:layout_marginRight="120pt"
+            android:paddingBottom="2pt"
+            android:paddingTop="2pt"
+            app:max="140" android:contentDescription="进度条"/>
 
     <TextView
-        android:id="@+id/tvDuration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|end"
-        android:layout_marginTop="80pt"
-        android:textColor="@android:color/white"
-        android:textSize="24pt" />
+            android:id="@+id/tvDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="80pt"
+            android:textColor="@android:color/white"
+            android:textSize="24pt" />
 
     <TextView
-        android:id="@+id/vodName"
-        android:layout_width="match_parent"
-        android:layout_height="36pt"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="30pt"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:maxLines="1"
-        android:textColor="@android:color/white"
-        android:textSize="20pt" />
+            android:id="@+id/vodName"
+            android:layout_width="match_parent"
+            android:layout_height="36pt"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="30pt"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="20pt" />
 </FrameLayout>

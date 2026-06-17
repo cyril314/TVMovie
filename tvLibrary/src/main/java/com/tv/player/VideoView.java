@@ -43,7 +43,6 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout implements 
     public static final int SCREEN_SCALE_ORIGINAL = 4;
     public static final int SCREEN_SCALE_CENTER_CROP = 5;
     protected int mCurrentScreenScaleType;
-
     protected int[] mVideoSize = {0, 0};
 
     protected boolean mIsMute;//是否静音
@@ -400,8 +399,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout implements 
             return;
         }
         ViewGroup decorView = getDecorView();
-        if (decorView == null)
-            return;
+        if (decorView == null) return;
 
         mIsFullScreen = false;
         //把播放器视图从DecorView中移除并添加到当前FrameLayout中即退出了全屏
@@ -519,8 +517,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout implements 
                 }
                 break;
             case AbstractPlayer.MEDIA_INFO_VIDEO_ROTATION_CHANGED:
-                if (mRenderView != null)
-                    mRenderView.setVideoRotation(extra);
+                if (mRenderView != null) mRenderView.setVideoRotation(extra);
                 break;
         }
     }
@@ -624,12 +621,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout implements 
      * 是否处于播放状态
      */
     protected boolean isInPlaybackState() {
-        return mMediaPlayer != null
-                && mCurrentPlayState != STATE_ERROR
-                && mCurrentPlayState != STATE_IDLE
-                && mCurrentPlayState != STATE_PREPARING
-                && mCurrentPlayState != STATE_START_ABORT
-                && mCurrentPlayState != STATE_PLAYBACK_COMPLETED;
+        return mMediaPlayer != null && mCurrentPlayState != STATE_ERROR && mCurrentPlayState != STATE_IDLE && mCurrentPlayState != STATE_PREPARING && mCurrentPlayState != STATE_START_ABORT && mCurrentPlayState != STATE_PLAYBACK_COMPLETED;
     }
 
     /**
@@ -770,12 +762,10 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout implements 
 
         @Override
         public void OnFullState(int state) {
-
         }
 
         @Override
         public void OnPlayerState(int state) {
-
         }
     }
 
