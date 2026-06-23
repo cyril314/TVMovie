@@ -1,5 +1,6 @@
 package com.movie.ui.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -10,10 +11,18 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+
 import com.movie.R;
+import com.movie.api.ApiConfig;
 import com.movie.base.BaseActivity;
+import com.movie.bean.PraseBean;
+import com.movie.util.HawkConfig;
 import com.movie.widget.VodSeekLayout;
+import com.orhanobut.hawk.Hawk;
 import com.tv.player.VideoView;
+
+import java.util.List;
 
 /**
  * @author aim
@@ -128,8 +137,54 @@ public class ProjectionPlayActivity extends BaseActivity {
                 boolean mute = !mVideoView.isMute();
                 mVideoView.setMute(mute);
             }
+
+            @Override
+            public void onChangeSource() {
+                showPraseSourceChooser();
+            }
         });
         mVodSeekLayout.setToggleState(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE);
+    }
+
+    private void showPraseSourceChooser() {
+        final List<PraseBean> praseBeanList = ApiConfig.get().getPraseBeanList();
+        if (praseBeanList == null || praseBeanList.isEmpty()) {
+            Toast.makeText(mContext, "暂无解析源可用", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        String[] items = new String[praseBeanList.size()];
+        int currentId = Hawk.get(HawkConfig.DEFAULT_PRASE_ID, 0);
+        int checkedItem = 0;
+        for (int i = 0; i < praseBeanList.size(); i++) {
+            items[i] = praseBeanList.get(i).getPraseName();
+            if (praseBeanList.get(i).getId() == currentId) {
+                checkedItem = i;
+            }
+        }
+        final int[] selectedIndex = new int[]{checkedItem};
+        new AlertDialog.Builder(this)
+                .setTitle("选择解析源")
+                .setSingleChoiceItems(items, checkedItem, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        selectedIndex[0] = which;
+                    }
+                })
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        int index = selectedIndex[0];
+                        if (index >= 0 && index < praseBeanList.size()) {
+                            int selectedId = praseBeanList.get(index).getId();
+                            if (selectedId != currentId) {
+                                Hawk.put(HawkConfig.DEFAULT_PRASE_ID, selectedId);
+                                Toast.makeText(ProjectionPlayActivity.this, "解析源已切换，重新播放后生效", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }
+                })
+                .setNegativeButton("取消", null)
+                .show();
     }
 
     private void initData() {

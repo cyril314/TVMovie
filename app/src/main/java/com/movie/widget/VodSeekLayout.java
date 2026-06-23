@@ -29,6 +29,7 @@ public class VodSeekLayout extends FrameLayout implements VodSeekBar.OnVodSeekBa
     private ImageView playState;
     private ImageView toggle;
     private ImageView sound;
+    private ImageView shift;
     private boolean isMute = false;
     private int delayed = 3000;
     private long mDuration;
@@ -77,11 +78,13 @@ public class VodSeekLayout extends FrameLayout implements VodSeekBar.OnVodSeekBa
         playState = view.findViewById(R.id.playState);
         toggle = view.findViewById(R.id.toggle);
         sound = view.findViewById(R.id.sound);
+        shift = view.findViewById(R.id.shift);
         seekInfoLayout.setBackgroundResource(R.drawable.vod_time);
         setBackgroundResource(R.drawable.seek_layout_background);
         playState.setImageResource(R.drawable.vod_play);
         sound.setImageResource(R.drawable.vod_audio);
         toggle.setImageResource(R.drawable.vod_toggle);
+        shift.setImageResource(R.drawable.vod_shift);
         mSeekBar.setOnVodSeekBarChangedListener(this);
         toggle.setOnClickListener(new OnClickListener() {
             @Override
@@ -98,6 +101,14 @@ public class VodSeekLayout extends FrameLayout implements VodSeekBar.OnVodSeekBa
                 setSoundState(isMute);
                 if (seekStateListener != null) {
                     seekStateListener.onSoundToggle();
+                }
+            }
+        });
+        shift.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (seekStateListener != null) {
+                    seekStateListener.onChangeSource();
                 }
             }
         });
@@ -234,5 +245,7 @@ public class VodSeekLayout extends FrameLayout implements VodSeekBar.OnVodSeekBa
         void onToggleScreen();
 
         void onSoundToggle();
+
+        void onChangeSource();
     }
 }

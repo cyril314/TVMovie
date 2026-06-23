@@ -56,11 +56,29 @@
             android:src="@drawable/vod_audio"
             android:contentDescription="有声/无声"/>
 
+    <ImageView
+            android:id="@+id/shift"
+            android:layout_width="42pt"
+            android:layout_height="42pt"
+            android:layout_marginLeft="174pt"
+            android:layout_marginTop="73pt"
+            android:src="@drawable/vod_shift"
+            android:contentDescription="切换源"/>
+
+    <ImageView
+            android:id="@+id/download"
+            android:layout_width="42pt"
+            android:layout_height="42pt"
+            android:layout_marginLeft="224pt"
+            android:layout_marginTop="73pt"
+            android:src="@drawable/vod_down"
+            android:contentDescription="下载"/>
+
     <com.tv.widget.VodSeekBar
             android:id="@+id/mSeekBar"
             android:layout_width="match_parent"
             android:layout_height="20pt"
-            android:layout_marginLeft="170pt"
+            android:layout_marginLeft="270pt"
             android:layout_marginTop="85pt"
             android:layout_marginRight="120pt"
             android:paddingBottom="2pt"
