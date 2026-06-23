@@ -33,8 +33,8 @@
         <activity android:name="com.movie.ui.activity.LivePlayActivity" android:screenOrientation="landscape"/>
         <activity android:name="com.movie.ui.activity.DetailActivity" android:screenOrientation="landscape"/>
         <activity android:name="com.movie.ui.activity.PlayActivity"
-                  android:screenOrientation="sensor"
-                  android:configChanges="orientation|screenSize|keyboardHidden"/>
+              android:screenOrientation="landscape"
+              android:configChanges="orientation|screenSize|keyboardHidden"/>
         <activity android:name="com.movie.ui.activity.PraseActivity" android:configChanges="orientation|screenSize|keyboardHidden"
                   android:screenOrientation="landscape"/>
         <activity android:name="com.movie.ui.activity.ProjectionPlayActivity" android:screenOrientation="landscape"/>

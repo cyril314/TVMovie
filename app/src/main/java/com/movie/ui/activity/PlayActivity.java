@@ -1,6 +1,7 @@
 package com.movie.ui.activity;
 
 import android.content.DialogInterface;
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -12,6 +13,13 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.net.Uri;
+import android.os.Environment;
+import android.Manifest;
+import android.content.pm.PackageManager;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import androidx.appcompat.app.AlertDialog;
 
@@ -29,6 +37,21 @@ import com.tv.player.VideoView;
 
 import java.util.List;
 import org.greenrobot.eventbus.EventBus;
+
+import com.arthenica.ffmpegkit.FFmpegKit;
+import com.arthenica.ffmpegkit.Session;
+import com.arthenica.ffmpegkit.ReturnCode;
+import com.arthenica.ffmpegkit.ExecuteCallback;
+
+import android.content.ContentValues;
+import android.provider.MediaStore;
+import android.media.MediaScannerConnection;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.IOException;
 
 /**
  * @author aim
@@ -58,6 +81,9 @@ public class PlayActivity extends BaseActivity {
             }
         }
     };
+    private static final int REQUEST_STORAGE = 1001;
+    private String pendingDownloadUrl;
+    private String pendingDownloadFileName;
 
 
     @Override
@@ -157,6 +183,25 @@ public class PlayActivity extends BaseActivity {
             public void onChangeSource() {
                 showPraseSourceChooser();
             }
+            @Override
+            public void onDownload() {
+                if (mVodInfo == null) {
+                    Toast.makeText(mContext, "当前无可下载的视频", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String url = mVodInfo.seriesList.get(mVideoView.getPlayIndex()).url;
+                String name = mVodInfo.name + "_" + mVodInfo.seriesList.get(mVideoView.getPlayIndex()).name + ".mp4";
+                pendingDownloadUrl = url;
+                pendingDownloadFileName = name.replaceAll("[\\\\/:*?\"<>|]", "_");
+                // 权限检查（Android Q 以下需要）
+                if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.Q) {
+                    if (ContextCompat.checkSelfPermission(PlayActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(PlayActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_STORAGE);
+                        return;
+                    }
+                }
+                performDownload(pendingDownloadUrl, pendingDownloadFileName);
+            }
         });
         mVodSeekLayout.setToggleState(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE);
     }
@@ -168,6 +213,121 @@ public class PlayActivity extends BaseActivity {
             mVodInfo = (VodInfo) bundle.getSerializable("VodInfo");
             mVideoView.setVodInfo(mVodInfo, mVodInfo.playIndex);
             mVodSeekLayout.setVodName(String.format("%s[%s]", mVodInfo.name, mVodInfo.seriesList.get(mVodInfo.playIndex).name));
+        }
+    }
+
+    private void performDownload(String url, String fileName) {
+        if (url == null || url.isEmpty()) {
+            Toast.makeText(mContext, "下载地址为空", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        // 检测 m3u8 流，直接在设备上用 FFmpeg 转码为 MP4
+        if (url.contains(".m3u8") || url.toLowerCase().contains("m3u8")) {
+            transcodeM3u8ToMp4(url, fileName);
+            return;
+        }
+        try {
+            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+            request.setTitle(fileName);
+            request.setDescription("正在下载视频");
+            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+            request.setAllowedOverMetered(true);
+            request.setAllowedOverRoaming(false);
+            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName);
+            DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+            if (dm != null) {
+                dm.enqueue(request);
+                Toast.makeText(mContext, "已添加到下载列表，完成后请在下载目录查看", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(mContext, "下载管理器不可用", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(mContext, "下载失败: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_STORAGE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (pendingDownloadUrl != null && pendingDownloadFileName != null) {
+                    performDownload(pendingDownloadUrl, pendingDownloadFileName);
+                }
+            } else {
+                Toast.makeText(this, "需要存储权限才能下载", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void transcodeM3u8ToMp4(final String url, final String fileName) {
+        Toast.makeText(this, "开始转码(使用 FFmpeg)，请稍候...", Toast.LENGTH_LONG).show();
+        final File outDir = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
+        if (outDir != null && !outDir.exists()) {
+            outDir.mkdirs();
+        }
+        final File outFile = new File(outDir, fileName);
+        final String ffmpegCmd = "-y -i \"" + url + "\" -c copy \"" + outFile.getAbsolutePath() + "\"";
+        FFmpegKit.executeAsync(ffmpegCmd, new ExecuteCallback() {
+            @Override
+            public void apply(Session session) {
+                ReturnCode returnCode = session.getReturnCode();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (returnCode != null && returnCode.isSuccess()) {
+                            // 转码成功，尝试移动到公共 Downloads
+                            boolean moved = moveToDownloads(outFile, fileName);
+                            if (moved) {
+                                Toast.makeText(PlayActivity.this, "转码并保存到下载目录成功: " + fileName, Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(PlayActivity.this, "转码完成，文件保存在: " + outFile.getAbsolutePath(), Toast.LENGTH_LONG).show();
+                            }
+                        } else {
+                            Toast.makeText(PlayActivity.this, "转码失败", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    private boolean moveToDownloads(File src, String displayName) {
+        if (src == null || !src.exists()) return false;
+        try {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+                ContentValues values = new ContentValues();
+                values.put(MediaStore.MediaColumns.DISPLAY_NAME, displayName);
+                values.put(MediaStore.MediaColumns.MIME_TYPE, "video/mp4");
+                values.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS);
+                android.net.Uri uri = getContentResolver().insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, values);
+                if (uri == null) return false;
+                try (OutputStream os = getContentResolver().openOutputStream(uri); InputStream is = new FileInputStream(src)) {
+                    byte[] buf = new byte[4096];
+                    int len;
+                    while ((len = is.read(buf)) > 0) {
+                        os.write(buf, 0, len);
+                    }
+                }
+                // 可选择删除 src
+                src.delete();
+                return true;
+            } else {
+                File dest = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), displayName);
+                try (InputStream is = new FileInputStream(src); OutputStream os = new FileOutputStream(dest)) {
+                    byte[] buf = new byte[4096];
+                    int len;
+                    while ((len = is.read(buf)) > 0) {
+                        os.write(buf, 0, len);
+                    }
+                }
+                MediaScannerConnection.scanFile(this, new String[]{dest.getAbsolutePath()}, new String[]{"video/mp4"}, null);
+                src.delete();
+                return true;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
         }
     }
 
@@ -186,29 +346,19 @@ public class PlayActivity extends BaseActivity {
                 checkedItem = i;
             }
         }
-        final int[] selectedIndex = new int[]{checkedItem};
         new AlertDialog.Builder(this)
                 .setTitle("选择解析源")
                 .setSingleChoiceItems(items, checkedItem, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        selectedIndex[0] = which;
-                    }
-                })
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        int index = selectedIndex[0];
-                        if (index >= 0 && index < praseBeanList.size()) {
-                            int selectedId = praseBeanList.get(index).getId();
-                            if (selectedId != currentId) {
-                                Hawk.put(HawkConfig.DEFAULT_PRASE_ID, selectedId);
-                                Toast.makeText(PlayActivity.this, "解析源已切换，重新播放后生效", Toast.LENGTH_SHORT).show();
-                            }
+                        int selectedId = praseBeanList.get(which).getId();
+                        if (selectedId != currentId) {
+                            Hawk.put(HawkConfig.DEFAULT_PRASE_ID, selectedId);
+                            Toast.makeText(PlayActivity.this, "解析源已切换，重新播放后生效", Toast.LENGTH_SHORT).show();
                         }
+                        dialog.dismiss();
                     }
                 })
-                .setNegativeButton("取消", null)
                 .show();
     }
 
@@ -306,7 +456,8 @@ public class PlayActivity extends BaseActivity {
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             mVideoView.setScreenScaleType(VideoView.SCREEN_SCALE_DEFAULT);
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            mVideoView.setScreenScaleType(VideoView.SCREEN_SCALE_CENTER_CROP);
+            // 使用 DEFAULT 确保视频完整显示，避免 CENTER_CROP 导致裁剪
+            mVideoView.setScreenScaleType(VideoView.SCREEN_SCALE_DEFAULT);
         }
     }
 

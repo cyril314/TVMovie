@@ -80,4 +80,6 @@ dependencies {
     api fileTree(dir: "libs", include: ["*.jar"])
     implementation project(path: ':tvLibrary')
     annotationProcessor rootProject.ext.dependencies["room-compiler"]
+    // FFmpegKit for on-device transcoding (m3u8 -> mp4) with HTTPS support
+    implementation 'com.arthenica:ffmpeg-kit-full-gpl:4.5.LTS'
 }
